@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Tue Mar 06 15:00:03 2018
+# Process ID: 2504
+# Current directory: C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_2
+# Command line: vivado.exe -log rx_filter.vds -mode batch -messageDb vivado.pb -notrace -source rx_filter.tcl
+# Log file: C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_2/rx_filter.vds
+# Journal file: C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_2\vivado.jou
+#-----------------------------------------------------------
+source rx_filter.tcl -notrace

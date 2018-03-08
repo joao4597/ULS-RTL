@@ -1,0 +1,370 @@
+
+*** Running vivado
+    with args -log rx_filter.vds -m64 -mode batch -messageDb vivado.pb -notrace -source rx_filter.tcl
+
+
+****** Vivado v2015.4 (64-bit)
+  **** SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source rx_filter.tcl -notrace
+Command: synth_design -top rx_filter -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-1223] The version limit for your license is '2018.03' and will expire in 23 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 291.750 ; gain = 119.199
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rx_filter' [C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/src/rx_filter.v:33]
+WARNING: [Synth 8-3848] Net orsample in module/entity rx_filter does not have driver. [C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/src/rx_filter.v:43]
+INFO: [Synth 8-256] done synthesizing module 'rx_filter' (1#1) [C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/src/rx_filter.v:33]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[231]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[230]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[229]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[228]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[227]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[226]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[225]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[224]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[223]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[222]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[221]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[220]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[219]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[218]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[217]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[216]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[215]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[214]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[213]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[212]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[211]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[210]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[209]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[208]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[207]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[206]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[205]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[204]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[203]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[202]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[201]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[200]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[199]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[198]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[197]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[196]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[195]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[194]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[193]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[192]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[191]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[190]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[189]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[188]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[187]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[186]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[185]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[184]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[183]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[182]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[181]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[180]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[179]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[178]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[177]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[176]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[175]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[174]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[173]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[172]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[171]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[170]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[169]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[168]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[167]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[166]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[165]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[164]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[163]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[162]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[161]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[160]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[159]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[158]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[157]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[156]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[155]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[154]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[153]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[152]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[151]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[150]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[149]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[148]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[147]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[146]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[145]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[144]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[143]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[142]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[141]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[140]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[139]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[138]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[137]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[136]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[135]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[134]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[133]
+WARNING: [Synth 8-3331] design rx_filter has unconnected port orsample[132]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 328.082 ; gain = 155.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 328.082 ; gain = 155.531
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 328.082 ; gain = 155.531
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-5546] ROM "oselect_coefficient" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-327] inferring latch for variable 'oselect_coefficient_reg' [C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/src/rx_filter.v:140]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 334.922 ; gain = 162.371
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rx_filter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 453.980 ; gain = 281.430
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 455.258 ; gain = 282.707
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 455.258 ; gain = 282.707
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[8] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[7] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[6] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[5] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[4] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[3] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[2] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[1] ) is unused and will be removed from module rx_filter.
+WARNING: [Synth 8-3332] Sequential element (\oselect_coefficient_reg[0] ) is unused and will be removed from module rx_filter.
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |BUFG  |     1|
+|2     |LUT1  |     1|
+|3     |LUT2  |     4|
+|4     |LUT3  |     5|
+|5     |LUT4  |     6|
+|6     |LUT5  |     2|
+|7     |LUT6  |     7|
+|8     |FDRE  |    11|
+|9     |IBUF  |     4|
+|10    |OBUF  |    10|
+|11    |OBUFT |   232|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   283|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 539 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 474.324 ; gain = 253.004
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 474.324 ; gain = 301.773
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 4 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+14 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 533.133 ; gain = 323.492
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 533.133 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Mar 08 17:40:13 2018...

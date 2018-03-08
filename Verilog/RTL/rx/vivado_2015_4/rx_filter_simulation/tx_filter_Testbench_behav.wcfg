@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tx_filter_Testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tx_filter_Testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="850000000fs"></ZoomStartTime>
+      <ZoomEndTime time="1448500001fs"></ZoomEndTime>
+      <Cursor1Time time="1180000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="13" />
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/isample" type="array">
+      <obj_property name="ElementShortName">isample[15:0]</obj_property>
+      <obj_property name="ObjectShortName">isample[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/enable" type="logic">
+      <obj_property name="ElementShortName">enable</obj_property>
+      <obj_property name="ObjectShortName">enable</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/risample" type="array">
+      <obj_property name="ElementShortName">risample[15:0]</obj_property>
+      <obj_property name="ObjectShortName">risample[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/risample_trig" type="logic">
+      <obj_property name="ElementShortName">risample_trig</obj_property>
+      <obj_property name="ObjectShortName">risample_trig</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/osample_ready_trig" type="logic">
+      <obj_property name="ElementShortName">osample_ready_trig</obj_property>
+      <obj_property name="ObjectShortName">osample_ready_trig</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/i" type="array">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/rsum" type="array">
+      <obj_property name="ElementShortName">rsum[40:0]</obj_property>
+      <obj_property name="ObjectShortName">rsum[40:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/wmultiplication" type="array">
+      <obj_property name="ElementShortName">wmultiplication[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wmultiplication[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/ifilter_coefficient" type="array">
+      <obj_property name="ElementShortName">ifilter_coefficient[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ifilter_coefficient[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/rcounter" type="array">
+      <obj_property name="ElementShortName">rcounter[8:0]</obj_property>
+      <obj_property name="ObjectShortName">rcounter[8:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/oselect_coefficient" type="array">
+      <obj_property name="ElementShortName">oselect_coefficient[8:0]</obj_property>
+      <obj_property name="ObjectShortName">oselect_coefficient[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -1,0 +1,362 @@
+
+*** Running vivado
+    with args -log rx_filter.vds -m64 -mode batch -messageDb vivado.pb -notrace -source rx_filter.tcl
+
+
+****** Vivado v2015.4 (64-bit)
+  **** SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source rx_filter.tcl -notrace
+Command: synth_design -top rx_filter -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-1223] The version limit for your license is '2018.03' and will expire in 25 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 292.000 ; gain = 119.852
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rx_filter' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:27]
+INFO: [Synth 8-256] done synthesizing module 'rx_filter' (1#1) [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:27]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 357.043 ; gain = 184.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 357.043 ; gain = 184.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 357.043 ; gain = 184.895
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[198][15:0]' into 'rsamples_reg[199][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[197][15:0]' into 'rsamples_reg[198][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[196][15:0]' into 'rsamples_reg[197][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[195][15:0]' into 'rsamples_reg[196][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[194][15:0]' into 'rsamples_reg[195][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[193][15:0]' into 'rsamples_reg[194][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[192][15:0]' into 'rsamples_reg[193][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[191][15:0]' into 'rsamples_reg[192][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[190][15:0]' into 'rsamples_reg[191][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[189][15:0]' into 'rsamples_reg[190][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[188][15:0]' into 'rsamples_reg[189][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[187][15:0]' into 'rsamples_reg[188][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[186][15:0]' into 'rsamples_reg[187][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[185][15:0]' into 'rsamples_reg[186][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[184][15:0]' into 'rsamples_reg[185][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[183][15:0]' into 'rsamples_reg[184][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[182][15:0]' into 'rsamples_reg[183][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[181][15:0]' into 'rsamples_reg[182][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[180][15:0]' into 'rsamples_reg[181][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[179][15:0]' into 'rsamples_reg[180][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[178][15:0]' into 'rsamples_reg[179][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[177][15:0]' into 'rsamples_reg[178][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[176][15:0]' into 'rsamples_reg[177][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[175][15:0]' into 'rsamples_reg[176][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[174][15:0]' into 'rsamples_reg[175][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[173][15:0]' into 'rsamples_reg[174][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[172][15:0]' into 'rsamples_reg[173][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[171][15:0]' into 'rsamples_reg[172][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[170][15:0]' into 'rsamples_reg[171][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[169][15:0]' into 'rsamples_reg[170][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[168][15:0]' into 'rsamples_reg[169][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[167][15:0]' into 'rsamples_reg[168][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[166][15:0]' into 'rsamples_reg[167][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[165][15:0]' into 'rsamples_reg[166][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[164][15:0]' into 'rsamples_reg[165][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[163][15:0]' into 'rsamples_reg[164][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[162][15:0]' into 'rsamples_reg[163][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[161][15:0]' into 'rsamples_reg[162][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[160][15:0]' into 'rsamples_reg[161][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[159][15:0]' into 'rsamples_reg[160][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[158][15:0]' into 'rsamples_reg[159][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[157][15:0]' into 'rsamples_reg[158][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[156][15:0]' into 'rsamples_reg[157][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[155][15:0]' into 'rsamples_reg[156][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[154][15:0]' into 'rsamples_reg[155][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[153][15:0]' into 'rsamples_reg[154][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[152][15:0]' into 'rsamples_reg[153][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[151][15:0]' into 'rsamples_reg[152][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[150][15:0]' into 'rsamples_reg[151][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[149][15:0]' into 'rsamples_reg[150][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[148][15:0]' into 'rsamples_reg[149][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[147][15:0]' into 'rsamples_reg[148][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[146][15:0]' into 'rsamples_reg[147][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[145][15:0]' into 'rsamples_reg[146][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[144][15:0]' into 'rsamples_reg[145][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[143][15:0]' into 'rsamples_reg[144][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[142][15:0]' into 'rsamples_reg[143][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[141][15:0]' into 'rsamples_reg[142][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[140][15:0]' into 'rsamples_reg[141][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[139][15:0]' into 'rsamples_reg[140][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[138][15:0]' into 'rsamples_reg[139][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[137][15:0]' into 'rsamples_reg[138][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[136][15:0]' into 'rsamples_reg[137][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[135][15:0]' into 'rsamples_reg[136][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[134][15:0]' into 'rsamples_reg[135][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[133][15:0]' into 'rsamples_reg[134][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[132][15:0]' into 'rsamples_reg[133][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[131][15:0]' into 'rsamples_reg[132][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[130][15:0]' into 'rsamples_reg[131][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[129][15:0]' into 'rsamples_reg[130][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[128][15:0]' into 'rsamples_reg[129][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[127][15:0]' into 'rsamples_reg[128][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[126][15:0]' into 'rsamples_reg[127][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[125][15:0]' into 'rsamples_reg[126][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[124][15:0]' into 'rsamples_reg[125][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[123][15:0]' into 'rsamples_reg[124][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[122][15:0]' into 'rsamples_reg[123][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[121][15:0]' into 'rsamples_reg[122][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[120][15:0]' into 'rsamples_reg[121][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[119][15:0]' into 'rsamples_reg[120][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[118][15:0]' into 'rsamples_reg[119][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[117][15:0]' into 'rsamples_reg[118][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[116][15:0]' into 'rsamples_reg[117][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[115][15:0]' into 'rsamples_reg[116][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[114][15:0]' into 'rsamples_reg[115][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[113][15:0]' into 'rsamples_reg[114][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[112][15:0]' into 'rsamples_reg[113][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[111][15:0]' into 'rsamples_reg[112][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[110][15:0]' into 'rsamples_reg[111][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[109][15:0]' into 'rsamples_reg[110][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[108][15:0]' into 'rsamples_reg[109][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[107][15:0]' into 'rsamples_reg[108][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[106][15:0]' into 'rsamples_reg[107][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[105][15:0]' into 'rsamples_reg[106][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[104][15:0]' into 'rsamples_reg[105][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[103][15:0]' into 'rsamples_reg[104][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[102][15:0]' into 'rsamples_reg[103][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[101][15:0]' into 'rsamples_reg[102][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[100][15:0]' into 'rsamples_reg[101][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Synth 8-4471] merging register 'rsingle_pair_reg[99][15:0]' into 'rsamples_reg[100][15:0]' [C:/Users/joao/Desktop/Tese/Verilog/RTL/rx/src/rx_filter.v:78]
+INFO: [Common 17-14] Message 'Synth 8-4471' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 409.699 ; gain = 237.551
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |datapath__GD   |           1|    112690|
+|2     |reg__201       |           1|       232|
+|3     |rx_filter__GB2 |           1|      3216|
++------+---------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	 200 Input    232 Bit       Adders := 1     
++---Registers : 
+	              232 Bit    Registers := 1     
+	               16 Bit    Registers := 201   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rx_filter 
+Detailed RTL Component Info : 
++---Adders : 
+	 200 Input    232 Bit       Adders := 1     
++---Registers : 
+	              232 Bit    Registers := 1     
+	               16 Bit    Registers := 201   
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 477.754 ; gain = 305.605
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 478.910 ; gain = 306.762
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 478.910 ; gain = 306.762
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |datapath__GD   |           1|    129942|
+|2     |reg__201       |           1|       232|
+|3     |rx_filter__GB2 |           1|      3216|
++------+---------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 538.355 ; gain = 366.207
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 538.355 ; gain = 366.207
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |datapath__GD   |           1|     37689|
+|2     |reg__201       |           1|       232|
+|3     |rx_filter__GB2 |           1|      3216|
++------+---------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:20 . Memory (MB): peak = 538.355 ; gain = 366.207
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------+------------+----------+
+|      |RTL Partition  |Replication |Instances |
++------+---------------+------------+----------+
+|1     |datapath__GD   |           1|     37689|
+|2     |reg__201       |           1|       232|
+|3     |rx_filter__GB2 |           1|      3216|
++------+---------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 579.039 ; gain = 406.891
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:23 ; elapsed = 00:00:22 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |  2191|
+|3     |LUT2   |     1|
+|4     |LUT3   |  3933|
+|5     |LUT4   |  8096|
+|6     |LUT5   |   229|
+|7     |LUT6   |   305|
+|8     |FDRE   |  3448|
+|9     |IBUF   |    18|
+|10    |OBUF   |   232|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       | 18454|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:21 . Memory (MB): peak = 579.039 ; gain = 357.633
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:24 . Memory (MB): peak = 579.039 ; gain = 406.891
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2209 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'rx_filter' is not ideal for floorplanning, since the cellview 'rx_filter' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+113 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:26 . Memory (MB): peak = 579.039 ; gain = 369.430
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 579.039 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 06 14:58:26 2018...
