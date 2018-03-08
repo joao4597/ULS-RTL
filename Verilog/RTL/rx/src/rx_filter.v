@@ -83,7 +83,7 @@ module rx_filter(
       end else begin
         if ((rcounter < `FILTER_ORDER - 1) || inew_sample) begin
           rsamples[(((`FILTER_ORDER - 2) * 16) - 1):0]                <= rsamples[((`FILTER_ORDER - 1) * 16) - 1:16];
-          rsamples[((`FILTER_ORDER - 1) * 16) - 1:((`FILTER_ORDER - 1) - 1) * 16] <= wheader_sample                       ;
+          rsamples[((`FILTER_ORDER - 1) * 16) - 1:((`FILTER_ORDER - 1) - 1) * 16] <= wheader_sample                 ;
         end
       end
     end
