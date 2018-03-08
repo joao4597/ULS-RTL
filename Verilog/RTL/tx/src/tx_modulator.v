@@ -52,8 +52,8 @@ module tx_modulator(
  
  
   //Satate machine registers 
-  reg [2:0]         STATE              ;
-  reg [2:0]         NEXTSATE           ;
+  reg [2:0]          STATE             ;
+  reg [2:0]          NEXTSATE          ;
  
   //Satate Machine states 
   parameter INI   = 3'b000             ,
@@ -122,23 +122,23 @@ module tx_modulator(
         end
         S2: begin
           if (rclocks_counter == 7 && rperiodes_counter == 4) begin
-          	rbit_counter = rbit_counter + 1                        ;
-          	rclocks_counter    <= 0                                ;
-          	rperiodes_counter  <= 0                                ;
-          	rselected_sequence <= rselected_sequence >> 1'b1       ; //shift selected sequence to the right
+            rbit_counter = rbit_counter + 1                        ;
+            rclocks_counter    <= 0                                ;
+            rperiodes_counter  <= 0                                ;
+            rselected_sequence <= rselected_sequence >> 1'b1       ; //shift selected sequence to the right
           end else begin
-          	if(rclocks_counter == 7) begin
-          	  rclocks_counter   <= 0                               ;
+            if(rclocks_counter == 7) begin
+              rclocks_counter   <= 0                               ;
               rperiodes_counter <= rperiodes_counter + 1           ;
               rselected_sequence[0] <= !rselected_sequence[0]      ;
-          	end else begin
-          	  if(rclocks_counter == 3) begin
-          		  rselected_sequence[0] <= !rselected_sequence[0]  ;
-          		  rclocks_counter <= rclocks_counter + 1           ;
-          		end else begin
-          			rclocks_counter <= rclocks_counter + 1         ;
-          		end
-          	end
+            end else begin
+              if(rclocks_counter == 3) begin
+                rselected_sequence[0] <= !rselected_sequence[0]    ;
+                rclocks_counter <= rclocks_counter + 1             ;
+              end else begin
+                rclocks_counter <= rclocks_counter + 1             ;
+              end
+            end
           end
         end
       endcase
