@@ -1,0 +1,20 @@
+Vivado Simulator 2015.4
+Copyright 1986-1999, 2001-2015 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2015.4/bin/unwrapped/win64.o/xelab.exe -wto b110819b4b52445baa81192365999fa9 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tx_modulator_Testbench_behav xil_defaultlib.tx_modulator_Testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_clk.v" Line 21. Module tx_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/src/tx_modulator.v" Line 32. Module tx_modulator doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_clk.v" Line 21. Module tx_clk doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/src/tx_modulator.v" Line 32. Module tx_modulator doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.tx_clk
+Compiling module xil_defaultlib.tx_modulator
+Compiling module xil_defaultlib.tx_modulator_Testbench
+WARNING: [XSIM 43-3373] "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_modulator_Testbench.v" Line 144. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+WARNING: [XSIM 43-3373] "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_modulator_Testbench.v" Line 145. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tx_modulator_Testbench_behav

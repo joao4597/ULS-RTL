@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/src/tx_modulator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_modulator
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_modulator_Testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_modulator_Testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/vivado_2015_4/vivado_2015_4.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

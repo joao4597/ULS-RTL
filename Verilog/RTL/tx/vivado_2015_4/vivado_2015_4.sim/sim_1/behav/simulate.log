@@ -1,0 +1,5 @@
+Vivado Simulator 2015.4
+Time resolution is 1 ps
+PASSED!! Congratulations!
+FINITO!
+$finish called at time : 1638520 ns : File "C:/Users/joao/Desktop/Tese/Verilog/RTL/tx/sim/tx_modulator_Testbench.v" Line 165
