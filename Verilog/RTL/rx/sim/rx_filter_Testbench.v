@@ -14,7 +14,7 @@
 /**
 * GENERAL DESCRIPTION:
 *
-* -Generates random inpt samples
+* -Generates random input samples
 * -Writes the expected result of the filtering to a filered filtered_CORRECT.txt
 * -Acquires the result of the module and outputs it to filtered.txt
 * -Compares the two files priviously generated to validate module
@@ -50,25 +50,25 @@ module tx_filter_Testbench();
   .crx_clk            (clk           ),
   .rrx_rst            (reset         ),
   .erx_en             (enable        ),
-   
+
   .isample            (risample      ),
   .inew_sample        (risample_trig ),
   .ifilter_coefficient(rfilter_coeff ),
-  
+
   .oselect_coefficient(oslected_coeff),
   .orsample           (wosample      ),
   .osample_ready_trig (ooutput_ready )
   );
-  
+
   initial begin
-    
+
     @(negedge clk);
     //reset module
     reset         <= 1'b1;
     enable        <= 1'b1;
     risample      <= $signed(16'b1);
     rfilter_coeff <= $signed(-1);
-    
+
     @(negedge clk);
     //disable reset and input the first sample
     reset <= 1'b0;
@@ -87,7 +87,7 @@ module tx_filter_Testbench();
       @(negedge clk);
       risample_trig <= 0;
     end
-    
+
     $finish;
   end
 

@@ -13,7 +13,7 @@
 
 /**
  * GENERAL DESCRIPTION:
- * 
+ *
  * -Receives as input a sample signaled by a triger
  * -Outputs a filtercoefficient selector
  * -Recceives the selected filter coefficient
@@ -22,7 +22,7 @@
  *
  * CONSTRAINTS:
  * -The number of clocks between two consecutive samples needs to be at least
- * equal to the FILTER_ORDER 
+ * equal to the FILTER_ORDER
  */
 
 
@@ -34,11 +34,11 @@ module rx_filter(
   input                     crx_clk            , //rx clock
   input                     rrx_rst            , //rx reset signal
   input                     erx_en             , //module enable signal
-           
+
   input      signed [15:0]  isample            , //samples to be filtered
   input                     inew_sample        , //new sample available
   input      signed [15:0]  ifilter_coefficient, //filter coefficient from memory
-   
+
   output reg        [8:0]   oselect_coefficient, //selects the filter coefficient from the memory
   output reg signed [231:0] orsample           , //filtered samples
   output reg                osample_ready_trig   //new sample ready after filtering
@@ -143,7 +143,7 @@ module rx_filter(
         oselect_coefficient = `FILTER_ORDER - 1;
       end
     end
-     
+
   end
 
 endmodule

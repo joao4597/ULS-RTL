@@ -31,7 +31,7 @@ module tx_modulator_Testbench();
 
   wire clk;
   wire modulation;
-  
+
   integer i;
 
   integer file        ;
@@ -45,22 +45,22 @@ module tx_modulator_Testbench();
   tx_clk tx_clk_0(
     .clk(clk)
   );
-  
-  
+
+
   //Module under testing
   tx_modulator tx_modulator_0(
     .ctx_clk(clk),
     .rtx_rst(rst),
     .ienable(enable),
-  
+
     .istart_interrupt(start_interrupt),
     .ibinary_sequence(binary_sequence),
 
     .omodulation(modulation)
   );
-  
+
   initial begin
-  
+
     file         = 0;
     file_PRBS    = 0;
     file_correct = 0;
@@ -74,20 +74,20 @@ module tx_modulator_Testbench();
     file_PRBS = $fopen("..\\..\\..\\..\\sim_files\\PRBS.txt", "r");
     //open file to save correct modulation result
     file_correct = $fopen("..\\..\\..\\..\\sim_files\\modulation_correct.txt", "w");
-  
+
     //Reset modules
     @(negedge clk);
     enable          <= 1'b0;
     rst             <= 1'b1;
     start_interrupt <= 1'b0;
     binary_sequence <= 1024'd0;
-    
-    
+
+
     //Desable reset and enable module
     @(negedge clk);
     enable          <= 1'b1;
     rst             <= 1'b0;
-    
+
     //Generate random binary sequence
     /*for(i = 31; i <= 1023; i = i + 32) begin
       binary_sequence[i-:31] <= $urandom;
@@ -115,13 +115,13 @@ module tx_modulator_Testbench();
     //Satart modulation
     start_interrupt <= 1'b1;
 
-    
+
     //wait for modulation to start
     @(negedge clk);
 
     start_interrupt <= 1'b0;
-    
-    
+
+
     //Wait for modulation to end
     for(i = 0; i < 40960; i = i + 1) begin
       @(negedge clk);
@@ -134,11 +134,11 @@ module tx_modulator_Testbench();
     $fclose(file);
     $fclose(file_PRBS);
     $fclose(file_correct);
-    
+
     //open modulation result and correct modulation for comparation
     file = $fopen("..\\..\\..\\..\\sim_files\\modulation.txt", "r");
     file_correct = $fopen("..\\..\\..\\..\\sim_files\\modulation_correct.txt", "r");
-    
+
     //read modulation output and correct modulation from files and compare them line by line
     for(i = 0; !$feof(file_correct) || !$feof(file); i = i + 1) begin
       $fscanf(file_correct, "%d\n", integer_aux);
@@ -149,22 +149,22 @@ module tx_modulator_Testbench();
         $fclose(file);
         $fclose(file_correct);
         $finish;
-      end  
+      end
     end
-    
+
     //successful test
     $display("PASSED!! Congratulations!");
-    
+
     //close file
     $fclose(file);
     $fclose(file_correct);
 
 
     $display("FINITO!");
-    
+
     $finish;
   end
-  
+
 endmodule
 
 

@@ -13,7 +13,7 @@
 
 /**
 * GENERAL DESCRIPTION:
-* 
+*
 * -Generates a clock signal
 **/
 
@@ -21,7 +21,7 @@
 module tx_clk (
   output reg clk
   );
-  
+
   initial begin
     clk <= 0;
   end

@@ -12,12 +12,12 @@
 
 
 /**
- * GENERAL DESCRIPTION:
- * 
- * This module takes a two dimentional vector containing an array of pseudo-random binary sequences
- * generates a square signal modulated in BPSK by one of the binary sequences, the binary sequence 
- * to be modulated is selected by on of the inputs.
- */
+* GENERAL DESCRIPTION:
+*
+* This module takes a two dimentional vector containing an array of pseudo-random binary sequences
+* generates a square signal modulated in BPSK by one of the binary sequences, the binary sequence
+* to be modulated is selected by on of the inputs.
+**/
 
 
 `define CpP   8     //number of clocks per signal period
@@ -36,7 +36,7 @@ module tx_modulator(
   input                      ienable           ,  //enable
 
   input                      istart_interrupt  ,  //signal to acquire sequence selector and sart modulation
-  input         [`SL - 1:0]  ibinary_sequence  ,  //array containing the available pseudo-random binary sequences 
+  input         [`SL - 1:0]  ibinary_sequence  ,  //array containing the available pseudo-random binary sequences
 
   output  wire               omodulation          //modulated signal
   );
@@ -49,19 +49,19 @@ module tx_modulator(
   reg [`CpPRS - 1:0] rclocks_counter   ;
   reg [`PpBRS - 1:0] rperiodes_counter ;
   reg [`SLRS - 1:0]  rbit_counter      ;
- 
- 
-  //Satate machine registers 
+
+
+  //Satate machine registers
   reg [2:0]          STATE             ;
   reg [2:0]          NEXTSATE          ;
- 
-  //Satate Machine states 
+
+  //Satate Machine states
   parameter INI   = 3'b000             ,
             S1    = 3'b001             ,
             S2    = 3'b010             ,
             S3    = 3'b011             ,
             S4    = 3'b100             ;
- 
+
   parameter CpPb2 = `CpP / 2'd2        ;
 
 
@@ -92,7 +92,7 @@ module tx_modulator(
         NEXTSATE = S2;
       end
       S2: begin  //Count clocks
-        if (rbit_counter == 1023 && rclocks_counter == 7 
+        if (rbit_counter == 1023 && rclocks_counter == 7
           && rperiodes_counter == 4) begin
           NEXTSATE = INI;
         end else begin
@@ -109,9 +109,9 @@ module tx_modulator(
       rclocks_counter    <= 0;
       rperiodes_counter  <= 0;
       rbit_counter       <= 0;
-    end else begin 
-      case (STATE) 
-        INI: begin 
+    end else begin
+      case (STATE)
+        INI: begin
           rselected_sequence <= 0;
           rclocks_counter    <= 0;
           rperiodes_counter  <= 0;
