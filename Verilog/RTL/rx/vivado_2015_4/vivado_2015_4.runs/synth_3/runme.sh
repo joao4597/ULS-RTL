@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3'
+HD_PWD='C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

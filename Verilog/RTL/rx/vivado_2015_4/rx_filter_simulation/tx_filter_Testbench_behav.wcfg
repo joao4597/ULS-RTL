@@ -11,11 +11,11 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="850000000fs"></ZoomStartTime>
-      <ZoomEndTime time="1448500001fs"></ZoomEndTime>
-      <Cursor1Time time="1180000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1221000001fs"></ZoomEndTime>
+      <Cursor1Time time="140000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="14" />
    <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/isample" type="array">
       <obj_property name="ElementShortName">isample[15:0]</obj_property>
       <obj_property name="ObjectShortName">isample[15:0]</obj_property>
@@ -50,11 +50,6 @@
       <obj_property name="ObjectShortName">i[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/rsum" type="array">
-      <obj_property name="ElementShortName">rsum[40:0]</obj_property>
-      <obj_property name="ObjectShortName">rsum[40:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
    <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/wmultiplication" type="array">
       <obj_property name="ElementShortName">wmultiplication[31:0]</obj_property>
       <obj_property name="ObjectShortName">wmultiplication[31:0]</obj_property>
@@ -73,5 +68,14 @@
       <obj_property name="ElementShortName">oselect_coefficient[8:0]</obj_property>
       <obj_property name="ObjectShortName">oselect_coefficient[8:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/wosample" type="array">
+      <obj_property name="ElementShortName">wosample[231:0]</obj_property>
+      <obj_property name="ObjectShortName">wosample[231:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/tx_filter_Testbench/rx_filter_0/wmultiplication" type="array">
+      <obj_property name="ElementShortName">wmultiplication[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wmultiplication[31:0]</obj_property>
    </wvobject>
 </wave_config>

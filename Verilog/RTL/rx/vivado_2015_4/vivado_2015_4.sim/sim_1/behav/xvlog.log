@@ -1,9 +1,9 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/sim/rx_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/sim/rx_clk.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tx_clk
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/src/rx_filter.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/src/rx_filter.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module rx_filter
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/sim/rx_filter_Testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/sim/rx_filter_Testbench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tx_filter_Testbench
-WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/sim/rx_filter_Testbench.v:82]
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/GoogleDrive/FEUP/Tese/dev/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+WARNING: [VRFC 10-2019] loop variable declaration is not allowed in this mode of verilog [C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/sim/rx_filter_Testbench.v:82]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

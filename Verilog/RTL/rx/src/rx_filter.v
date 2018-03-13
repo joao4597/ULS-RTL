@@ -47,7 +47,6 @@ module rx_filter(
   reg         [((`FILTER_ORDER - 1) * 16) - 1:0] rsamples       ; //holds buffered isamples
   reg         [8:0]                              rcounter       ; //simple counter of executed multiplications
   reg                                            rtriger_buffer ; //buffers the osample_ready_triger one clock
-  reg  signed [40:0]                             rsum           ; //sum of al multiplications of the filter coeff by the samples
   wire        [15:0]                             wheader_sample ; //sample to be placed at the head of the rsamples register
   wire signed [31:0]                             wmultiplication; //single multiplication of rsamples header by filter coeff
 
@@ -95,16 +94,16 @@ module rx_filter(
   //multiplications adder
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rsum <= 0;
+      orsample <= 0;
     end else begin
       if (!erx_en) begin
-        rsum <= 0;
+        orsample <= 0;
       end else begin
         if (rcounter == 1) begin
-          rsum <= wmultiplication;
+          orsample <= wmultiplication;
         end else begin
           if (rcounter < `FILTER_ORDER) begin
-            rsum <= rsum + wmultiplication;
+            orsample <= orsample + wmultiplication;
           end
         end
       end

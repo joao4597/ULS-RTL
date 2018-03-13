@@ -78,7 +78,7 @@ module tx_filter_Testbench();
     @(negedge clk);
     risample_trig <= 0;
 
-    for(i = 0; i < 200; i = i + 1) begin
+    for(i = 0; i < 20; i = i + 1) begin
       for (integer j = 0; j < 200 - 1; j= j +1) begin
         @(negedge clk);
       end
