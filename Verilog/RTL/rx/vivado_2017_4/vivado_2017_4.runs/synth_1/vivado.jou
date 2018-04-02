@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Apr  2 20:08:04 2018
+# Process ID: 19537
+# Current directory: /home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1
+# Command line: vivado -log rx_samples_organizer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rx_samples_organizer.tcl
+# Log file: /home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1/rx_samples_organizer.vds
+# Journal file: /home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source rx_samples_organizer.tcl -notrace

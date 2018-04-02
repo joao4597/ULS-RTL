@@ -1,0 +1,437 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Apr  2 20:08:04 2018
+# Process ID: 19537
+# Current directory: /home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1
+# Command line: vivado -log rx_samples_organizer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source rx_samples_organizer.tcl
+# Log file: /home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1/rx_samples_organizer.vds
+# Journal file: /home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source rx_samples_organizer.tcl -notrace
+Command: synth_design -top rx_samples_organizer -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19560 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1250.859 ; gain = 73.996 ; free physical = 7434 ; free virtual = 18501
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rx_samples_organizer' [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_self_controled_BRAM' [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:22]
+	Parameter MEMORY_LENGTH bound to: 510 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'rx_BRAM' [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:4]
+INFO: [Synth 8-256] done synthesizing module 'rx_BRAM' (1#1) [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:4]
+WARNING: [Synth 8-689] width (16) of port connection 'dob' does not match port width (18) of module 'rx_BRAM' [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+INFO: [Synth 8-256] done synthesizing module 'rx_self_controled_BRAM' (2#1) [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:22]
+INFO: [Synth 8-256] done synthesizing module 'rx_samples_organizer' (3#1) [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v:22]
+WARNING: [Synth 8-3331] design rx_self_controled_BRAM has unconnected port erx_en
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1292.391 ; gain = 115.527 ; free physical = 7447 ; free virtual = 18513
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1292.391 ; gain = 115.527 ; free physical = 7447 ; free virtual = 18513
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1300.395 ; gain = 123.531 ; free physical = 7447 ; free virtual = 18513
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+WARNING: [Synth 8-6014] Unused sequential element rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rram_cycle_counter_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v:61]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1316.410 ; gain = 139.547 ; free physical = 7437 ; free virtual = 18504
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 40    
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	               18 Bit    Registers := 20    
+	                9 Bit    Registers := 40    
+	                5 Bit    Registers := 1     
++---RAMs : 
+	               9K Bit         RAMs := 20    
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 40    
+	   2 Input      1 Bit        Muxes := 21    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rx_samples_organizer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module rx_BRAM 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
++---RAMs : 
+	               9K Bit         RAMs := 1     
+Module rx_self_controled_BRAM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                9 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_0/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_1/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_2/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_3/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_4/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_5/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_6/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_7/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_8/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_9/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_10/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_11/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_12/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_13/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_14/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_15/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_16/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_17/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_18/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rx_self_controled_BRAM_19/rrd_addr_RAM_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_self_controled_BRAM.v:44]
+WARNING: [Synth 8-6014] Unused sequential element rram_cycle_counter_reg was removed.  [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v:61]
+WARNING: [Synth 8-3331] design rx_samples_organizer has unconnected port erx_en
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_0/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_1/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_2/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_3/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_4/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_5/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_6/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_7/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_8/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_9/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_10/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_11/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_12/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_13/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_14/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_15/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_16/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_17/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_18/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_self_controled_BRAM_19/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/src/simple_dual_one_clock.v:29]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:36 . Memory (MB): peak = 1461.793 ; gain = 284.930 ; free physical = 7257 ; free virtual = 18331
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping  Report (see note below)
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The tale above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:36 . Memory (MB): peak = 1461.793 ; gain = 284.930 ; free physical = 7258 ; free virtual = 18332
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping  Report
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|rx_BRAM:    | ram_reg    | 512 x 18(READ_FIRST)   | W |   | 512 x 18(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
++------------+------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_0/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_1/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_2/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_3/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_4/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_5/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_6/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_7/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_8/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_9/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_10/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_11/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_12/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_13/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_14/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_15/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_16/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_17/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_18/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance rx_self_controled_BRAM_19/rRAM/ram_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:36 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7255 ; free virtual = 18329
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |LUT1     |     1|
+|3     |LUT2     |    22|
+|4     |LUT3     |    81|
+|5     |LUT4     |   221|
+|6     |LUT5     |   121|
+|7     |LUT6     |   141|
+|8     |RAMB18E1 |    20|
+|9     |FDRE     |   365|
+|10    |IBUF     |    19|
+|11    |OBUF     |   320|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------------------------+--------------------------+------+
+|      |Instance                    |Module                    |Cells |
++------+----------------------------+--------------------------+------+
+|1     |top                         |                          |  1312|
+|2     |  rx_self_controled_BRAM_0  |rx_self_controled_BRAM    |    48|
+|3     |    rRAM                    |rx_BRAM_37                |     2|
+|4     |  rx_self_controled_BRAM_1  |rx_self_controled_BRAM_0  |    48|
+|5     |    rRAM                    |rx_BRAM_36                |     2|
+|6     |  rx_self_controled_BRAM_10 |rx_self_controled_BRAM_1  |    48|
+|7     |    rRAM                    |rx_BRAM_35                |     2|
+|8     |  rx_self_controled_BRAM_11 |rx_self_controled_BRAM_2  |    48|
+|9     |    rRAM                    |rx_BRAM_34                |     2|
+|10    |  rx_self_controled_BRAM_12 |rx_self_controled_BRAM_3  |    48|
+|11    |    rRAM                    |rx_BRAM_33                |     2|
+|12    |  rx_self_controled_BRAM_13 |rx_self_controled_BRAM_4  |    48|
+|13    |    rRAM                    |rx_BRAM_32                |     2|
+|14    |  rx_self_controled_BRAM_14 |rx_self_controled_BRAM_5  |    48|
+|15    |    rRAM                    |rx_BRAM_31                |     2|
+|16    |  rx_self_controled_BRAM_15 |rx_self_controled_BRAM_6  |    48|
+|17    |    rRAM                    |rx_BRAM_30                |     2|
+|18    |  rx_self_controled_BRAM_16 |rx_self_controled_BRAM_7  |    48|
+|19    |    rRAM                    |rx_BRAM_29                |     2|
+|20    |  rx_self_controled_BRAM_17 |rx_self_controled_BRAM_8  |    48|
+|21    |    rRAM                    |rx_BRAM_28                |     2|
+|22    |  rx_self_controled_BRAM_18 |rx_self_controled_BRAM_9  |    48|
+|23    |    rRAM                    |rx_BRAM_27                |     2|
+|24    |  rx_self_controled_BRAM_19 |rx_self_controled_BRAM_10 |    48|
+|25    |    rRAM                    |rx_BRAM_26                |     2|
+|26    |  rx_self_controled_BRAM_2  |rx_self_controled_BRAM_11 |    48|
+|27    |    rRAM                    |rx_BRAM_25                |     2|
+|28    |  rx_self_controled_BRAM_3  |rx_self_controled_BRAM_12 |    48|
+|29    |    rRAM                    |rx_BRAM_24                |     2|
+|30    |  rx_self_controled_BRAM_4  |rx_self_controled_BRAM_13 |    48|
+|31    |    rRAM                    |rx_BRAM_23                |     2|
+|32    |  rx_self_controled_BRAM_5  |rx_self_controled_BRAM_14 |    48|
+|33    |    rRAM                    |rx_BRAM_22                |     2|
+|34    |  rx_self_controled_BRAM_6  |rx_self_controled_BRAM_15 |    48|
+|35    |    rRAM                    |rx_BRAM_21                |     2|
+|36    |  rx_self_controled_BRAM_7  |rx_self_controled_BRAM_16 |    48|
+|37    |    rRAM                    |rx_BRAM_20                |     2|
+|38    |  rx_self_controled_BRAM_8  |rx_self_controled_BRAM_17 |    48|
+|39    |    rRAM                    |rx_BRAM_19                |     2|
+|40    |  rx_self_controled_BRAM_9  |rx_self_controled_BRAM_18 |    48|
+|41    |    rRAM                    |rx_BRAM                   |     2|
++------+----------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7254 ; free virtual = 18328
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 46 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.801 ; gain = 292.938 ; free physical = 7256 ; free virtual = 18330
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1469.809 ; gain = 292.938 ; free physical = 7256 ; free virtual = 18330
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 39 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+35 Infos, 46 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:39 . Memory (MB): peak = 1583.828 ; gain = 420.340 ; free physical = 7233 ; free virtual = 18307
+INFO: [Common 17-1381] The checkpoint '/home/joao/Documents/ULS-RTL/Verilog/RTL/rx/vivado_2017_4/vivado_2017_4.runs/synth_1/rx_samples_organizer.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file rx_samples_organizer_utilization_synth.rpt -pb rx_samples_organizer_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.12 . Memory (MB): peak = 1607.840 ; gain = 0.000 ; free physical = 7232 ; free virtual = 18307
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  2 20:08:54 2018...
