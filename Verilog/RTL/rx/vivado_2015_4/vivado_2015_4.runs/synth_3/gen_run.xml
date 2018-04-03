@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_3" LaunchPart="xc7z010clg400-1" LaunchTime="1520863792">
-  <File Type="RDS-DCP" Name="rx_filter.dcp"/>
+<GenRun Id="synth_3" LaunchPart="xc7z010clg400-1" LaunchTime="1522767619">
+  <File Type="RDS-DCP" Name="rx_samples_organizer.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_3/constrs_in.xml"/>
-  <File Type="RDS-UTIL-PB" Name="rx_filter_utilization_synth.pb"/>
+  <File Type="RDS-UTIL-PB" Name="rx_samples_organizer_utilization_synth.pb"/>
   <File Type="RUN-SRCS" Name="$PDATADIR/runs/synth_3/sources.xml"/>
-  <File Type="RDS-PROPCONSTRS" Name="rx_filter_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="rx_filter.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="rx_samples_organizer_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="rx_samples_organizer.tcl"/>
   <File Type="RUN-STRAT" Name="$PDATADIR/runs/synth_3/synth_3.psg"/>
-  <File Type="RDS-RDS" Name="rx_filter.vds"/>
-  <File Type="RDS-UTIL" Name="rx_filter_utilization_synth.rpt"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="rx_filter_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="rx_filter_timing_summary_synth.pb"/>
+  <File Type="RDS-RDS" Name="rx_samples_organizer.vds"/>
+  <File Type="RDS-UTIL" Name="rx_samples_organizer_utilization_synth.rpt"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="rx_samples_organizer_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="rx_samples_organizer_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../src/rx_filter.v">
+    <File Path="$PPRDIR/../src/rx_BRAM.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_BRAM_internal_controller.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_samples_organizer.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -23,20 +37,12 @@
     <File Path="$PPRDIR/../sim/rx_clk.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../sim/rx_filter_Testbench.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="rx_filter"/>
+      <Option Name="TopModule" Val="rx_samples_organizer"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

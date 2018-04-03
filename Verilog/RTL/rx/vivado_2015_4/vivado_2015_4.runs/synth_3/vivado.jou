@@ -2,11 +2,11 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Mon Mar 12 14:09:55 2018
-# Process ID: 7976
-# Current directory: C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3
-# Command line: vivado.exe -log rx_filter.vds -mode batch -messageDb vivado.pb -notrace -source rx_filter.tcl
-# Log file: C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3/rx_filter.vds
-# Journal file: C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3\vivado.jou
+# Start of session at: Tue Apr 03 16:00:21 2018
+# Process ID: 6424
+# Current directory: C:/Users/joao/GoogleDrive/FEUP/Tese/dev/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3
+# Command line: vivado.exe -log rx_samples_organizer.vds -mode batch -messageDb vivado.pb -notrace -source rx_samples_organizer.tcl
+# Log file: C:/Users/joao/GoogleDrive/FEUP/Tese/dev/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3/rx_samples_organizer.vds
+# Journal file: C:/Users/joao/GoogleDrive/FEUP/Tese/dev/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3\vivado.jou
 #-----------------------------------------------------------
-source rx_filter.tcl -notrace
+source rx_samples_organizer.tcl -notrace

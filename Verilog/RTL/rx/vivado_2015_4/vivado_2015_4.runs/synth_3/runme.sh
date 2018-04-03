@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/joao/Desktop/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3'
+HD_PWD='C:/Users/joao/GoogleDrive/FEUP/Tese/dev/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log rx_filter.vds -m64 -mode batch -messageDb vivado.pb -notrace -source rx_filter.tcl
+EAStep vivado -log rx_samples_organizer.vds -m64 -mode batch -messageDb vivado.pb -notrace -source rx_samples_organizer.tcl
