@@ -18,6 +18,8 @@ module rx_BRAM (clk,ena,enb,wea,addra,addrb,dia,dob);
   
   integer i;
 
+
+  //set iniial value of memories to zero
   initial begin
     for (i = 0; i < 1024; i = i + 1) begin
       ram[i] = 0;

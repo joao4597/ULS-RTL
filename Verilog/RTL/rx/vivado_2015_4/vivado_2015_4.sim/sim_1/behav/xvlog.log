@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_BRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_internal_controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_BRAM_internal_controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_samples_organizer
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_samples_organizer_Testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_samples_organizer_Testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

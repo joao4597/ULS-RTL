@@ -48,13 +48,13 @@ module rx_BRAM_internal_controller #(
   //Updates the next address to write to every time a write enable is received
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
-      rwr_addr_RAM = 0;
+      rwr_addr_RAM <= 0;
     end else begin
       if (wr_en_RAM) begin
         if (rwr_addr_RAM == MEMORY_LENGTH - 1) begin
-          rwr_addr_RAM = 0;
+          rwr_addr_RAM <= 0;
         end else begin
-          rwr_addr_RAM = rwr_addr_RAM + 1;
+          rwr_addr_RAM <= rwr_addr_RAM + 1;
         end
       end
     end
@@ -63,18 +63,18 @@ module rx_BRAM_internal_controller #(
   //Updates the next address to be read every clock
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
-      rrd_addr_RAM = 0;
+      rrd_addr_RAM <= 0;
     end else begin
       if (wr_en_RAM) begin
-        rrd_addr_RAM = rwr_addr_RAM;
+        rrd_addr_RAM <= rwr_addr_RAM + 1;
       end else begin
         if (new_sample_trig) begin
-          rrd_addr_RAM = rwr_addr_RAM;
+          rrd_addr_RAM <= rwr_addr_RAM;
         end else begin
           if (rrd_addr_RAM < MEMORY_LENGTH - 1) begin
-            rrd_addr_RAM = rrd_addr_RAM + 1;
+            rrd_addr_RAM <= rrd_addr_RAM + 1;
           end else begin
-            rrd_addr_RAM = 0;
+            rrd_addr_RAM <= 0;
           end
         end
       end
