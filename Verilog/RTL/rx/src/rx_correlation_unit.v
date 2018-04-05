@@ -19,67 +19,96 @@
  *
  */
 
-module rx_correlation_unit(
+module rx_correlation_unit #(
+  parameter SAMPLE_POSITION = 0
+  )(
   input  wire               crx_clk         ,  //clock signal
   input  wire               rrx_rst         ,  //reset signal
   input  wire               erx_en          ,  //enable signal
-  
-  input  wire               inew_sample_trig,  //new sample triger
+   
+  input  wire               inew_sample_trig,
+   
+  input  wire signed [15:0] isample         ,
+  input  wire signed [15:0] isample_plus_ten,
 
-  input wire signed [15:0] idata_sample_0   ,
-  input wire signed [15:0] idata_sample_1   ,
-  input wire signed [15:0] idata_sample_2   ,
-  input wire signed [15:0] idata_sample_3   ,
-  input wire signed [15:0] idata_sample_4   ,
-  input wire signed [15:0] idata_sample_5   ,
-  input wire signed [15:0] idata_sample_6   ,
-  input wire signed [15:0] idata_sample_7   ,
-  input wire signed [15:0] idata_sample_8   ,
-  input wire signed [15:0] idata_sample_9   ,
-  input wire signed [15:0] idata_sample_10  ,
-  input wire signed [15:0] idata_sample_11  ,
-  input wire signed [15:0] idata_sample_12  ,
-  input wire signed [15:0] idata_sample_13  ,
-  input wire signed [15:0] idata_sample_14  ,
-  input wire signed [15:0] idata_sample_15  ,
-  input wire signed [15:0] idata_sample_16  ,
-  input wire signed [15:0] idata_sample_17  ,
-  input wire signed [15:0] idata_sample_18  ,
-  input wire signed [15:0] idata_sample_19  ,
-
-  input wire        [4:0]  iorder_pointer
+  output wire               obit_ready      ,
+  output reg  signed [16:0] oresult_0       ,
+  output reg  signed [16:0] oresult_1
   );
 
-  parameter MAP_D = 0;
-  parameter MAP_C = 1;
-  parameter MAP_B = 2;
-  parameter MAP_A = 3;
+  reg         [3:0] rnormalized_order;
+  reg signed [16:0] rsum_0, rsum_1   ;
+  reg               flag             ;
 
-  integer i;
-  
-  reg signed [16:0] rresult      [19:0];
-  reg        [15:0] wmultiplexer [19:0];
+  assign obit_ready = flag;
 
-  wire [4:0] worder_pointer_normalized;
-
-  //normaliizes the order pointer, becomes a number between 0 and 9
-  assign worder_pointer_normalized = iorder_pointer < 10 ? iorder_pointer : iorder_pointer - 10;
-
-  initial begin
-    for (i = 0; i < 20; i = i + 1) begin
-      result[i] = 0;
+  //flag used tow count the two clocks necessary to process one bit
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      flag <= 0;
+    end else begin
+      if (erx_en) begin
+        flag <= 0;
+      end else begin
+        if (inew_sample_trig) begin
+          flag <= 0;
+        end else begin
+          flag <= flag + 1;
+        end
+      end
     end
   end
 
-  //sample 0
+  //based on the sample order it decides what to do with the samples
   always @(*) begin
-    if ((!=iorder_pointer[MAP_D] && iorder_pointer[MAP_A]) || (iorder_pointer[MAP_B] && iorder_pointer[MAP_C])) begin
-      wmultiplexer[0] = - 1;
+    if (rnormalized_order > 1 && rnormalized_order < 5) begin
+      rsum_0 = oresult_0 - isample         ;
+      rsum_1 = oresult_1 - isample_plus_ten;
     end else begin
-      if ((iorder_pointer[MAP_C] && !=iorder_pointer[MAP_A]) || (!=iorder_pointer[MAP_A] && !=iorder_pointer[MAP_B] && iorder_pointer[MAP_B])) begin
-        wmultiplexer[0] = 1;
+      if (rnormalized_order > 6) begin
+        rsum_0 = oresult_0 + isample         ;
+        rsum_1 = oresult_1 + isample_plus_ten;
       end else begin
-        wmultiplexer = 0;
+        rsum_0 = 0;
+        rsum_1 = 0;
+      end
+    end
+  end
+
+  //Keeps track of the sanmples order relative to its position
+  always @(posedge crx_clk) begin
+    if (rrx_rst == 1) begin
+      rnormalized_order <= 0 + SAMPLE_POSITION;
+    end else begin
+      if (inew_sample_trig) begin
+        if (rnormalized_order >= 9) begin
+          rnormalized_order <= 0;
+        end else begin
+          rnormalized_order <= rnormalized_order + 1;
+        end
+      end
+    end
+  end
+
+  //holds the result of the correlation of each sample for the
+  //two clocks corresponding to one bit of the pseudo random binary
+  //sequence
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      oresult_0 <= 0;
+      oresult_1 <= 0;
+    end else begin
+      if (erx_en) begin
+        oresult_0 <= 0;
+        oresult_1 <= 0;
+      end else begin
+        if (!flag) begin
+          oresult_0 <= isample;
+          oresult_1 <= isample_plus_ten;
+        end else begin
+          oresult_0 <= rsum_0;
+          oresult_1 <= rsum_1;
+        end
       end
     end
   end

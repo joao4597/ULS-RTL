@@ -22,18 +22,20 @@
  */
 
 module rx_sequences_bits_feader(
-  input  crx_clk         ,  //clock signal
-  input  rrx_rst         ,  //reset signal
-  input  erx_en          ,  //enable signal
+  input  wire        crx_clk        ,  //clock signal
+  input  wire        rrx_rst         ,  //reset signal
+  input  wire        erx_en          ,  //enable signal
   
-  input  inew_sample_trig,  //new sample trigger
+  input  wire        inew_sample_trig,  //new sample trigger
 
-  output osequences_bits    //16 bits corresponding to the 16 binary sequences
+  output wire [15:0] osequences_bits    //16 bits corresponding to the 16 binary sequences
   );
 
   //This flag is incremented at each clock, oscilates bettwen one and zero
   //used to devide the clock
   reg flag;
+
+  reg [7:0] rread_address;
   
 
   rx_BRAM_16_256 rx_BRAM_16_256_0(crx_clk, erx_en, 1'b1, 1'b0, 8'b0, rread_address, 16'b0, osequences_bits);

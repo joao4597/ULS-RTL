@@ -1,0 +1,718 @@
+
+*** Running vivado
+    with args -log rx_top_level.vds -m64 -mode batch -messageDb vivado.pb -notrace -source rx_top_level.tcl
+
+
+****** Vivado v2015.4 (64-bit)
+  **** SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+  **** IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+    ** Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+
+source rx_top_level.tcl -notrace
+Command: synth_design -top rx_top_level -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -95 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 291.426 ; gain = 119.230
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'rx_top_level' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_samples_organizer' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_BRAM_internal_controller' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_internal_controller.v:22]
+	Parameter MEMORY_LENGTH bound to: 510 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'rx_BRAM' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:4]
+INFO: [Synth 8-256] done synthesizing module 'rx_BRAM' (1#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:4]
+WARNING: [Synth 8-689] width (16) of port connection 'dob' does not match port width (18) of module 'rx_BRAM' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_internal_controller.v:45]
+INFO: [Synth 8-256] done synthesizing module 'rx_BRAM_internal_controller' (2#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_internal_controller.v:22]
+INFO: [Synth 8-256] done synthesizing module 'rx_samples_organizer' (3#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized0' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized0' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized1' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 2 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized1' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized2' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 3 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized2' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized3' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 4 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized3' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized4' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized4' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized5' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 6 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized5' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized6' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 7 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized6' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized7' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 8 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized7' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_correlation_unit__parameterized8' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+	Parameter SAMPLE_POSITION bound to: 9 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlation_unit__parameterized8' (4#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:22]
+INFO: [Synth 8-638] synthesizing module 'rx_sequences_bits_feader' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_sequnces_bits_feader.v:24]
+INFO: [Synth 8-638] synthesizing module 'rx_BRAM_16_256' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_256.v:6]
+INFO: [Synth 8-256] done synthesizing module 'rx_BRAM_16_256' (5#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_256.v:6]
+INFO: [Synth 8-256] done synthesizing module 'rx_sequences_bits_feader' (6#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_sequnces_bits_feader.v:24]
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator' (7#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:22]
+INFO: [Synth 8-256] done synthesizing module 'rx_top_level' (8#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:22]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 329.953 ; gain = 157.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 329.953 ; gain = 157.758
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 329.953 ; gain = 157.758
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:64]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+INFO: [Synth 8-3537] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the inputs of the operator [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v:294]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 382.430 ; gain = 210.234
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	  16 Input     56 Bit       Adders := 1     
+	  20 Input     41 Bit       Adders := 1     
+	   3 Input     17 Bit       Adders := 20    
+	   2 Input      9 Bit       Adders := 40    
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 10    
+	   2 Input      1 Bit       Adders := 11    
++---Registers : 
+	               41 Bit    Registers := 1     
+	               18 Bit    Registers := 20    
+	               17 Bit    Registers := 20    
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 40    
+	                8 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 10    
+	                1 Bit    Registers := 11    
++---RAMs : 
+	               9K Bit         RAMs := 20    
+	               4K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 40    
+	   2 Input      9 Bit        Muxes := 60    
+	   4 Input      4 Bit        Muxes := 7     
+	   3 Input      4 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 4     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 69    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module rx_top_level 
+Detailed RTL Component Info : 
++---Adders : 
+	  16 Input     56 Bit       Adders := 1     
+Module rx_BRAM 
+Detailed RTL Component Info : 
++---Registers : 
+	               18 Bit    Registers := 1     
++---RAMs : 
+	               9K Bit         RAMs := 1     
+Module rx_BRAM_internal_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	                9 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 1     
+Module rx_samples_organizer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module rx_correlation_unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module rx_correlation_unit__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized4 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized5 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized6 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized7 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlation_unit__parameterized8 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_BRAM_16_256 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module rx_sequences_bits_feader 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlator 
+Detailed RTL Component Info : 
++---Adders : 
+	  20 Input     41 Bit       Adders := 1     
++---Registers : 
+	               41 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 461.246 ; gain = 289.051
+---------------------------------------------------------------------------------
+Start Cross Boundary Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 463.617 ; gain = 291.422
+---------------------------------------------------------------------------------
+Finished Parallel Reinference  : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 463.617 ; gain = 291.422
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_0/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_0/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_1/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_1/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_2/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_2/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_3/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_3/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_4/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_4/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_5/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_5/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_6/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_6/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_7/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_7/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_8/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_8/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_9/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_9/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_10/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_10/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_11/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_11/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_12/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_12/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_13/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_13/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_14/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_14/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_15/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_15/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_16/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_16/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_17/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_17/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_18/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_18/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+WARNING: [Synth 8-3936] Found unconnected internal register 'rx_BRAM_internal_controller_19/rRAM/dob_reg' and it is trimmed from '18' to '16' bits. [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v:38]
+Optimized 0 bits of RAM "rx_BRAM_internal_controller_19/rRAM/ram_reg" due to constant propagation. Old ram width 16 bits, new ram width 16 bits
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM:
++-------------+---------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+----------------------------------------------+
+|Module Name  | RTL Object                                  | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name                            | 
++-------------+---------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+----------------------------------------------+
+|rx_top_level | rx_BRAM_internal_controller_0/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__22 | 
+|rx_top_level | rx_BRAM_internal_controller_1/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__24 | 
+|rx_top_level | rx_BRAM_internal_controller_2/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__26 | 
+|rx_top_level | rx_BRAM_internal_controller_3/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__28 | 
+|rx_top_level | rx_BRAM_internal_controller_4/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__30 | 
+|rx_top_level | rx_BRAM_internal_controller_5/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__32 | 
+|rx_top_level | rx_BRAM_internal_controller_6/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__34 | 
+|rx_top_level | rx_BRAM_internal_controller_7/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__36 | 
+|rx_top_level | rx_BRAM_internal_controller_8/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__38 | 
+|rx_top_level | rx_BRAM_internal_controller_9/rRAM/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__40 | 
+|rx_top_level | rx_BRAM_internal_controller_10/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__42 | 
+|rx_top_level | rx_BRAM_internal_controller_11/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__44 | 
+|rx_top_level | rx_BRAM_internal_controller_12/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__46 | 
+|rx_top_level | rx_BRAM_internal_controller_13/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__48 | 
+|rx_top_level | rx_BRAM_internal_controller_14/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__50 | 
+|rx_top_level | rx_BRAM_internal_controller_15/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__52 | 
+|rx_top_level | rx_BRAM_internal_controller_16/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__54 | 
+|rx_top_level | rx_BRAM_internal_controller_17/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__56 | 
+|rx_top_level | rx_BRAM_internal_controller_18/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__58 | 
+|rx_top_level | rx_BRAM_internal_controller_19/rRAM/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | rx_top_level/rx_samples_organizer/extram__60 | 
++-------------+---------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+----------------------------------------------+
+
+Note: The table above shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
+Distributed RAM: 
++-------------+-----------------------------------------------------+-----------+----------------------+-----------------------------+--------------------------------+
+|Module Name  | RTL Object                                          | Inference | Size (Depth x Width) | Primitives                  | Hierarchical Name              | 
++-------------+-----------------------------------------------------+-----------+----------------------+-----------------------------+--------------------------------+
+|rx_top_level | rx_sequences_bits_feader_0/rx_BRAM_16_256_0/ram_reg | Implied   | 256 x 16             | RAM64X1D x 4  RAM64M x 20   | rx_top_level/rx_correlator/ram | 
++-------------+-----------------------------------------------------+-----------+----------------------+-----------------------------+--------------------------------+
+
+Note: The table above shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 516.617 ; gain = 344.422
+---------------------------------------------------------------------------------
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 516.617 ; gain = 344.422
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 516.617 ; gain = 344.422
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_9/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_8/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_7/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_6/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_5/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_4/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_3/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_2/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4765] Removing register instance (\rx_correlator_0/rx_correlation_unit_1/flag_reg ) from module (rx_top_level) as it is equivalent to (\rx_correlator_0/rx_correlation_unit_0/flag_reg ) and driving same net [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v:43]
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_0/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_1/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_2/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_3/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_4/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_5/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_6/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_7/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_8/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_9/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_10/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_11/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_12/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_13/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_14/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_15/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_16/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_17/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_18/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_19/rRAM/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_correlator_0/rx_sequences_bits_feader_0/rx_BRAM_16_256_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 545.676 ; gain = 373.480
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |   416|
+|3     |LUT1     |    39|
+|4     |LUT2     |    57|
+|5     |LUT3     |  1529|
+|6     |LUT4     |   545|
+|7     |LUT5     |   251|
+|8     |LUT6     |   843|
+|9     |RAMB18E1 |    21|
+|10    |FDRE     |  1437|
+|11    |FDSE     |    15|
+|12    |IBUF     |    20|
+|13    |OBUF     |    56|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------------------------------+------------------------------------+------+
+|      |Instance                           |Module                              |Cells |
++------+-----------------------------------+------------------------------------+------+
+|1     |top                                |                                    |  5230|
+|2     |  rx_correlator_0                  |rx_correlator                       |  3822|
+|3     |    rx_correlation_unit_0          |rx_correlation_unit                 |   432|
+|4     |    rx_correlation_unit_1          |rx_correlation_unit__parameterized0 |    90|
+|5     |    rx_correlation_unit_2          |rx_correlation_unit__parameterized1 |   111|
+|6     |    rx_correlation_unit_3          |rx_correlation_unit__parameterized2 |    89|
+|7     |    rx_correlation_unit_4          |rx_correlation_unit__parameterized3 |    89|
+|8     |    rx_correlation_unit_5          |rx_correlation_unit__parameterized4 |    90|
+|9     |    rx_correlation_unit_6          |rx_correlation_unit__parameterized5 |    89|
+|10    |    rx_correlation_unit_7          |rx_correlation_unit__parameterized6 |    89|
+|11    |    rx_correlation_unit_8          |rx_correlation_unit__parameterized7 |    90|
+|12    |    rx_correlation_unit_9          |rx_correlation_unit__parameterized8 |    90|
+|13    |    rx_sequences_bits_feader_0     |rx_sequences_bits_feader            |   871|
+|14    |      rx_BRAM_16_256_0             |rx_BRAM_16_256                      |   849|
+|15    |  rx_samples_organizer_0           |rx_samples_organizer                |  1150|
+|16    |    rx_BRAM_internal_controller_0  |rx_BRAM_internal_controller         |    58|
+|17    |      rRAM                         |rx_BRAM_37                          |     2|
+|18    |    rx_BRAM_internal_controller_1  |rx_BRAM_internal_controller_0       |    56|
+|19    |      rRAM                         |rx_BRAM_36                          |     2|
+|20    |    rx_BRAM_internal_controller_10 |rx_BRAM_internal_controller_1       |    57|
+|21    |      rRAM                         |rx_BRAM_35                          |     2|
+|22    |    rx_BRAM_internal_controller_11 |rx_BRAM_internal_controller_2       |    56|
+|23    |      rRAM                         |rx_BRAM_34                          |     2|
+|24    |    rx_BRAM_internal_controller_12 |rx_BRAM_internal_controller_3       |    57|
+|25    |      rRAM                         |rx_BRAM_33                          |     2|
+|26    |    rx_BRAM_internal_controller_13 |rx_BRAM_internal_controller_4       |    56|
+|27    |      rRAM                         |rx_BRAM_32                          |     2|
+|28    |    rx_BRAM_internal_controller_14 |rx_BRAM_internal_controller_5       |    56|
+|29    |      rRAM                         |rx_BRAM_31                          |     2|
+|30    |    rx_BRAM_internal_controller_15 |rx_BRAM_internal_controller_6       |    58|
+|31    |      rRAM                         |rx_BRAM_30                          |     2|
+|32    |    rx_BRAM_internal_controller_16 |rx_BRAM_internal_controller_7       |    57|
+|33    |      rRAM                         |rx_BRAM_29                          |     2|
+|34    |    rx_BRAM_internal_controller_17 |rx_BRAM_internal_controller_8       |    57|
+|35    |      rRAM                         |rx_BRAM_28                          |     2|
+|36    |    rx_BRAM_internal_controller_18 |rx_BRAM_internal_controller_9       |    57|
+|37    |      rRAM                         |rx_BRAM_27                          |     2|
+|38    |    rx_BRAM_internal_controller_19 |rx_BRAM_internal_controller_10      |    57|
+|39    |      rRAM                         |rx_BRAM_26                          |     2|
+|40    |    rx_BRAM_internal_controller_2  |rx_BRAM_internal_controller_11      |    58|
+|41    |      rRAM                         |rx_BRAM_25                          |     2|
+|42    |    rx_BRAM_internal_controller_3  |rx_BRAM_internal_controller_12      |    56|
+|43    |      rRAM                         |rx_BRAM_24                          |     2|
+|44    |    rx_BRAM_internal_controller_4  |rx_BRAM_internal_controller_13      |    57|
+|45    |      rRAM                         |rx_BRAM_23                          |     2|
+|46    |    rx_BRAM_internal_controller_5  |rx_BRAM_internal_controller_14      |    56|
+|47    |      rRAM                         |rx_BRAM_22                          |     2|
+|48    |    rx_BRAM_internal_controller_6  |rx_BRAM_internal_controller_15      |    57|
+|49    |      rRAM                         |rx_BRAM_21                          |     2|
+|50    |    rx_BRAM_internal_controller_7  |rx_BRAM_internal_controller_16      |    59|
+|51    |      rRAM                         |rx_BRAM_20                          |     2|
+|52    |    rx_BRAM_internal_controller_8  |rx_BRAM_internal_controller_17      |    58|
+|53    |      rRAM                         |rx_BRAM_19                          |     2|
+|54    |    rx_BRAM_internal_controller_9  |rx_BRAM_internal_controller_18      |    55|
+|55    |      rRAM                         |rx_BRAM                             |     2|
++------+-----------------------------------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 545.676 ; gain = 373.480
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 545.676 ; gain = 323.656
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 545.676 ; gain = 373.480
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 457 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+110 Infos, 21 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 592.230 ; gain = 383.262
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 592.230 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Apr 05 20:42:25 2018...

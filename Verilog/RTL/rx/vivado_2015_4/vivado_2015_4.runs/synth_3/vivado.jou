@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Thu Apr 05 20:41:59 2018
+# Process ID: 8668
+# Current directory: C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3
+# Command line: vivado.exe -log rx_top_level.vds -mode batch -messageDb vivado.pb -notrace -source rx_top_level.tcl
+# Log file: C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3/rx_top_level.vds
+# Journal file: C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3\vivado.jou
+#-----------------------------------------------------------
+source rx_top_level.tcl -notrace

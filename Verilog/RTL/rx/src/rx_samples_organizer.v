@@ -47,10 +47,7 @@ module rx_samples_organizer(
   output wire signed [15:0] odata_16        ,
   output wire signed [15:0] odata_17        ,
   output wire signed [15:0] odata_18        ,
-  output wire signed [15:0] odata_19        ,
-
-  output wire        [4:0]  oorder_pointer    //points to the position of the oldest
-                                              //sample in the outputs             
+  output wire signed [15:0] odata_19                     
   );
 
   wire signed [15:0] wsamples_out [19:0];
@@ -58,7 +55,7 @@ module rx_samples_organizer(
   
   reg [4:0] rram_cycle_counter;
   
-  //Keeps track of what ram out of the 20 the sample are being writen to
+  //Keeps track of what ram out of the 20, the sample is being writen to
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
       rram_cycle_counter <= 0;
@@ -72,10 +69,7 @@ module rx_samples_organizer(
       end
     end
   end
-
-
-  assign oorder_pointer = rram_cycle_counter;
-  
+    
   
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
