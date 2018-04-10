@@ -25,7 +25,7 @@ module rx_band_pass_filter(
   input  wire               rrx_rst         ,  //reset signal
   input  wire               erx_en          ,  //enable signal
   input  wire signed [15:0] idata_in_RAM    ,  //new sample to be stored
-  
+
   output wire signed [15:0] ofiltered_sample
   );
 
@@ -43,7 +43,7 @@ module rx_band_pass_filter(
   reg [40:0] rfiltered_sample_final;
 
 
-  //anticipates when a new sample is comming based on the read adderess of the samples memory
+  //anticipates when a new sample is coming based on the read address of the samples memory
   assign wnew_sample_trigg = rread_address_RAM == 511 ? 1'b1 : 1'b0;
 
 
@@ -62,7 +62,7 @@ module rx_band_pass_filter(
     .dia    (idata_in_RAM          ),  //data in
     .dob    (wsample_read          )   //data out
     );
-  
+
 
   //Reads the filter coefficients in Round Robin
   always @(posedge crx_clk) begin
@@ -78,7 +78,7 @@ module rx_band_pass_filter(
   end
 
 
-  //Keeps track of the memory address the next incomming sample will be stored in
+  //Keeps track of the memory address the next incoming sample will be stored in
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rwrite_address_samples <= 0;
@@ -112,7 +112,7 @@ module rx_band_pass_filter(
   end
 
 
-  //Acumulates the result of the multiplication of the samples by the filter coefficients
+  //Accumulates the result of the multiplication of the samples by the filter coefficients
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rfiltered_sample_acum  <= 0;
@@ -135,7 +135,7 @@ module rx_band_pass_filter(
   assign ofiltered_sample = rfiltered_sample_final[15:0];
 
 
-endmodule 
+endmodule
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

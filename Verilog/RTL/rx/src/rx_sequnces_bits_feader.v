@@ -14,7 +14,7 @@
 /**
  * GENERAL DESCRIPTION:
  *
- * - instatiates a 16 by 256 bit memory that keeps the 16 pseudo-random binary sequences
+ * - instantiates a 16 by 256 bit memory that keeps the 16 pseudo-random binary sequences
  * - at each two clocks outputs a bit from each of the 16 sequences
  *
  * CONSTRAINTS:
@@ -25,18 +25,18 @@ module rx_sequences_bits_feader(
   input  wire        crx_clk        ,  //clock signal
   input  wire        rrx_rst         ,  //reset signal
   input  wire        erx_en          ,  //enable signal
-  
+
   input  wire        inew_sample_trig,  //new sample trigger
 
   output wire [15:0] osequences_bits    //16 bits corresponding to the 16 binary sequences
   );
 
-  //This flag is incremented at each clock, oscilates bettwen one and zero
-  //used to devide the clock
+  //This flag is incremented at each clock, oscillates between one and zero
+  //used to divide the clock
   reg flag;
 
   reg [7:0] rread_address;
-  
+
 
   rx_BRAM_16_256_binary_sequences rx_BRAM_16_256_binary_sequences_0(crx_clk, erx_en, 1'b1, 1'b0, 8'b0, rread_address, 16'b0, osequences_bits);
 
@@ -65,7 +65,7 @@ module rx_sequences_bits_feader(
   end
 
 
-endmodule 
+endmodule
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

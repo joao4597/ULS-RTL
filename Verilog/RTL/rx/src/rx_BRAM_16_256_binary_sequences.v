@@ -1,10 +1,22 @@
 // Simple Dual-Port Block RAM with One Clock
 // File: simple_dual_one_clock.v
 
+/**
+ * GENERAL DESCRIPTION:
+ *
+ * -16 bit by 256 line RAM that holds the 16 possible pseudo-random binary sequences
+ * -Each column holds of of the possible sequences
+ *
+ *
+ * CONSTRAINTS:
+ *
+ *
+ */
+
 
 //16 by 256
 module rx_BRAM_16_256_binary_sequences (clk,ena,enb,wea,addra,addrb,dia,dob);
-  
+
   input         clk  ;  //clock
   input         ena  ;  //enable
   input         enb  ;  //enable read
@@ -13,13 +25,13 @@ module rx_BRAM_16_256_binary_sequences (clk,ena,enb,wea,addra,addrb,dia,dob);
   input  [7:0]  addrb;  //read addr
   input  [15:0] dia  ;  //data in
   output [15:0] dob  ;  //data out
-  
+
   reg [15:0] ram [255:0];
   reg [15:0] doa        ;
   reg [15:0] dob        ;
-  
-  //Initalize the ram with the 16 possible binary sequences
-  //each collum represents a sequence
+
+  //Initialize the ram with the 16 possible binary sequences
+  //each column represents a sequence
   initial begin
     ram[0]   = 16'b0110001001101011;
     ram[1]   = 16'b1000111011001010;
@@ -277,19 +289,19 @@ module rx_BRAM_16_256_binary_sequences (clk,ena,enb,wea,addra,addrb,dia,dob);
     ram[253] = 16'b0000100110101111;
     ram[254] = 16'b1011101100101000;
   end
-  
-  always @(posedge clk) begin 
+
+  always @(posedge clk) begin
    if (ena) begin
       if (wea)
           ram[addra] <= dia;
    end
   end
-    
-  always @(posedge clk) begin 
+
+  always @(posedge clk) begin
     if (enb)
       dob <= ram[addrb];
   end
-  
+
 endmodule
 
 //MODULE OBTAINED ON THE XILINX WEBSITE

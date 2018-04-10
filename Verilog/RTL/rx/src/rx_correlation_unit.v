@@ -25,9 +25,9 @@ module rx_correlation_unit #(
   input  wire               crx_clk         ,  //clock signal
   input  wire               rrx_rst         ,  //reset signal
   input  wire               erx_en          ,  //enable signal
-   
+
   input  wire               inew_sample_trig,
-   
+
   input  wire signed [15:0] isample         ,
   input  wire signed [15:0] isample_plus_ten,
 
@@ -73,7 +73,7 @@ module rx_correlation_unit #(
     end
   end
 
-  //Keeps track of the sanmples order relative to its position
+  //Keeps track of the samples order relative to its position
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
       rnormalized_order <= 0 + SAMPLE_POSITION;
@@ -115,7 +115,7 @@ module rx_correlation_unit #(
     end
   end
 
-endmodule 
+endmodule
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

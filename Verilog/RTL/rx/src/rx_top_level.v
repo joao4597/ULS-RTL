@@ -14,13 +14,13 @@
 /**
  * GENERAL DESCRIPTION:
  *
- * -Receices one sample every 128 clocks
- * -Aplies a low pass filter and decimates samples by 4
- * -Aplies a Band-pass filter to the decimated samples
+ * -Receives one sample every 128 clocks
+ * -Applies a low pass filter and decimates samples by 4
+ * -Applies a Band-pass filter to the decimated samples
  * -Stores the samples in 20 RAMS so 20 samples can be access in parallel every clock
  * -Correlates the filtered samples with the 16 possible signals
- * -Detects a correlation peak and identifies the recieved signal
- * -Outputs de received sequence with a timestamp
+ * -Detects a correlation peak and identifies the received signal
+ * -Outputs the received sequence with a timestamps
  *
  *
  * CONSTRAINTS:
@@ -32,7 +32,7 @@ module rx_top_level(
   input  wire               crx_clk               ,  //clock signal
   input  wire               rrx_rst               ,  //reset signal
   input  wire               erx_en                ,  //enable signal
-    
+
   input  wire signed [15:0] inew_sample           ,  //new sample in
   input  wire               inew_sample_trig      ,  //new sample trigger signal
 
@@ -54,7 +54,7 @@ module rx_top_level(
   output wire signed [40:0] wcorrelation_result_15
 
   );
-  
+
   //Outputs of rx_low_pass_filter
   wire signed [15:0] wfiltered_sample_low_pass;
 
@@ -88,18 +88,18 @@ module rx_top_level(
   );
 
 
-  //stores incomming samples and ouputs 20 of the stored samples every clock
+  //stores incoming samples and outputs 20 of the stored samples every clock
   //in parallel
   rx_samples_organizer rx_samples_organizer_0(
     .crx_clk         (crx_clk                   ),  //clock signal
     .rrx_rst         (rrx_rst                   ),  //reset signal
     .erx_en          (erx_en                    ),  //enable signal
     .idata_in_RAM    (wfiltered_sample_band_pass),  //new sample to be stored
-         
+
     .inew_sample_trig(inew_sample_trig          ),  //new sample trigger
-    
-    //20 ordered samples outputed in parallel
-    .odata_0         (wparallel_samples[0]      ),  
+
+    //20 ordered samples outputted in parallel
+    .odata_0         (wparallel_samples[0]      ),
     .odata_1         (wparallel_samples[1]      ),
     .odata_2         (wparallel_samples[2]      ),
     .odata_3         (wparallel_samples[3]      ),
@@ -118,7 +118,7 @@ module rx_top_level(
     .odata_16        (wparallel_samples[16]     ),
     .odata_17        (wparallel_samples[17]     ),
     .odata_18        (wparallel_samples[18]     ),
-    .odata_19        (wparallel_samples[19]     )             
+    .odata_19        (wparallel_samples[19]     )
   );
 
   //buffer inew_sample_trig by one clock
@@ -139,9 +139,9 @@ module rx_top_level(
     .crx_clk           (crx_clk                           ),  //clock signal
     .rrx_rst           (rrx_rst                           ),  //reset signal
     .erx_en            (erx_en                            ),  //enable signal
-      
+
     .inew_sample_trig  (inew_sample_trig_one_clock_delayed),  //new sample trigger
-    
+
     //20 samples in parallel
     .idata_sample_0    (wparallel_samples[0]              ),
     .idata_sample_1    (wparallel_samples[1]              ),
@@ -163,7 +163,7 @@ module rx_top_level(
     .idata_sample_17   (wparallel_samples[17]             ),
     .idata_sample_18   (wparallel_samples[18]             ),
     .idata_sample_19   (wparallel_samples[19]             ),
-    
+
 
     //result of the correlation for the 16 possible pseudo-random binary sequences
     .ocorrelation_seq_0 (wcorrelation_result_0            ),
@@ -184,7 +184,7 @@ module rx_top_level(
     .ocorrelation_seq_15(wcorrelation_result_15           )
   );
 
-endmodule 
+endmodule
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

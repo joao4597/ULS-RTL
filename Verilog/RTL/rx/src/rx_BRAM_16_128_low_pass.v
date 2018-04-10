@@ -1,8 +1,20 @@
 // Simple Dual-Port Block RAM with One Clock
 // File: simple_dual_one_clock.v
 
+/**
+ * GENERAL DESCRIPTION:
+ *
+ * -16 bit by 128 lines RAM that holds the 128 coefficients of a low pass filter
+ * -FPass -> 45 KHz || FCut -> 100KHz
+ *
+ *
+ * CONSTRAINTS:
+ *
+ *
+ */
+
 module rx_BRAM_16_128_low_pass (clk, rrx_rst, ena,enb,wea,addra,addrb,dia,dob);
-  
+
   input         clk    ;  //clock
   input         rrx_rst;
   input         ena    ;  //enable
@@ -12,27 +24,27 @@ module rx_BRAM_16_128_low_pass (clk, rrx_rst, ena,enb,wea,addra,addrb,dia,dob);
   input  [6:0]  addrb  ;  //read addr
   input  [15:0] dia    ;  //data in
   output [15:0] dob    ;  //data out
-  
+
   reg [15:0] ram [127:0];
   reg [15:0] doa        ;
   reg [15:0] dob        ;
-  
+
   integer i;
 
-  //set iniial value of memories to zero
+  //set initial value of memories to zero
   initial begin
     for (i = 0; i < 128; i = i + 1) begin
       ram[i] = 1;
     end
   end
-  
-  always @(posedge clk) begin 
+
+  always @(posedge clk) begin
    if (ena) begin
       if (wea)
           ram[addra] <= dia;
    end
   end
-  
+
   always @(posedge clk) begin
     if (rrx_rst) begin
       dob <= 0;
@@ -42,5 +54,5 @@ module rx_BRAM_16_128_low_pass (clk, rrx_rst, ena,enb,wea,addra,addrb,dia,dob);
       end
     end
   end
-  
+
 endmodule

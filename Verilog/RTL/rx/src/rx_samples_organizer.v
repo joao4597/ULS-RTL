@@ -15,11 +15,11 @@
  * GENERAL DESCRIPTION:
  *
  * -This block instantiates 20 RAM Blocks of 16 bits by 512
- * -Stores the incomming samples distributed across the 20 RAMs,
+ * -Stores the incoming samples distributed across the 20 RAMs,
  *   (sample#0 -> RAM#0); (sample#1 -> RAM#1); (sample#2 -> RAM#2) and so on in round robin;
  * -This way, at all times, the hole of the RAMs hold the last 10200 samples, corresponding to a full signal
- * -Every time a trigger signal is received, the incoming sample replace3s the oldest sample and
- *   the module starts outputing from the oldest to the newest sample 20 samples per clock
+ * -Every time a trigger signal is received, the incoming sample replaces the oldest sample and
+ *   the module starts outputting from the oldest to the newest sample 20 samples per clock
  *
  *
  * CONSTRAINTS:
@@ -32,11 +32,11 @@ module rx_samples_organizer(
   input  wire               rrx_rst         ,  //reset signal
   input  wire               erx_en          ,  //enable signal
   input  wire signed [15:0] idata_in_RAM    ,  //new sample to be stored
-  
-  input  wire               inew_sample_trig,  //new sample triger
- 
-  //20 signed consecutive samples in parallel 
-  output wire signed [15:0] odata_0         ,  
+
+  input  wire               inew_sample_trig,  //new sample trigger
+
+  //20 signed consecutive samples in parallel
+  output wire signed [15:0] odata_0         ,
   output wire signed [15:0] odata_1         ,
   output wire signed [15:0] odata_2         ,
   output wire signed [15:0] odata_3         ,
@@ -55,15 +55,15 @@ module rx_samples_organizer(
   output wire signed [15:0] odata_16        ,
   output wire signed [15:0] odata_17        ,
   output wire signed [15:0] odata_18        ,
-  output wire signed [15:0] odata_19                     
+  output wire signed [15:0] odata_19
   );
 
   wire signed [15:0] wsamples_out [19:0];
   wire [4:0] order;
-  
+
   reg [4:0] rram_cycle_counter;
-  
-  //Keeps track of what ram out of the 20, the sample is being writen to
+
+  //Keeps track of what ram out of the 20, the sample is being written to
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
       rram_cycle_counter <= 0;
@@ -77,7 +77,7 @@ module rx_samples_organizer(
       end
     end
   end
-    
+
   //The foolowing modules are the 20 RAM blocks
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
@@ -86,15 +86,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 0) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[0]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -102,15 +102,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 1) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[1]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -118,15 +118,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 2) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[2]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -134,15 +134,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 3) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[3]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -150,15 +150,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 4) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[4]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -166,15 +166,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 5) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[5]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -182,15 +182,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 6) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[6]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -198,15 +198,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 7) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[7]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -214,15 +214,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 8) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[8]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -230,15 +230,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                      ),
       .rrx_rst         (rrx_rst                                      ),
       .erx_en          (erx_en                                       ),
-      
+
       .new_sample_trig (inew_sample_trig                             ),
       .wr_en_RAM       ((rram_cycle_counter == 9) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                 ),
-                                   
+
       .data_out_RAM    (wsamples_out[9]                              )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -246,15 +246,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 10) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[10        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -262,15 +262,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 11) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[11        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -278,15 +278,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 12) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[12        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -294,15 +294,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
-      .new_sample_trig (inew_sample_trig                              ), 
+
+      .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 13) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[13        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -310,15 +310,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 14) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[14        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -326,15 +326,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 15) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[15        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -342,15 +342,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 16) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[16        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -358,15 +358,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 17) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[17        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -374,15 +374,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 18) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[18        ]                      )
     );
-  
-  
+
+
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )
@@ -390,15 +390,15 @@ module rx_samples_organizer(
       .crx_clk         (crx_clk                                       ),
       .rrx_rst         (rrx_rst                                       ),
       .erx_en          (erx_en                                        ),
-      
+
       .new_sample_trig (inew_sample_trig                              ),
       .wr_en_RAM       ((rram_cycle_counter == 19) && inew_sample_trig),
       .data_in_RAM     (idata_in_RAM                                  ),
-                                   
+
       .data_out_RAM    (wsamples_out[19        ]                      )
     );
-  
-  
+
+
   assign odata_0  = wsamples_out[0] ;
   assign odata_1  = wsamples_out[1] ;
   assign odata_2  = wsamples_out[2] ;
@@ -419,9 +419,9 @@ module rx_samples_organizer(
   assign odata_17 = wsamples_out[17];
   assign odata_18 = wsamples_out[18];
   assign odata_19 = wsamples_out[19];
-  
-  
-endmodule 
+
+
+endmodule
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\

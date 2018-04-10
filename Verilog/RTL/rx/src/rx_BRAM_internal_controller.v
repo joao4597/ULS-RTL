@@ -13,14 +13,14 @@
 
 /**
  * GENERAL DESCRIPTION:
- * 
- * -Receibes a new sample every 512 clocks signaled by a trigger
+ *
+ * -Receives a new sample every 512 clocks signaled by a trigger
  * -Stores the samples in a round robin fashion
  * -Holds the last 510 samples at all times
- * -Every time a inew_sample trigger is received it starts outputing the 510 stored samples
+ * -Every time a inew_sample trigger is received it starts outputting the 510 stored samples
  *   from oldest to most recent
  * -Only stores a new sample when a wr_en_RAM is received, a inew_sample_trig means that a new sample arrived
- *   howver, it can be stored in on of the other parallel RAM blocks
+ *   however, it can be stored in on of the other parallel RAM blocks
  *
  *
  * CONSTRAINTS:
@@ -39,21 +39,21 @@ module rx_BRAM_internal_controller #(
     input  wire               new_sample_trig ,
     input  wire               wr_en_RAM       ,
     input  wire signed [15:0] data_in_RAM     ,
-  
-    output wire signed [15:0] data_out_RAM 
+
+    output wire signed [15:0] data_out_RAM
   );
-  
-  
+
+
   reg [8:0] rrd_addr_RAM;
   reg [8:0] rwr_addr_RAM;
-  
+
   reg [10:0] roldest_sample_addr;
-  
-  
+
+
   //Simple dual-port BRAM
   rx_BRAM_16_510_filtered_samples rx_BRAM_16_510_filtered_samples_0(crx_clk, rrx_rst, 1'b1, 1'b1, wr_en_RAM , rwr_addr_RAM, rrd_addr_RAM, data_in_RAM, data_out_RAM);
-  
-  
+
+
   //Updates the next address to write to every time a write enable is received
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
@@ -68,7 +68,7 @@ module rx_BRAM_internal_controller #(
       end
     end
   end
-  
+
   //Updates the next address to be read every clock
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
@@ -89,12 +89,12 @@ module rx_BRAM_internal_controller #(
       end
     end
   end
-  
-  
+
+
 endmodule
-  
-  
-  
+
+
+
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
   *                                                                             *
   *              @Copyright (C) 2018, #1Nadal, All Rights Reserved              *

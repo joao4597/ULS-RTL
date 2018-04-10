@@ -62,7 +62,7 @@ module rx_low_pass_filter(
     .dia    (idata_in_RAM          ),  //data in
     .dob    (wsample_read          )   //data out
     );
-  
+
 
   //Reads the filter coefficients in Round Robin
   always @(posedge crx_clk) begin
@@ -78,7 +78,7 @@ module rx_low_pass_filter(
   end
 
 
-  //Keeps track of the memory address the next incomming sample will be stored in
+  //Keeps track of the memory address the next incoming sample will be stored in
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rwrite_address_samples <= 0;
@@ -137,7 +137,7 @@ module rx_low_pass_filter(
                             rfiltered_sample_final[40:32];
 
 
-endmodule 
+endmodule
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
