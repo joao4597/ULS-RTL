@@ -1,7 +1,7 @@
 Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2015.4 (win64) Build 1412921 Wed Nov 18 09:43:45 MST 2015
-| Date         : Thu Apr 05 20:42:24 2018
+| Date         : Tue Apr 10 19:44:45 2018
 | Host         : HP running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file rx_top_level_utilization_synth.rpt -pb rx_top_level_utilization_synth.pb
 | Design       : rx_top_level
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 2602 |     0 |     17600 | 14.78 |
-|   LUT as Logic          | 2602 |     0 |     17600 | 14.78 |
+| Slice LUTs*             | 2180 |     0 |     17600 | 12.39 |
+|   LUT as Logic          | 2180 |     0 |     17600 | 12.39 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         | 1452 |     0 |     35200 |  4.13 |
-|   Register as Flip Flop | 1452 |     0 |     35200 |  4.13 |
+| Slice Registers         | 1466 |     0 |     35200 |  4.16 |
+|   Register as Flip Flop | 1466 |     0 |     35200 |  4.16 |
 |   Register as Latch     |    0 |     0 |     35200 |  0.00 |
 | F7 Muxes                |    0 |     0 |      8800 |  0.00 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
@@ -57,7 +57,7 @@ Table of Contents
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
 | 15    |          Yes |         Set |            - |
-| 1437  |          Yes |       Reset |            - |
+| 1451  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -88,24 +88,24 @@ Table of Contents
 4. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+-------+
-|          Site Type          | Used | Fixed | Available | Util% |
-+-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   76 |     0 |       100 | 76.00 |
-| Bonded IPADs                |    0 |     0 |         2 |  0.00 |
-| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
-| PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
-| PHASER_REF                  |    0 |     0 |         2 |  0.00 |
-| OUT_FIFO                    |    0 |     0 |         8 |  0.00 |
-| IN_FIFO                     |    0 |     0 |         8 |  0.00 |
-| IDELAYCTRL                  |    0 |     0 |         2 |  0.00 |
-| IBUFGDS                     |    0 |     0 |        96 |  0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |  0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |  0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
-| ILOGIC                      |    0 |     0 |       100 |  0.00 |
-| OLOGIC                      |    0 |     0 |       100 |  0.00 |
-+-----------------------------+------+-------+-----------+-------+
++-----------------------------+------+-------+-----------+--------+
+|          Site Type          | Used | Fixed | Available |  Util% |
++-----------------------------+------+-------+-----------+--------+
+| Bonded IOB                  |  660 |     0 |       100 | 660.00 |
+| Bonded IPADs                |    0 |     0 |         2 |   0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
+| PHY_CONTROL                 |    0 |     0 |         2 |   0.00 |
+| PHASER_REF                  |    0 |     0 |         2 |   0.00 |
+| OUT_FIFO                    |    0 |     0 |         8 |   0.00 |
+| IN_FIFO                     |    0 |     0 |         8 |   0.00 |
+| IDELAYCTRL                  |    0 |     0 |         2 |   0.00 |
+| IBUFGDS                     |    0 |     0 |        96 |   0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |   0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |   0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |   0.00 |
+| ILOGIC                      |    0 |     0 |       100 |   0.00 |
+| OLOGIC                      |    0 |     0 |       100 |   0.00 |
++-----------------------------+------+-------+-----------+--------+
 
 
 5. Clocking
@@ -147,18 +147,18 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT3     | 1529 |                 LUT |
-| FDRE     | 1437 |        Flop & Latch |
-| LUT6     |  843 |                 LUT |
-| LUT4     |  545 |                 LUT |
-| CARRY4   |  416 |          CarryLogic |
-| LUT5     |  251 |                 LUT |
-| LUT2     |   57 |                 LUT |
-| OBUF     |   56 |                  IO |
+| FDRE     | 1451 |        Flop & Latch |
+| LUT3     | 1234 |                 LUT |
+| LUT6     |  772 |                 LUT |
+| OBUF     |  656 |                  IO |
+| CARRY4   |  333 |          CarryLogic |
+| LUT4     |  312 |                 LUT |
+| LUT5     |  207 |                 LUT |
+| LUT2     |   46 |                 LUT |
 | LUT1     |   39 |                 LUT |
 | RAMB18E1 |   21 |        Block Memory |
-| IBUF     |   20 |                  IO |
 | FDSE     |   15 |        Flop & Latch |
+| IBUF     |    4 |                  IO |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

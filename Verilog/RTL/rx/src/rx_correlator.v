@@ -14,6 +14,9 @@
 /**
  * GENERAL DESCRIPTION:
  *
+ * -Instatiates a module that outputs the 16 possible pseudo-random binary sequences
+ * -Receives 20 samples in parallel and correlates the samples with the 16 possible signals
+ * -Instantiates 10 modules responsible for correlating 2 samples each
  *
  * CONSTRAINTS:
  *
@@ -65,13 +68,17 @@ module rx_correlator(
   output wire signed [40:0] ocorrelation_seq_15
   );
   
-  wire signed [16:0] wresult      [20:0];
+  wire signed [16:0] wresult      [19:0];
 
   wire        [15:0] wsequences;
   wire               wbit_ready;
 
   reg signed [40:0] rcorrelation_units_sum    ;
   reg signed [40:0] rcorrelation_result [15:0];
+
+  reg rbit_ready_one_clk_delay;
+  reg rnew_sample_trig_delay1;
+  reg rnew_sample_trig_delay2;
 
   rx_correlation_unit #(
     .SAMPLE_POSITION(0)
@@ -104,7 +111,7 @@ module rx_correlator(
     .isample         (idata_sample_1  ),
     .isample_plus_ten(idata_sample_11 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[1]      ),
     .oresult_1       (wresult[11]     )
   );
@@ -122,7 +129,7 @@ module rx_correlator(
     .isample         (idata_sample_2  ),
     .isample_plus_ten(idata_sample_12 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[2]      ),
     .oresult_1       (wresult[12]     )
   );
@@ -140,7 +147,7 @@ module rx_correlator(
     .isample         (idata_sample_3  ),
     .isample_plus_ten(idata_sample_13 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[3]      ),
     .oresult_1       (wresult[13]     )
   );
@@ -158,7 +165,7 @@ module rx_correlator(
     .isample         (idata_sample_4  ),
     .isample_plus_ten(idata_sample_14 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[4]      ),
     .oresult_1       (wresult[14]     )
   );
@@ -176,7 +183,7 @@ module rx_correlator(
     .isample         (idata_sample_5  ),
     .isample_plus_ten(idata_sample_15 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[5]      ),
     .oresult_1       (wresult[15]     )
   );
@@ -194,7 +201,7 @@ module rx_correlator(
     .isample         (idata_sample_6  ),
     .isample_plus_ten(idata_sample_16 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[6]      ),
     .oresult_1       (wresult[16]     )
   );
@@ -212,7 +219,7 @@ module rx_correlator(
     .isample         (idata_sample_7  ),
     .isample_plus_ten(idata_sample_17 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[7]      ),
     .oresult_1       (wresult[17]     )
   );
@@ -231,7 +238,7 @@ module rx_correlator(
     .isample         (idata_sample_8  ),
     .isample_plus_ten(idata_sample_18 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[8]      ),
     .oresult_1       (wresult[18]     )
   );
@@ -249,20 +256,20 @@ module rx_correlator(
     .isample         (idata_sample_9  ),
     .isample_plus_ten(idata_sample_19 ),
   
-    .obit_ready      (wbit_ready      ),
+    //.obit_ready      (wbit_ready      ),
     .oresult_0       (wresult[9]      ),
     .oresult_1       (wresult[19]     )
   );
 
 
   rx_sequences_bits_feader rx_sequences_bits_feader_0(
-    .crx_clk         (crx_clk         ),  //clock signal
-    .rrx_rst         (rrx_rst         ),  //reset signal
-    .erx_en          (erx_en          ),  //enable signal
+    .crx_clk         (crx_clk                ),  //clock signal
+    .rrx_rst         (rrx_rst                ),  //reset signal
+    .erx_en          (erx_en                 ),  //enable signal
     
-    .inew_sample_trig(inew_sample_trig),  //new sample trigger
+    .inew_sample_trig(rnew_sample_trig_delay2),  //new sample trigger
   
-    .osequences_bits (wsequences      )   //16 bits corresponding to the 16 binary sequences
+    .osequences_bits (wsequences             )   //16 bits corresponding to the 16 binary sequences
   );
 
   always @(posedge crx_clk) begin
@@ -279,7 +286,43 @@ module rx_correlator(
       end
     end
   end
+
+
+  //Delays the wbit_ready signal from the correlation units
+  //this is necessary because it takes an extra clock to add all the correlation units
+  //before they can be added or subtracted to each of the 16 rcorrelation_result registers
+  //according to the 16 possible pseudo-random binary sequences
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rbit_ready_one_clk_delay <= 0;
+    end else begin
+      if (!erx_en) begin
+        rbit_ready_one_clk_delay <= 0;
+      end else begin
+        rbit_ready_one_clk_delay <= wbit_ready;
+      end
+    end
+  end
+
+
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rnew_sample_trig_delay1 <= 0;
+      rnew_sample_trig_delay2 <= 0;
+    end else begin
+      if (!erx_en) begin
+        rnew_sample_trig_delay1 <= 0;
+        rnew_sample_trig_delay2 <= 0;
+      end else begin
+        rnew_sample_trig_delay1 <= inew_sample_trig;
+        rnew_sample_trig_delay2 <= rnew_sample_trig_delay1;
+      end
+    end
+  end
+
   
+  //these registers accumulate the correlation of the received signal for each of the 16 possible sequences
+  //each new resukt form the correaltion units is either added or subtracted acording to the bits os each sequence
   generate
     genvar i;
     for (i = 0; i < 16; i = i + 1) begin
@@ -290,11 +333,15 @@ module rx_correlator(
           if (!erx_en) begin
             rcorrelation_result[i] <= 0;
           end else begin
-            if (wbit_ready) begin
-              if (wsequences[i])begin
-                rcorrelation_result[i] <= rcorrelation_result[i] + rcorrelation_units_sum;
-              end else begin
-                rcorrelation_result[i] <= rcorrelation_result[i] - rcorrelation_units_sum;
+            if (rnew_sample_trig_delay2) begin
+              rcorrelation_result[i] <= 0;
+            end else begin
+              if (rbit_ready_one_clk_delay) begin
+                if (wsequences[i])begin
+                  rcorrelation_result[i] <= rcorrelation_result[i] + rcorrelation_units_sum;
+                end else begin
+                  rcorrelation_result[i] <= rcorrelation_result[i] - rcorrelation_units_sum;
+                end
               end
             end
           end

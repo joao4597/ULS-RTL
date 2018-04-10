@@ -31,7 +31,7 @@ module rx_correlation_unit #(
   input  wire signed [15:0] isample         ,
   input  wire signed [15:0] isample_plus_ten,
 
-  output wire               obit_ready      ,
+  output reg                obit_ready      ,
   output reg  signed [16:0] oresult_0       ,
   output reg  signed [16:0] oresult_1
   );
@@ -40,14 +40,12 @@ module rx_correlation_unit #(
   reg signed [16:0] rsum_0, rsum_1   ;
   reg               flag             ;
 
-  assign obit_ready = flag;
-
-  //flag used tow count the two clocks necessary to process one bit
+  //flag used to count the two clocks necessary to process one bit
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       flag <= 0;
     end else begin
-      if (erx_en) begin
+      if (!erx_en) begin
         flag <= 0;
       end else begin
         if (inew_sample_trig) begin
@@ -95,19 +93,23 @@ module rx_correlation_unit #(
   //sequence
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      oresult_0 <= 0;
-      oresult_1 <= 0;
+      oresult_0  <= 0;
+      oresult_1  <= 0;
+      obit_ready <= 0;
     end else begin
-      if (erx_en) begin
-        oresult_0 <= 0;
-        oresult_1 <= 0;
+      if (!erx_en) begin
+        oresult_0  <= 0;
+        oresult_1  <= 0;
+        obit_ready <= 0;
       end else begin
         if (!flag) begin
-          oresult_0 <= isample;
-          oresult_1 <= isample_plus_ten;
+          oresult_0  <= isample;
+          oresult_1  <= isample_plus_ten;
+          obit_ready <= 0;
         end else begin
-          oresult_0 <= rsum_0;
-          oresult_1 <= rsum_1;
+          oresult_0  <= rsum_0;
+          oresult_1  <= rsum_1;
+          obit_ready <= 1;
         end
       end
     end

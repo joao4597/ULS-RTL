@@ -38,7 +38,7 @@ module rx_sequences_bits_feader(
   reg [7:0] rread_address;
   
 
-  rx_BRAM_16_256 rx_BRAM_16_256_0(crx_clk, erx_en, 1'b1, 1'b0, 8'b0, rread_address, 16'b0, osequences_bits);
+  rx_BRAM_16_256_binary_sequences rx_BRAM_16_256_binary_sequences_0(crx_clk, erx_en, 1'b1, 1'b0, 8'b0, rread_address, 16'b0, osequences_bits);
 
 
   //Updates the read address of the memory that keeps the binary sequences

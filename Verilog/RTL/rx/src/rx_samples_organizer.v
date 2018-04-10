@@ -14,8 +14,16 @@
 /**
  * GENERAL DESCRIPTION:
  *
+ * -This block instantiates 20 RAM Blocks of 16 bits by 512
+ * -Stores the incomming samples distributed across the 20 RAMs,
+ *   (sample#0 -> RAM#0); (sample#1 -> RAM#1); (sample#2 -> RAM#2) and so on in round robin;
+ * -This way, at all times, the hole of the RAMs hold the last 10200 samples, corresponding to a full signal
+ * -Every time a trigger signal is received, the incoming sample replace3s the oldest sample and
+ *   the module starts outputing from the oldest to the newest sample 20 samples per clock
+ *
  *
  * CONSTRAINTS:
+ *
  *
  */
 
@@ -70,7 +78,7 @@ module rx_samples_organizer(
     end
   end
     
-  
+  //The foolowing modules are the 20 RAM blocks
   rx_BRAM_internal_controller #(
       .MEMORY_LENGTH(510)
     )

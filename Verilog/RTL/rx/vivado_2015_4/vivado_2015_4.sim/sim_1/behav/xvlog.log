@@ -1,12 +1,29 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_BRAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_256_binary_sequences.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_BRAM_16_256_binary_sequences
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_510_filtered_samples.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_BRAM_16_510_filtered_samples
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_128.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_BRAM_16_128
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_sequnces_bits_feader.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_sequences_bits_feader
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_correlation_unit
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_internal_controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module rx_BRAM_internal_controller
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_clk.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tx_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_128_low_pass.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_BRAM_16_128_low_pass
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_correlator
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module rx_samples_organizer
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_samples_organizer_Testbench.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module rx_samples_organizer_Testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_low_pass_filter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_low_pass_filter
+WARNING: [VRFC 10-965] invalid size of integer constant literal [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_low_pass_filter.v:52]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tx_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_top_level
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_top_level_Testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module rx_top_level_Testbench
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

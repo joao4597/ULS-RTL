@@ -3,176 +3,75 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="rx_samples_organizer_Testbench_behav.wdb" id="1">
+      <db_ref path="rx_top_level_Testbench_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
-            <top_module name="rx_samples_organizer_Testbench" />
+            <top_module name="rx_top_level_Testbench" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="209283406959600fs"></ZoomStartTime>
-      <ZoomEndTime time="209283911959601fs"></ZoomEndTime>
-      <Cursor1Time time="209283481960000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="91400000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="33" />
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
+   <WVObjectSize size="14" />
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/crx_clk" type="logic">
+      <obj_property name="ElementShortName">crx_clk</obj_property>
+      <obj_property name="ObjectShortName">crx_clk</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/i" type="array">
-      <obj_property name="ElementShortName">i[31:0]</obj_property>
-      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rrx_rst" type="logic">
+      <obj_property name="ElementShortName">rrx_rst</obj_property>
+      <obj_property name="ObjectShortName">rrx_rst</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/j" type="array">
-      <obj_property name="ElementShortName">j[31:0]</obj_property>
-      <obj_property name="ObjectShortName">j[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/erx_en" type="logic">
+      <obj_property name="ElementShortName">erx_en</obj_property>
+      <obj_property name="ObjectShortName">erx_en</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/enable" type="logic">
-      <obj_property name="ElementShortName">enable</obj_property>
-      <obj_property name="ObjectShortName">enable</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/idata_in_RAM" type="array">
+      <obj_property name="ElementShortName">idata_in_RAM[15:0]</obj_property>
+      <obj_property name="ObjectShortName">idata_in_RAM[15:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/osample_ready" type="logic">
+      <obj_property name="ElementShortName">osample_ready</obj_property>
+      <obj_property name="ObjectShortName">osample_ready</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/triger" type="logic">
-      <obj_property name="ElementShortName">triger</obj_property>
-      <obj_property name="ObjectShortName">triger</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/ofiltered_sample" type="array">
+      <obj_property name="ElementShortName">ofiltered_sample[15:0]</obj_property>
+      <obj_property name="ObjectShortName">ofiltered_sample[15:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/rsample_in" type="array">
-      <obj_property name="ElementShortName">rsample_in[15:0]</obj_property>
-      <obj_property name="ObjectShortName">rsample_in[15:0]</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/wcoeff_read" type="array">
+      <obj_property name="ElementShortName">wcoeff_read[15:0]</obj_property>
+      <obj_property name="ObjectShortName">wcoeff_read[15:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/rx_samples_organizer_0/rx_BRAM_internal_controller_0/rRAM/ram[2]" type="array">
-      <obj_property name="ElementShortName">[2][17:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[2][17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/wsample_read" type="array">
+      <obj_property name="ElementShortName">wsample_read[15:0]</obj_property>
+      <obj_property name="ObjectShortName">wsample_read[15:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/rx_samples_organizer_0/rx_BRAM_internal_controller_0/rRAM/ram[1]" type="array">
-      <obj_property name="ElementShortName">[1][17:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[1][17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/wnew_sample_trigg" type="logic">
+      <obj_property name="ElementShortName">wnew_sample_trigg</obj_property>
+      <obj_property name="ObjectShortName">wnew_sample_trigg</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/rx_samples_organizer_0/rx_BRAM_internal_controller_0/rRAM/ram[0]" type="array">
-      <obj_property name="ElementShortName">[0][17:0]</obj_property>
-      <obj_property name="ObjectShortName">ram[0][17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rread_address_RAM" type="array">
+      <obj_property name="ElementShortName">rread_address_RAM[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rread_address_RAM[6:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/rx_samples_organizer_0/rx_BRAM_internal_controller_0/rRAM/dia" type="array">
-      <obj_property name="ElementShortName">dia[17:0]</obj_property>
-      <obj_property name="ObjectShortName">dia[17:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rwrite_address_samples" type="array">
+      <obj_property name="ElementShortName">rwrite_address_samples[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rwrite_address_samples[6:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/rx_samples_organizer_0/rx_BRAM_internal_controller_0/data_in_RAM" type="array">
-      <obj_property name="ElementShortName">data_in_RAM[15:0]</obj_property>
-      <obj_property name="ObjectShortName">data_in_RAM[15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rread_address_samples" type="array">
+      <obj_property name="ElementShortName">rread_address_samples[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rread_address_samples[6:0]</obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out" type="array">
-      <obj_property name="ElementShortName">wsample_out[19:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[19:0][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rfiltered_sample_acum" type="array">
+      <obj_property name="ElementShortName">rfiltered_sample_acum[40:0]</obj_property>
+      <obj_property name="ObjectShortName">rfiltered_sample_acum[40:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[19]" type="array">
-      <obj_property name="ElementShortName">[19][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[19][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[18]" type="array">
-      <obj_property name="ElementShortName">[18][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[18][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[17]" type="array">
-      <obj_property name="ElementShortName">[17][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[17][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[16]" type="array">
-      <obj_property name="ElementShortName">[16][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[16][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[15]" type="array">
-      <obj_property name="ElementShortName">[15][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[15][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[14]" type="array">
-      <obj_property name="ElementShortName">[14][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[14][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[13]" type="array">
-      <obj_property name="ElementShortName">[13][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[13][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[12]" type="array">
-      <obj_property name="ElementShortName">[12][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[12][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[11]" type="array">
-      <obj_property name="ElementShortName">[11][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[11][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[10]" type="array">
-      <obj_property name="ElementShortName">[10][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[10][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[9]" type="array">
-      <obj_property name="ElementShortName">[9][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[9][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[8]" type="array">
-      <obj_property name="ElementShortName">[8][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[8][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[7]" type="array">
-      <obj_property name="ElementShortName">[7][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[7][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[6]" type="array">
-      <obj_property name="ElementShortName">[6][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[6][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[5]" type="array">
-      <obj_property name="ElementShortName">[5][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[5][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[4]" type="array">
-      <obj_property name="ElementShortName">[4][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[4][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[3]" type="array">
-      <obj_property name="ElementShortName">[3][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[3][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[2]" type="array">
-      <obj_property name="ElementShortName">[2][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[2][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[1]" type="array">
-      <obj_property name="ElementShortName">[1][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[1][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_samples_organizer_Testbench/wsample_out[0]" type="array">
-      <obj_property name="ElementShortName">[0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_out[0][15:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rfiltered_sample_final" type="array">
+      <obj_property name="ElementShortName">rfiltered_sample_final[40:0]</obj_property>
+      <obj_property name="ObjectShortName">rfiltered_sample_final[40:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
 </wave_config>
