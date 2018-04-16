@@ -39,12 +39,16 @@ module rx_low_pass_filter(
   reg [6:0] rwrite_address_samples;
   reg [6:0] rread_address_samples ;
 
-  reg [40:0] rfiltered_sample_acum ;
-  reg [40:0] rfiltered_sample_final;
+  reg signed [69:0] rfiltered_sample_acum ;
+  reg signed [69:0] rfiltered_sample_final;
+
+  wire signed [69:0] widata_in_RAM_extended;
+  wire signed [69:0] wwcoeff_read_extended ;
+  wire signed [69:0] wwsample_read_extended;
 
 
-  //anticipates when a new sample is comming based on the read adderess of the samples memory
-  assign wnew_sample_trigg = rread_address_RAM == 127 ? 1'b1 : 1'b0;
+  //anticipates when a new sample is comming based on the read adderess of the filter filter memory
+  assign wnew_sample_trigg = rread_address_RAM == 0 ? 1'b1 : 1'b0;
 
 
   //RAM that holds the low pass filter coefficients
@@ -97,12 +101,12 @@ module rx_low_pass_filter(
   //Increments the read address to access the stored samples
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rread_address_samples <= 0;
+      rread_address_samples <= 1;
     end else begin
       if (!erx_en) begin
-        rread_address_samples <= 0;
+        rread_address_samples <= 1;
       end else begin
-        if (wnew_sample_trigg) begin
+        if (rread_address_RAM == 127) begin
           rread_address_samples <= rread_address_samples + 2;
         end else begin
           rread_address_samples <= rread_address_samples + 1;
@@ -123,18 +127,22 @@ module rx_low_pass_filter(
         rfiltered_sample_final <= 0;
       end else begin
         if (wnew_sample_trigg) begin
-          rfiltered_sample_final <= rfiltered_sample_acum + (idata_in_RAM * wcoeff_read);
+          rfiltered_sample_final <= rfiltered_sample_acum + (widata_in_RAM_extended * wwcoeff_read_extended);
           rfiltered_sample_acum  <= 0;
+        end else begin
+          rfiltered_sample_acum  <= rfiltered_sample_acum + (wwsample_read_extended * wwcoeff_read_extended);
         end
-          rfiltered_sample_acum <= rfiltered_sample_acum + (wsample_read * wcoeff_read);
       end
     end
   end
 
 
-  assign ofiltered_sample = rfiltered_sample_final[15:0]  +
-                            rfiltered_sample_final[31:16] +
-                            rfiltered_sample_final[40:32];
+  assign widata_in_RAM_extended = $signed(idata_in_RAM);
+  assign wwcoeff_read_extended  = $signed(wcoeff_read );
+  assign wwsample_read_extended = $signed(wsample_read);
+
+
+  assign ofiltered_sample = rfiltered_sample_final[25:10];
 
 
 endmodule

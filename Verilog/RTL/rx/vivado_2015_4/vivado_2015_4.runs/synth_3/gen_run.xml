@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_3" LaunchPart="xc7z010clg400-1" LaunchTime="1523385855">
+<GenRun Id="synth_3" LaunchPart="xc7z010clg400-1" LaunchTime="1523637564">
   <File Type="RDS-DCP" Name="rx_top_level.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_3/constrs_in.xml"/>
   <File Type="RDS-UTIL-PB" Name="rx_top_level_utilization_synth.pb"/>
@@ -21,6 +21,20 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/rx_BRAM_16_256_binary_sequences.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_BRAM_16_128_low_pass.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_BRAM_16_128.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -62,14 +76,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../src/rx_BRAM_16_128.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../src/rx_BRAM_16_128_low_pass.v">
+    <File Path="$PPRDIR/../src/rx_low_pass_filter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -91,13 +98,6 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/rx_band_pass_filter.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PPRDIR/../src/rx_low_pass_filter.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

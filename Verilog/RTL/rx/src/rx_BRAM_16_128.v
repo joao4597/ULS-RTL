@@ -14,26 +14,26 @@
 
 module rx_BRAM_16_128 (clk, rrx_rst, ena,enb,wea,addra,addrb,dia,dob);
 
-  input         clk    ;  //clock
-  input         rrx_rst;
-  input         ena    ;  //enable
-  input         enb    ;  //enable read
-  input         wea    ;  //write enable
-  input  [6:0]  addra  ;  //write address
-  input  [6:0]  addrb  ;  //read addr
-  input  [15:0] dia    ;  //data in
-  output [15:0] dob    ;  //data out
+  input                clk    ;  //clock
+  input                rrx_rst;
+  input                ena    ;  //enable
+  input                enb    ;  //enable read
+  input                wea    ;  //write enable
+  input          [6:0] addra  ;  //write address
+  input          [6:0] addrb  ;  //read addr
+  input  signed [15:0] dia    ;  //data in
+  output signed [15:0] dob    ;  //data out
 
-  reg [15:0] ram [127:0];
-  reg [15:0] doa        ;
-  reg [15:0] dob        ;
+  reg signed [15:0] ram [127:0];
+  reg signed [15:0] doa        ;
+  reg signed [15:0] dob        ;
 
   integer i;
 
   //set initial value of memories to zero
   initial begin
     for (i = 0; i < 128; i = i + 1) begin
-      ram[i] = 1;
+      ram[i] = 0;
     end
   end
 

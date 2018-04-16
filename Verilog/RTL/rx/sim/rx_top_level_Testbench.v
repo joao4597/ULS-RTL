@@ -28,7 +28,7 @@ module rx_top_level_Testbench();
 
   reg reset, enable;
   reg signed [15:0] sample_in;
-  reg               trigger;
+  reg               trigger  ;
   //Clock generator for testing
   tx_clk tx_clk_0(
     .clk(clk)
@@ -42,7 +42,6 @@ module rx_top_level_Testbench();
   .erx_en                (enable        ),  //enable signal
        
   .inew_sample           (sample_in     ),
-  .inew_sample_trig      (trigger       ),
  
   .wcorrelation_result_0 (sample_out[0] ),
   .wcorrelation_result_1 (sample_out[1] ),
@@ -63,31 +62,62 @@ module rx_top_level_Testbench();
   );
 
 
-  integer i, j;
+  integer i, j                 ;
+  integer samples_file         ;
+  integer low_pass_result      ; 
+  integer band_pass_result     ;
+  integer aux                  ;
+  integer sample_aux           ;
 
+  reg signed [15:0] aux_reg;
+  reg [1:0] two_bit_counter;
+
+   
   assign sample_out[16] = i;
   //test
   initial begin
 
+    two_bit_counter <= 0;
+
+    //open file to save modulation result
+    samples_file     = $fopen("..\\..\\..\\..\\sim_files\\record.csv", "r");
+    low_pass_result  = $fopen("..\\..\\..\\..\\sim_files\\low_pass_result.csv" , "w");
+    band_pass_result = $fopen("..\\..\\..\\..\\sim_files\\band_pass_result.csv", "w");
+
     //reset module
     @(negedge clk);
     reset     <= 1'b1;
-    enable    <= 1'b1;
+    enable    <= 1'b0;
     sample_in <= 1'b0;
 
     
     @(negedge clk);
-    reset    <= 1'b0;
+    reset  <= 1'b0;
+    enable <= 1'b1;
 
 
-    for (i = 0; i < 10200; i = i + 1) begin
-      sample_in <= $signed(i);
-      trigger <= 1'b1;
+    for (i = 1; $fscanf(samples_file, "%d\n", sample_aux) > 0;) begin
+
+      sample_in <= sample_aux;
+      
+
+      //SAVE THE LOW_PASS RESULT
       @(negedge clk);
-      trigger <= 1'b0;
+      $fwrite(low_pass_result, "%d\n", $signed(rx_top_level_0.wfiltered_sample_low_pass));
 
-      //wait 512 clocks between new samples
-      for (j = 0; j < 511; j = j + 1) begin
+
+      //SAVE THE BAND_PASS RESULT
+      @(negedge clk);
+      if (two_bit_counter == 0) begin
+        $fwrite(band_pass_result, "%d -> %d\n", i, $signed(rx_top_level_0.wfiltered_sample_band_pass));
+        two_bit_counter = two_bit_counter + 1;
+        i = i + 1;
+      end else begin
+        two_bit_counter = two_bit_counter + 1;
+      end
+
+      //wait 127 clocks between new samples
+      for (j = 0; j < 126; j = j + 1) begin
         @(negedge clk);
       end
     end

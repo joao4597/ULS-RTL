@@ -12,66 +12,8 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="91400000001fs"></ZoomEndTime>
+      <ZoomEndTime time="35700000003fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="14" />
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/crx_clk" type="logic">
-      <obj_property name="ElementShortName">crx_clk</obj_property>
-      <obj_property name="ObjectShortName">crx_clk</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rrx_rst" type="logic">
-      <obj_property name="ElementShortName">rrx_rst</obj_property>
-      <obj_property name="ObjectShortName">rrx_rst</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/erx_en" type="logic">
-      <obj_property name="ElementShortName">erx_en</obj_property>
-      <obj_property name="ObjectShortName">erx_en</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/idata_in_RAM" type="array">
-      <obj_property name="ElementShortName">idata_in_RAM[15:0]</obj_property>
-      <obj_property name="ObjectShortName">idata_in_RAM[15:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/osample_ready" type="logic">
-      <obj_property name="ElementShortName">osample_ready</obj_property>
-      <obj_property name="ObjectShortName">osample_ready</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/ofiltered_sample" type="array">
-      <obj_property name="ElementShortName">ofiltered_sample[15:0]</obj_property>
-      <obj_property name="ObjectShortName">ofiltered_sample[15:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/wcoeff_read" type="array">
-      <obj_property name="ElementShortName">wcoeff_read[15:0]</obj_property>
-      <obj_property name="ObjectShortName">wcoeff_read[15:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/wsample_read" type="array">
-      <obj_property name="ElementShortName">wsample_read[15:0]</obj_property>
-      <obj_property name="ObjectShortName">wsample_read[15:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/wnew_sample_trigg" type="logic">
-      <obj_property name="ElementShortName">wnew_sample_trigg</obj_property>
-      <obj_property name="ObjectShortName">wnew_sample_trigg</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rread_address_RAM" type="array">
-      <obj_property name="ElementShortName">rread_address_RAM[6:0]</obj_property>
-      <obj_property name="ObjectShortName">rread_address_RAM[6:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rwrite_address_samples" type="array">
-      <obj_property name="ElementShortName">rwrite_address_samples[6:0]</obj_property>
-      <obj_property name="ObjectShortName">rwrite_address_samples[6:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rread_address_samples" type="array">
-      <obj_property name="ElementShortName">rread_address_samples[6:0]</obj_property>
-      <obj_property name="ObjectShortName">rread_address_samples[6:0]</obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rfiltered_sample_acum" type="array">
-      <obj_property name="ElementShortName">rfiltered_sample_acum[40:0]</obj_property>
-      <obj_property name="ObjectShortName">rfiltered_sample_acum[40:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
-   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_low_pass_filter_0/rfiltered_sample_final" type="array">
-      <obj_property name="ElementShortName">rfiltered_sample_final[40:0]</obj_property>
-      <obj_property name="ObjectShortName">rfiltered_sample_final[40:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
-   </wvobject>
+   <WVObjectSize size="0" />
 </wave_config>
