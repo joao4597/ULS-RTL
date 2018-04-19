@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="rx_top_level_Testbench_behav1.wdb" id="1">
+      <db_ref path="rx_top_level_Testbench_behav.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="rx_top_level_Testbench" />
@@ -11,9 +11,146 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="412101194166665fs"></ZoomStartTime>
-      <ZoomEndTime time="412101705166667fs"></ZoomEndTime>
-      <Cursor1Time time="412101620000000fs"></Cursor1Time>
+      <ZoomStartTime time="1639934166665fs"></ZoomStartTime>
+      <ZoomEndTime time="1640445166668fs"></ZoomEndTime>
+      <Cursor1Time time="1640360000000fs"></Cursor1Time>
    </zoom_setting>
-   <WVObjectSize size="0" />
+   <WVObjectSize size="34" />
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/crx_clk" type="logic">
+      <obj_property name="ElementShortName">crx_clk</obj_property>
+      <obj_property name="ObjectShortName">crx_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/rrx_rst" type="logic">
+      <obj_property name="ElementShortName">rrx_rst</obj_property>
+      <obj_property name="ObjectShortName">rrx_rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/erx_en" type="logic">
+      <obj_property name="ElementShortName">erx_en</obj_property>
+      <obj_property name="ObjectShortName">erx_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/icurrent_time" type="array">
+      <obj_property name="ElementShortName">icurrent_time[32:0]</obj_property>
+      <obj_property name="ObjectShortName">icurrent_time[32:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_filtered" type="array">
+      <obj_property name="ElementShortName">isample_filtered[15:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_filtered[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/inew_samle_trigger" type="logic">
+      <obj_property name="ElementShortName">inew_samle_trigger</obj_property>
+      <obj_property name="ObjectShortName">inew_samle_trigger</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_0" type="array">
+      <obj_property name="ElementShortName">isample_correlation_0[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_0[40:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_1" type="array">
+      <obj_property name="ElementShortName">isample_correlation_1[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_1[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_2" type="array">
+      <obj_property name="ElementShortName">isample_correlation_2[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_2[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_3" type="array">
+      <obj_property name="ElementShortName">isample_correlation_3[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_3[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_4" type="array">
+      <obj_property name="ElementShortName">isample_correlation_4[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_4[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_5" type="array">
+      <obj_property name="ElementShortName">isample_correlation_5[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_5[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_6" type="array">
+      <obj_property name="ElementShortName">isample_correlation_6[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_6[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_7" type="array">
+      <obj_property name="ElementShortName">isample_correlation_7[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_7[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_8" type="array">
+      <obj_property name="ElementShortName">isample_correlation_8[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_8[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_9" type="array">
+      <obj_property name="ElementShortName">isample_correlation_9[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_9[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_10" type="array">
+      <obj_property name="ElementShortName">isample_correlation_10[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_10[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_11" type="array">
+      <obj_property name="ElementShortName">isample_correlation_11[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_11[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_12" type="array">
+      <obj_property name="ElementShortName">isample_correlation_12[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_12[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_13" type="array">
+      <obj_property name="ElementShortName">isample_correlation_13[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_13[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_14" type="array">
+      <obj_property name="ElementShortName">isample_correlation_14[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_14[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/isample_correlation_15" type="array">
+      <obj_property name="ElementShortName">isample_correlation_15[40:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_15[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/o_sample_arm" type="array">
+      <obj_property name="ElementShortName">o_sample_arm[40:0]</obj_property>
+      <obj_property name="ObjectShortName">o_sample_arm[40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/o_received_seq" type="array">
+      <obj_property name="ElementShortName">o_received_seq[3:0]</obj_property>
+      <obj_property name="ObjectShortName">o_received_seq[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/o_time_arm" type="array">
+      <obj_property name="ElementShortName">o_time_arm[15:0]</obj_property>
+      <obj_property name="ObjectShortName">o_time_arm[15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/o_trigger_arm" type="logic">
+      <obj_property name="ElementShortName">o_trigger_arm</obj_property>
+      <obj_property name="ObjectShortName">o_trigger_arm</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/x" type="array">
+      <obj_property name="ElementShortName">x[31:0]</obj_property>
+      <obj_property name="ObjectShortName">x[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/rpos_trigger_counter" type="array">
+      <obj_property name="ElementShortName">rpos_trigger_counter[13:0]</obj_property>
+      <obj_property name="ObjectShortName">rpos_trigger_counter[13:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/rhighest_sample" type="array">
+      <obj_property name="ElementShortName">rhighest_sample[15:0][40:0]</obj_property>
+      <obj_property name="ObjectShortName">rhighest_sample[15:0][40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/rtimestamp" type="array">
+      <obj_property name="ElementShortName">rtimestamp[15:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">rtimestamp[15:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/rcounter_4bit" type="array">
+      <obj_property name="ElementShortName">rcounter_4bit[3:0]</obj_property>
+      <obj_property name="ObjectShortName">rcounter_4bit[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/rstart_comparing_seqs" type="logic">
+      <obj_property name="ElementShortName">rstart_comparing_seqs</obj_property>
+      <obj_property name="ObjectShortName">rstart_comparing_seqs</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/wsample_correlation" type="array">
+      <obj_property name="ElementShortName">wsample_correlation[15:0][40:0]</obj_property>
+      <obj_property name="ObjectShortName">wsample_correlation[15:0][40:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_top_level_Testbench/rx_top_level_0/rx_peak_identification_0/wtrigger_threshold" type="logic">
+      <obj_property name="ElementShortName">wtrigger_threshold</obj_property>
+      <obj_property name="ObjectShortName">wtrigger_threshold</obj_property>
+   </wvobject>
 </wave_config>

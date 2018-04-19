@@ -35,7 +35,7 @@ module rx_top_level(
  
   input  wire signed [15:0] inew_sample   ,  //new sample in
 
-  output wire signed [15:0] o_sample_arm  ,  //Peak Value
+  output wire signed [40:0] o_sample_arm  ,  //Peak Value
   output wire         [3:0] o_received_seq,
   output wire        [15:0] o_time_arm    ,  //Timestamp
   output wire               o_trigger_arm    //Trigger
@@ -64,7 +64,8 @@ module rx_top_level(
   //Inputs of rx_correaltor
   reg new_sample_trig_delay_4;
   //Outputs of rx_correlator
-  wire signed [15:0] wcorrelation_result [15:0];
+  wire wcorrelator_trigger;
+  wire signed [40:0] wcorrelation_result [15:0];
 
 
   /////////////////////////////////////////////////LOW_PASS_FILTER//////////////////////////////////////////////////////
@@ -206,7 +207,8 @@ module rx_top_level(
     .ocorrelation_seq_12(wcorrelation_result[12]),
     .ocorrelation_seq_13(wcorrelation_result[13]),
     .ocorrelation_seq_14(wcorrelation_result[14]),
-    .ocorrelation_seq_15(wcorrelation_result[15])
+    .ocorrelation_seq_15(wcorrelation_result[15]),
+    .onew_result_trigger(wcorrelator_trigger    )
   );
 
 
@@ -221,7 +223,7 @@ module rx_top_level(
    
   .isample_filtered      (wparallel_samples[0]   ),  //output of band_pass filter
   
-  .inew_samle_trigger    (new_sample_trig_delay_1),
+  .inew_samle_trigger    (wcorrelator_trigger    ),
 
   .isample_correlation_0 (wcorrelation_result[0] ),
   .isample_correlation_1 (wcorrelation_result[1] ),
@@ -245,6 +247,7 @@ module rx_top_level(
   .o_time_arm            (o_time_arm             ),  //Timestamp
   .o_trigger_arm         (o_trigger_arm          )   //Trigger
   );
+
 endmodule
 
 

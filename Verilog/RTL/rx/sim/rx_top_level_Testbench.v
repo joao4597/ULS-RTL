@@ -24,7 +24,7 @@
 module rx_top_level_Testbench();
 
   wire signed clk;
-  wire signed [40:0] sample_out [16:0];
+  //wire signed [40:0] sample_out [16:0];
 
   reg reset, enable;
   reg signed [15:0] sample_in;
@@ -34,31 +34,24 @@ module rx_top_level_Testbench();
     .clk(clk)
   );
 
+  wire signed [40:0] sample_arm     ;
+  wire         [3:0] received_signal;
+  wire        [15:0] time_arm       ;
+  wire               trigger_arm    ; 
+  
 
   //block uder testing
   rx_top_level rx_top_level_0(
-  .crx_clk               (clk           ),  //clock signal
-  .rrx_rst               (reset         ),  //reset signal
-  .erx_en                (enable        ),  //enable signal
+  .crx_clk        (clk           ),  //clock signal
+  .rrx_rst        (reset         ),  //reset signal
+  .erx_en         (enable        ),  //enable signal
        
-  .inew_sample           (sample_in     ),
- 
-  .wcorrelation_result_0 (sample_out[0] ),
-  .wcorrelation_result_1 (sample_out[1] ),
-  .wcorrelation_result_2 (sample_out[2] ),
-  .wcorrelation_result_3 (sample_out[3] ),
-  .wcorrelation_result_4 (sample_out[4] ),
-  .wcorrelation_result_5 (sample_out[5] ),
-  .wcorrelation_result_6 (sample_out[6] ),
-  .wcorrelation_result_7 (sample_out[7] ),
-  .wcorrelation_result_8 (sample_out[8] ),
-  .wcorrelation_result_9 (sample_out[9] ),
-  .wcorrelation_result_10(sample_out[10]),
-  .wcorrelation_result_11(sample_out[11]),
-  .wcorrelation_result_12(sample_out[12]),
-  .wcorrelation_result_13(sample_out[13]),
-  .wcorrelation_result_14(sample_out[14]),
-  .wcorrelation_result_15(sample_out[15])
+  .inew_sample    (sample_in     ),
+
+  .o_sample_arm   (sample_arm     ),  //Peak Value
+  .o_received_seq (received_signal),
+  .o_time_arm     (time_arm       ),  //Timestamp
+  .o_trigger_arm  (trigger_arm    )   //Trigger
   );
 
 
@@ -72,8 +65,6 @@ module rx_top_level_Testbench();
   reg signed [15:0] aux_reg;
   reg [1:0] two_bit_counter;
 
-   
-  assign sample_out[16] = i;
   //test
   initial begin
 
@@ -150,19 +141,19 @@ module rx_top_level_Testbench();
       if (rx_top_level_0.new_sample_trig_delay_1) begin
         @(negedge clk);
         @(negedge clk);
-        $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result_3));
+        $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result[3]));
         $fflush(correlator_result);
 
         $fscanf(correlator_result_mat, "%d\n", sample_aux_c);
-        aux_c = $signed(rx_top_level_0.wcorrelation_result_3);
+        aux_c = $signed(rx_top_level_0.wcorrelation_result[3]);
         
         if (sample_aux_c == aux_c) begin
           if (i_c % 200 == 0) begin
-            $display("%1d samples correct\n", i_c);
+            //$display("%1d samples correct\n", i_c);
           end
         end else begin
           $display("%1d -> erro %1d -> %1d\n", i_c, sample_aux_c, aux_c);
-          //$finish;
+          $finish;
         end
 
         i_c = i_c + 1;
@@ -170,6 +161,23 @@ module rx_top_level_Testbench();
     end
 
     $finish;
+  end
+
+
+
+  //Saves the rx_peak_identification outputs
+  initial begin
+    @(negedge clk);
+    while(1 == 1) begin
+      @(negedge clk);
+      if (trigger_arm) begin
+        $display("++++++Peak Acquiered++++++"                   );
+        $display("Sample value      -> %1d", $signed(sample_arm));
+        $display("Timestamp         -> %1d", time_arm           );
+        $display("Received sequence -> %1d", received_signal    );
+        $display("++++++++++++++++++++++++++"                   );
+      end   
+    end
   end
 
 

@@ -65,7 +65,9 @@ module rx_correlator(
   output wire signed [40:0] ocorrelation_seq_12,
   output wire signed [40:0] ocorrelation_seq_13,
   output wire signed [40:0] ocorrelation_seq_14,
-  output wire signed [40:0] ocorrelation_seq_15
+  output wire signed [40:0] ocorrelation_seq_15, 
+
+  output reg                onew_result_trigger
   );
 
   wire signed [16:0] wresult      [19:0];
@@ -374,6 +376,24 @@ module rx_correlator(
   assign ocorrelation_seq_13 = rcorrelation_result[13];
   assign ocorrelation_seq_14 = rcorrelation_result[14];
   assign ocorrelation_seq_15 = rcorrelation_result[15];
+
+
+  //trigger activated when new result of the correlation is available
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      onew_result_trigger <= 0; 
+    end else begin
+      if (!erx_en) begin
+        onew_result_trigger <= 0;
+      end else begin
+        if (rnew_sample_trig_delay1) begin
+          onew_result_trigger <= 1;
+        end else begin
+          onew_result_trigger <= 0;
+        end
+      end
+    end
+  end
 
 endmodule
 
