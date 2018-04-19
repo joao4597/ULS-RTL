@@ -60,8 +60,8 @@ module rx_correlation_unit #(
   //based on the sample order it decides what to do with the samples
   always @(*) begin
     if (rnormalized_order > 1 && rnormalized_order < 5) begin
-      rsum_0 = oresult_0 - isample         ;
-      rsum_1 = oresult_1 - isample_plus_ten;
+      rsum_0 = - oresult_0 - isample         ;
+      rsum_1 = - oresult_1 - isample_plus_ten;
     end else begin
       if (rnormalized_order > 6) begin
         rsum_0 = oresult_0 + isample         ;
@@ -76,7 +76,11 @@ module rx_correlation_unit #(
   //Keeps track of the samples order relative to its position
   always @(posedge crx_clk) begin
     if (rrx_rst == 1) begin
-      rnormalized_order <= 0 + SAMPLE_POSITION;
+      if (SAMPLE_POSITION != 0) begin
+        rnormalized_order <= 10 - SAMPLE_POSITION;
+      end else begin
+        rnormalized_order <= SAMPLE_POSITION;
+      end 
     end else begin
       if (inew_sample_trig) begin
         if (rnormalized_order >= 9) begin

@@ -62,7 +62,7 @@ module rx_top_level(
 
 
   //Inputs of rx_band_pass_filter
-  reg rerx_en;
+  reg rrx_rst_1;
   //Outputs of rx_band_pass_filter
   wire signed [15:0] wfiltered_sample_band_pass;
   wire               wband_pass_sample_ready   ;
@@ -95,12 +95,12 @@ module rx_top_level(
   //Delay the enqable signal one clock
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rerx_en <= 0;
+      rrx_rst_1 <= 1;
     end else begin
       if (!erx_en) begin
-        rerx_en <= 0;
+        rrx_rst_1 <= 1;
       end else begin
-        rerx_en <= erx_en;
+        rrx_rst_1 <= rrx_rst;
       end
     end
   end
@@ -108,8 +108,8 @@ module rx_top_level(
   //Band pass filter
   rx_band_pass_filter rx_band_pass_filter_0(
   .crx_clk         (crx_clk                   ),  //clock signal
-  .rrx_rst         (rrx_rst                   ),  //reset signal
-  .erx_en          (rerx_en                   ),  //enable signal
+  .rrx_rst         (rrx_rst_1                 ),  //reset signal
+  .erx_en          (erx_en                    ),  //enable signal
   .idata_in_RAM    (wfiltered_sample_low_pass ),  //new sample to be stored
 
   .osample_ready   (wband_pass_sample_ready   ),
@@ -120,19 +120,6 @@ module rx_top_level(
 
 
   ////////////////////////////////////////////////SAMPLES_ORGANIZER/////////////////////////////////////////////////////
-  //delays the new sample trigger signal
-  always @(posedge crx_clk) begin
-    if (rrx_rst) begin
-      new_sample_trig_delay_1 <= 0;
-    end else begin
-      if (!erx_en) begin
-        new_sample_trig_delay_1 <= 0;
-      end else begin
-        new_sample_trig_delay_1 <= wband_pass_sample_ready;
-      end
-    end
-  end
-
   //stores incoming samples and outputs 20 of the stored samples every clock
   //in parallel
   rx_samples_organizer rx_samples_organizer_0(
@@ -169,6 +156,19 @@ module rx_top_level(
 
 
   ////////////////////////////////////////////////////CORRELATOR////////////////////////////////////////////////////////
+  //delays the new sample trigger signal
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      new_sample_trig_delay_1 <= 0;
+    end else begin
+      if (!erx_en) begin
+        new_sample_trig_delay_1 <= 0;
+      end else begin
+        new_sample_trig_delay_1 <= wband_pass_sample_ready;
+      end
+    end
+  end
+
   //Correlation of the received samples with all possible transmitted signals
   rx_correlator rx_correlator_0(
     .crx_clk           (crx_clk                ),  //clock signal

@@ -158,5 +158,6 @@ Compiling module xil_defaultlib.rx_sequences_bits_feader
 Compiling module xil_defaultlib.rx_correlator
 Compiling module xil_defaultlib.rx_top_level
 Compiling module xil_defaultlib.rx_top_level_Testbench
+WARNING: [XSIM 43-3373] "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_top_level_Testbench.v" Line 156. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot rx_top_level_Testbench_behav

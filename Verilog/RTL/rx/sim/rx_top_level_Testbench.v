@@ -62,7 +62,7 @@ module rx_top_level_Testbench();
   );
 
 
-  integer i, j                 ;
+  integer i, j, w              ;
   integer samples_file         ;
   integer low_pass_result      ; 
   integer band_pass_result     ;
@@ -96,22 +96,25 @@ module rx_top_level_Testbench();
     enable <= 1'b1;
 
 
-    for (i = 1; $fscanf(samples_file, "%d\n", sample_aux) > 0;) begin
+    for (i = 1, w = 1; $fscanf(samples_file, "%d\n", sample_aux) > 0;) begin
 
       sample_in <= sample_aux;
       
 
       //SAVE THE LOW_PASS RESULT
       @(negedge clk);
-      $fwrite(low_pass_result, "%d\n", $signed(rx_top_level_0.wfiltered_sample_low_pass));
+      $fwrite(low_pass_result, "%1d\n", $signed(rx_top_level_0.wfiltered_sample_low_pass));
+      $fflush(low_pass_result);
 
 
       //SAVE THE BAND_PASS RESULT
       @(negedge clk);
       if (two_bit_counter == 0) begin
-        $fwrite(band_pass_result, "%d -> %d\n", i, $signed(rx_top_level_0.wfiltered_sample_band_pass));
+        $fwrite(band_pass_result, "%1d\n", $signed(rx_top_level_0.wfiltered_sample_band_pass));
+        $fflush(band_pass_result);
         two_bit_counter = two_bit_counter + 1;
         i = i + 1;
+        w = w + 1;
       end else begin
         two_bit_counter = two_bit_counter + 1;
       end
@@ -122,6 +125,49 @@ module rx_top_level_Testbench();
       end
     end
 
+
+    $finish;
+  end
+
+  
+  //SAVES THE RESULT OF RX_CORRELATOR
+  integer correlator_result;
+  integer correlator_result_mat;
+  integer i_c;
+  integer sample_aux_c;
+  integer aux_c;
+  initial begin
+
+    i_c = 0;
+    sample_aux_c = 0;
+
+    //open file to save correlation result
+    correlator_result     = $fopen("..\\..\\..\\..\\sim_files\\correlator_result.csv", "w");
+    correlator_result_mat = $fopen("..\\..\\..\\..\\sim_files\\CORRELATOR_RESULT_MAT_1.csv", "r");;
+
+    while (i_c > -1) begin
+      @(negedge clk);
+      if (rx_top_level_0.new_sample_trig_delay_1) begin
+        @(negedge clk);
+        @(negedge clk);
+        $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result_10));
+        $fflush(correlator_result);
+
+        $fscanf(correlator_result_mat, "%d\n", sample_aux_c);
+        aux_c = $signed(rx_top_level_0.wcorrelation_result_10);
+        
+        if (sample_aux_c == aux_c) begin
+          if (i_c % 200 == 0) begin
+            $display("%1d samples correct\n", i_c);
+          end
+        end else begin
+          $display("%1d -> erro %1d -> %1d\n", i_c, sample_aux_c, aux_c);
+          $finish;
+        end
+
+        i_c = i_c + 1;
+      end
+    end
 
     $finish;
   end

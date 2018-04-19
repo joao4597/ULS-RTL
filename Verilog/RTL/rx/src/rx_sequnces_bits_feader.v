@@ -45,18 +45,18 @@ module rx_sequences_bits_feader(
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rread_address <= 0;
-      flag <= 0;
+      flag   <= 0;
     end else begin
       if (!erx_en) begin
         rread_address <= 0;
-        flag <= 0;
+        flag   <= 0;
       end else begin
         if(inew_sample_trig) begin
           rread_address <= 0;
           flag          <= 0;
         end else begin
-          flag <= flag + 1;
-          if (rread_address < 254 && flag) begin
+          flag   <= flag + 1;
+          if ((rread_address < 254) && flag) begin
             rread_address <= rread_address + 1;
           end
         end

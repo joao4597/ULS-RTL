@@ -79,6 +79,8 @@ module rx_correlator(
   reg rbit_ready_one_clk_delay;
   reg rnew_sample_trig_delay1;
   reg rnew_sample_trig_delay2;
+  reg rnew_sample_trig_delay3;
+  reg rnew_sample_trig_delay4;  
 
   rx_correlation_unit #(
     .SAMPLE_POSITION(0)
@@ -309,13 +311,19 @@ module rx_correlator(
     if (rrx_rst) begin
       rnew_sample_trig_delay1 <= 0;
       rnew_sample_trig_delay2 <= 0;
+      rnew_sample_trig_delay3 <= 0;
+      rnew_sample_trig_delay4 <= 0;
     end else begin
       if (!erx_en) begin
         rnew_sample_trig_delay1 <= 0;
         rnew_sample_trig_delay2 <= 0;
+        rnew_sample_trig_delay3 <= 0;
+        rnew_sample_trig_delay4 <= 0;
       end else begin
         rnew_sample_trig_delay1 <= inew_sample_trig;
         rnew_sample_trig_delay2 <= rnew_sample_trig_delay1;
+        rnew_sample_trig_delay3 <= rnew_sample_trig_delay2;
+        rnew_sample_trig_delay4 <= rnew_sample_trig_delay3;
       end
     end
   end
@@ -345,7 +353,7 @@ module rx_correlator(
               end
             end
           end
-        end
+        end 
       end
     end
   endgenerate

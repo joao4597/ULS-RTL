@@ -143,6 +143,7 @@ module rx_low_pass_filter(
 
 
   assign ofiltered_sample = rfiltered_sample_final[25:10];
+  //assign ofiltered_sample = rfiltered_sample_final[15:0];
 
 
 endmodule

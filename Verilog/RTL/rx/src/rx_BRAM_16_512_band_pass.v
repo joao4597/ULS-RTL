@@ -546,7 +546,14 @@ module rx_BRAM_16_512_band_pass (clk, rrx_rst, ena,enb,wea,addra,addrb,dia,dob);
     ram[509] = 0;
     ram[510] = 1;
     ram[511] = 0;
-
+/*
+    //USED ONLY FOR DEBBUGING PURPOSES
+    for (i = 1; i < 512; i = i + 1) begin
+      ram[i] = 0;
+    end
+    ram[511] = 1;
+    //USED ONLY FOR DEBBUGING PURPOSES
+*/
     dob = ram[511];
   end
 

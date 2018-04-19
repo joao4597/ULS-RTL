@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="rx_top_level_Testbench_behav.wdb" id="1">
+      <db_ref path="rx_top_level_Testbench_behav1.wdb" id="1">
          <top_modules>
             <top_module name="glbl" />
             <top_module name="rx_top_level_Testbench" />
@@ -11,9 +11,9 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="35700000003fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomStartTime time="412101194166665fs"></ZoomStartTime>
+      <ZoomEndTime time="412101705166667fs"></ZoomEndTime>
+      <Cursor1Time time="412101620000000fs"></Cursor1Time>
    </zoom_setting>
    <WVObjectSize size="0" />
 </wave_config>

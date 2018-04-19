@@ -1,0 +1,7 @@
+Vivado Simulator 2015.4
+Time resolution is 1 ps
+0 samples correct
+
+12 -> erro -1 -> 0
+
+$finish called at time : 246 us : File "C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/sim/rx_top_level_Testbench.v" Line 165
