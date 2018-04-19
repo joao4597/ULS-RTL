@@ -29,29 +29,16 @@
  */
 
 module rx_top_level(
-  input  wire               crx_clk               ,  //clock signal
-  input  wire               rrx_rst               ,  //reset signal
-  input  wire               erx_en                ,  //enable signal
+  input  wire               crx_clk       ,  //clock signal
+  input  wire               rrx_rst       ,  //reset signal
+  input  wire               erx_en        ,  //enable signal
+ 
+  input  wire signed [15:0] inew_sample   ,  //new sample in
 
-  input  wire signed [15:0] inew_sample           ,  //new sample in
-
-  output wire signed [40:0] wcorrelation_result_0 ,
-  output wire signed [40:0] wcorrelation_result_1 ,
-  output wire signed [40:0] wcorrelation_result_2 ,
-  output wire signed [40:0] wcorrelation_result_3 ,
-  output wire signed [40:0] wcorrelation_result_4 ,
-  output wire signed [40:0] wcorrelation_result_5 ,
-  output wire signed [40:0] wcorrelation_result_6 ,
-  output wire signed [40:0] wcorrelation_result_7 ,
-  output wire signed [40:0] wcorrelation_result_8 ,
-  output wire signed [40:0] wcorrelation_result_9 ,
-  output wire signed [40:0] wcorrelation_result_10,
-  output wire signed [40:0] wcorrelation_result_11,
-  output wire signed [40:0] wcorrelation_result_12,
-  output wire signed [40:0] wcorrelation_result_13,
-  output wire signed [40:0] wcorrelation_result_14,
-  output wire signed [40:0] wcorrelation_result_15
-
+  output wire signed [15:0] o_sample_arm  ,  //Peak Value
+  output wire         [3:0] o_received_seq,
+  output wire        [15:0] o_time_arm    ,  //Timestamp
+  output wire               o_trigger_arm    //Trigger
   );
 
   reg new_sample_trig_delay_1;
@@ -76,6 +63,9 @@ module rx_top_level(
 
   //Inputs of rx_correaltor
   reg new_sample_trig_delay_4;
+  //Outputs of rx_correlator
+  wire signed [15:0] wcorrelation_result [15:0];
+
 
   /////////////////////////////////////////////////LOW_PASS_FILTER//////////////////////////////////////////////////////
   //Low pass filter
@@ -201,28 +191,60 @@ module rx_top_level(
 
 
     //result of the correlation for the 16 possible pseudo-random binary sequences
-    .ocorrelation_seq_0 (wcorrelation_result_0 ),
-    .ocorrelation_seq_1 (wcorrelation_result_1 ),
-    .ocorrelation_seq_2 (wcorrelation_result_2 ),
-    .ocorrelation_seq_3 (wcorrelation_result_3 ),
-    .ocorrelation_seq_4 (wcorrelation_result_4 ),
-    .ocorrelation_seq_5 (wcorrelation_result_5 ),
-    .ocorrelation_seq_6 (wcorrelation_result_6 ),
-    .ocorrelation_seq_7 (wcorrelation_result_7 ),
-    .ocorrelation_seq_8 (wcorrelation_result_8 ),
-    .ocorrelation_seq_9 (wcorrelation_result_9 ),
-    .ocorrelation_seq_10(wcorrelation_result_10),
-    .ocorrelation_seq_11(wcorrelation_result_11),
-    .ocorrelation_seq_12(wcorrelation_result_12),
-    .ocorrelation_seq_13(wcorrelation_result_13),
-    .ocorrelation_seq_14(wcorrelation_result_14),
-    .ocorrelation_seq_15(wcorrelation_result_15)
+    .ocorrelation_seq_0 (wcorrelation_result[0] ),
+    .ocorrelation_seq_1 (wcorrelation_result[1] ),
+    .ocorrelation_seq_2 (wcorrelation_result[2] ),
+    .ocorrelation_seq_3 (wcorrelation_result[3] ),
+    .ocorrelation_seq_4 (wcorrelation_result[4] ),
+    .ocorrelation_seq_5 (wcorrelation_result[5] ),
+    .ocorrelation_seq_6 (wcorrelation_result[6] ),
+    .ocorrelation_seq_7 (wcorrelation_result[7] ),
+    .ocorrelation_seq_8 (wcorrelation_result[8] ),
+    .ocorrelation_seq_9 (wcorrelation_result[9] ),
+    .ocorrelation_seq_10(wcorrelation_result[10]),
+    .ocorrelation_seq_11(wcorrelation_result[11]),
+    .ocorrelation_seq_12(wcorrelation_result[12]),
+    .ocorrelation_seq_13(wcorrelation_result[13]),
+    .ocorrelation_seq_14(wcorrelation_result[14]),
+    .ocorrelation_seq_15(wcorrelation_result[15])
   );
 
 
 
   ///////////////////////////////////////////////////PEAK_FINDER////////////////////////////////////////////////////////
+  rx_peak_identification rx_peak_identification_0(
+  .crx_clk               (crx_clk                ),  //clock signal
+  .rrx_rst               (rrx_rst                ),  //reset signal
+  .erx_en                (erx_en                 ),  //enable signal
 
+  .icurrent_time         (23                     ), 
+   
+  .isample_filtered      (wparallel_samples[0]   ),  //output of band_pass filter
+  
+  .inew_samle_trigger    (new_sample_trig_delay_1),
+
+  .isample_correlation_0 (wcorrelation_result[0] ),
+  .isample_correlation_1 (wcorrelation_result[1] ),
+  .isample_correlation_2 (wcorrelation_result[2] ),
+  .isample_correlation_3 (wcorrelation_result[3] ),
+  .isample_correlation_4 (wcorrelation_result[4] ),
+  .isample_correlation_5 (wcorrelation_result[5] ),
+  .isample_correlation_6 (wcorrelation_result[6] ),
+  .isample_correlation_7 (wcorrelation_result[7] ),
+  .isample_correlation_8 (wcorrelation_result[8] ),
+  .isample_correlation_9 (wcorrelation_result[9] ),
+  .isample_correlation_10(wcorrelation_result[10]),
+  .isample_correlation_11(wcorrelation_result[11]),
+  .isample_correlation_12(wcorrelation_result[12]),
+  .isample_correlation_13(wcorrelation_result[13]),
+  .isample_correlation_14(wcorrelation_result[14]),
+  .isample_correlation_15(wcorrelation_result[15]),
+
+  .o_sample_arm          (o_sample_arm           ),  //Peak Value
+  .o_received_seq        (o_received_seq         ),
+  .o_time_arm            (o_time_arm             ),  //Timestamp
+  .o_trigger_arm         (o_trigger_arm          )   //Trigger
+  );
 endmodule
 
 

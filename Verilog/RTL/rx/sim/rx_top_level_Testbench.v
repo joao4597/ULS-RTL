@@ -80,9 +80,9 @@ module rx_top_level_Testbench();
     two_bit_counter <= 0;
 
     //open file to save modulation result
-    samples_file     = $fopen("..\\..\\..\\..\\sim_files\\record.csv", "r");
-    low_pass_result  = $fopen("..\\..\\..\\..\\sim_files\\low_pass_result.csv" , "w");
-    band_pass_result = $fopen("..\\..\\..\\..\\sim_files\\band_pass_result.csv", "w");
+    samples_file     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\record_11_12_13_14.csv", "r");
+    low_pass_result  = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\low_pass_result.csv" , "w");
+    band_pass_result = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\band_pass_result.csv", "w");
 
     //reset module
     @(negedge clk);
@@ -142,19 +142,19 @@ module rx_top_level_Testbench();
     sample_aux_c = 0;
 
     //open file to save correlation result
-    correlator_result     = $fopen("..\\..\\..\\..\\sim_files\\correlator_result.csv", "w");
-    correlator_result_mat = $fopen("..\\..\\..\\..\\sim_files\\CORRELATOR_RESULT_MAT_1.csv", "r");;
+    correlator_result     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\correlator_result.csv", "w");
+    correlator_result_mat = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\CORRELATOR_RESULT_MAT_12.csv", "r");;
 
     while (i_c > -1) begin
       @(negedge clk);
       if (rx_top_level_0.new_sample_trig_delay_1) begin
         @(negedge clk);
         @(negedge clk);
-        $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result_10));
+        $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result_3));
         $fflush(correlator_result);
 
         $fscanf(correlator_result_mat, "%d\n", sample_aux_c);
-        aux_c = $signed(rx_top_level_0.wcorrelation_result_10);
+        aux_c = $signed(rx_top_level_0.wcorrelation_result_3);
         
         if (sample_aux_c == aux_c) begin
           if (i_c % 200 == 0) begin
@@ -162,7 +162,7 @@ module rx_top_level_Testbench();
           end
         end else begin
           $display("%1d -> erro %1d -> %1d\n", i_c, sample_aux_c, aux_c);
-          $finish;
+          //$finish;
         end
 
         i_c = i_c + 1;
