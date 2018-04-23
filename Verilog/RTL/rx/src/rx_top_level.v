@@ -53,6 +53,7 @@ module rx_top_level(
   //Outputs of rx_band_pass_filter
   wire signed [15:0] wfiltered_sample_band_pass;
   wire               wband_pass_sample_ready   ;
+  reg  signed [15:0] rfiltered_sample_band_pass;
 
   
   //Inputs of samples organizer
@@ -214,40 +215,54 @@ module rx_top_level(
 
 
   ///////////////////////////////////////////////////PEAK_FINDER////////////////////////////////////////////////////////
-  rx_peak_identification rx_peak_identification_0(
-  .crx_clk               (crx_clk                ),  //clock signal
-  .rrx_rst               (rrx_rst                ),  //reset signal
-  .erx_en                (erx_en                 ),  //enable signal
-
-  .icurrent_time         (23                     ), 
-   
-  .isample_filtered      (wparallel_samples[0]   ),  //output of band_pass filter
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rfiltered_sample_band_pass <= 0;
+    end else begin
+      if (!erx_en) begin
+        rfiltered_sample_band_pass <= 0;
+      end else begin
+        if (wband_pass_sample_ready) begin
+          rfiltered_sample_band_pass <= wfiltered_sample_band_pass;
+        end
+      end
+    end
+  end
   
-  .inew_samle_trigger    (wcorrelator_trigger    ),
+  rx_peak_identification rx_peak_identification_0(
+  .crx_clk               (crx_clk                   ),  //clock signal
+  .rrx_rst               (rrx_rst                   ),  //reset signal
+  .erx_en                (erx_en                    ),  //enable signal
 
-  .isample_correlation_0 (wcorrelation_result[0] ),
-  .isample_correlation_1 (wcorrelation_result[1] ),
-  .isample_correlation_2 (wcorrelation_result[2] ),
-  .isample_correlation_3 (wcorrelation_result[3] ),
-  .isample_correlation_4 (wcorrelation_result[4] ),
-  .isample_correlation_5 (wcorrelation_result[5] ),
-  .isample_correlation_6 (wcorrelation_result[6] ),
-  .isample_correlation_7 (wcorrelation_result[7] ),
-  .isample_correlation_8 (wcorrelation_result[8] ),
-  .isample_correlation_9 (wcorrelation_result[9] ),
-  .isample_correlation_10(wcorrelation_result[10]),
-  .isample_correlation_11(wcorrelation_result[11]),
-  .isample_correlation_12(wcorrelation_result[12]),
-  .isample_correlation_13(wcorrelation_result[13]),
-  .isample_correlation_14(wcorrelation_result[14]),
-  .isample_correlation_15(wcorrelation_result[15]),
+  .icurrent_time         (23                        ), 
+   
+  .isample_filtered      (rfiltered_sample_band_pass),  //output of band_pass filter
+  
+  .inew_samle_trigger    (wcorrelator_trigger       ),
 
-  .o_sample_arm          (o_sample_arm           ),  //Peak Value
-  .o_received_seq        (o_received_seq         ),
-  .o_time_arm            (o_time_arm             ),  //Timestamp
-  .o_trigger_arm         (o_trigger_arm          )   //Trigger
+  .isample_correlation_0 (wcorrelation_result[0]    ),
+  .isample_correlation_1 (wcorrelation_result[1]    ),
+  .isample_correlation_2 (wcorrelation_result[2]    ),
+  .isample_correlation_3 (wcorrelation_result[3]    ),
+  .isample_correlation_4 (wcorrelation_result[4]    ),
+  .isample_correlation_5 (wcorrelation_result[5]    ),
+  .isample_correlation_6 (wcorrelation_result[6]    ),
+  .isample_correlation_7 (wcorrelation_result[7]    ),
+  .isample_correlation_8 (wcorrelation_result[8]    ),
+  .isample_correlation_9 (wcorrelation_result[9]    ),
+  .isample_correlation_10(wcorrelation_result[10]   ),
+  .isample_correlation_11(wcorrelation_result[11]   ),
+  .isample_correlation_12(wcorrelation_result[12]   ),
+  .isample_correlation_13(wcorrelation_result[13]   ),
+  .isample_correlation_14(wcorrelation_result[14]   ),
+  .isample_correlation_15(wcorrelation_result[15]   ),
+
+  .o_sample_arm          (o_sample_arm              ),  //Peak Value
+  .o_received_seq        (o_received_seq            ),
+  .o_time_arm            (o_time_arm                ),  //Timestamp
+  .o_trigger_arm         (o_trigger_arm             )   //Trigger
   );
-
+  
 endmodule
 
 

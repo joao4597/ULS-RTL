@@ -138,7 +138,7 @@ module rx_top_level_Testbench();
 
     while (i_c > -1) begin
       @(negedge clk);
-      if (rx_top_level_0.new_sample_trig_delay_1) begin
+      if (rx_top_level_0.wcorrelator_trigger) begin
         @(negedge clk);
         @(negedge clk);
         $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result[3]));

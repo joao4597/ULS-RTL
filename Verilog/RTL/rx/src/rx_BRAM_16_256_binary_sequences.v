@@ -5,7 +5,7 @@
  * GENERAL DESCRIPTION:
  *
  * -16 bit by 256 line RAM that holds the 16 possible pseudo-random binary sequences
- * -Each column holds of of the possible sequences
+ * -Each column holds one of the possible sequences
  *
  *
  * CONSTRAINTS:

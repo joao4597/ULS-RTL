@@ -75,14 +75,29 @@ module rx_correlator(
   wire        [15:0] wsequences;
   wire               wbit_ready;
 
-  reg signed [40:0] rcorrelation_units_sum    ;
+  reg signed [40:0] rcorrelation_units_sum_0    ;
+  reg signed [40:0] rcorrelation_units_sum_1    ;
+  reg signed [40:0] rcorrelation_units_sum_2    ;
+  reg signed [40:0] rcorrelation_units_sum_3    ;
+  reg signed [40:0] rcorrelation_units_sum_4    ;
+  reg signed [40:0] rcorrelation_units_sum_01   ;
+  reg signed [40:0] rcorrelation_units_sum_23   ;
+  reg signed [40:0] rcorrelation_units_sum_44   ;
+  reg signed [40:0] rcorrelation_units_sum_0123 ;
+  reg signed [40:0] rcorrelation_units_sum_444  ;
+  reg signed [40:0] rcorrelation_units_sum_01234;
+  
   reg signed [40:0] rcorrelation_result [15:0];
 
-  reg rbit_ready_one_clk_delay;
+  reg rbit_ready_one_clk_delay  ;
+  reg rbit_ready_two_clk_delay  ;
+  reg rbit_ready_three_clk_delay;
+  reg rbit_ready_four_clk_delay ;
   reg rnew_sample_trig_delay1;
   reg rnew_sample_trig_delay2;
   reg rnew_sample_trig_delay3;
-  reg rnew_sample_trig_delay4;  
+  reg rnew_sample_trig_delay4;
+  reg rnew_sample_trig_delay5;
 
   rx_correlation_unit #(
     .SAMPLE_POSITION(0)
@@ -271,22 +286,76 @@ module rx_correlator(
     .rrx_rst         (rrx_rst                ),  //reset signal
     .erx_en          (erx_en                 ),  //enable signal
 
-    .inew_sample_trig(rnew_sample_trig_delay2),  //new sample trigger
+    .inew_sample_trig(rnew_sample_trig_delay5),  //new sample trigger
 
     .osequences_bits (wsequences             )   //16 bits corresponding to the 16 binary sequences
   );
 
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rcorrelation_units_sum <= 0;
+      rcorrelation_units_sum_0 <= 0;
+      rcorrelation_units_sum_1 <= 0;
+      rcorrelation_units_sum_2 <= 0;
+      rcorrelation_units_sum_3 <= 0;
+      rcorrelation_units_sum_4 <= 0;
     end else begin
       if (!erx_en) begin
-        rcorrelation_units_sum <= 0;
+        rcorrelation_units_sum_0 <= 0;
+        rcorrelation_units_sum_1 <= 0;
+        rcorrelation_units_sum_2 <= 0;
+        rcorrelation_units_sum_3 <= 0;
+        rcorrelation_units_sum_4 <= 0;
       end else begin
-        rcorrelation_units_sum <= wresult[0]  + wresult[1]  + wresult[2]  + wresult[3]  + wresult[4]  + wresult[5]  +
-                                  wresult[6]  + wresult[7]  + wresult[8]  + wresult[9]  + wresult[10] + wresult[11] +
-                                  wresult[12] + wresult[13] + wresult[14] + wresult[15] + wresult[16] + wresult[17] +
-                                  wresult[18] + wresult[19];
+        rcorrelation_units_sum_0 <= wresult[0]  + wresult[1]  + wresult[2]  + wresult[ 3];
+        rcorrelation_units_sum_1 <= wresult[4]  + wresult[5]  + wresult[6]  + wresult[ 7];
+        rcorrelation_units_sum_2 <= wresult[8]  + wresult[9]  + wresult[10] + wresult[11];
+        rcorrelation_units_sum_3 <= wresult[12] + wresult[13] + wresult[14] + wresult[15];
+        rcorrelation_units_sum_4 <= wresult[16] + wresult[17] + wresult[18] + wresult[19];
+      end
+    end
+  end
+
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rcorrelation_units_sum_01 <= 0;
+      rcorrelation_units_sum_23 <= 0;
+      rcorrelation_units_sum_44 <= 0;
+    end else begin
+      if (!erx_en) begin
+        rcorrelation_units_sum_01 <= 0;
+        rcorrelation_units_sum_23 <= 0;
+        rcorrelation_units_sum_44 <= 0;
+      end else begin
+        rcorrelation_units_sum_01 <= rcorrelation_units_sum_0 + rcorrelation_units_sum_1;
+        rcorrelation_units_sum_23 <= rcorrelation_units_sum_2 + rcorrelation_units_sum_3;
+        rcorrelation_units_sum_44 <= rcorrelation_units_sum_4;
+      end
+    end
+  end
+
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rcorrelation_units_sum_0123 <= 0;
+      rcorrelation_units_sum_444  <= 0;
+    end else begin
+      if (!erx_en) begin
+        rcorrelation_units_sum_0123 <= 0;
+        rcorrelation_units_sum_444  <= 0;
+      end else begin
+        rcorrelation_units_sum_0123 <= rcorrelation_units_sum_01 + rcorrelation_units_sum_23;
+        rcorrelation_units_sum_444  <= rcorrelation_units_sum_44;
+      end
+    end
+  end
+
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rcorrelation_units_sum_01234 <= 0;
+    end else begin
+      if (!erx_en) begin
+        rcorrelation_units_sum_01234 <= 0;
+      end else begin
+        rcorrelation_units_sum_01234 <= rcorrelation_units_sum_0123 + rcorrelation_units_sum_444;
       end
     end
   end
@@ -298,12 +367,21 @@ module rx_correlator(
   //according to the 16 possible pseudo-random binary sequences
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rbit_ready_one_clk_delay <= 0;
+      rbit_ready_one_clk_delay  <= 0;
+      rbit_ready_two_clk_delay  <= 0;
+      rbit_ready_three_clk_delay<= 0;
+      rbit_ready_four_clk_delay <= 0;
     end else begin
       if (!erx_en) begin
-        rbit_ready_one_clk_delay <= 0;
+        rbit_ready_one_clk_delay  <= 0;
+        rbit_ready_two_clk_delay  <= 0;
+        rbit_ready_three_clk_delay<= 0;
+        rbit_ready_four_clk_delay <= 0;
       end else begin
-        rbit_ready_one_clk_delay <= wbit_ready;
+        rbit_ready_one_clk_delay   <= wbit_ready;
+        rbit_ready_two_clk_delay   <= rbit_ready_one_clk_delay;
+        rbit_ready_three_clk_delay <= rbit_ready_two_clk_delay;
+        rbit_ready_four_clk_delay  <= rbit_ready_three_clk_delay;
       end
     end
   end
@@ -315,17 +393,20 @@ module rx_correlator(
       rnew_sample_trig_delay2 <= 0;
       rnew_sample_trig_delay3 <= 0;
       rnew_sample_trig_delay4 <= 0;
+      rnew_sample_trig_delay5 <= 0;
     end else begin
       if (!erx_en) begin
         rnew_sample_trig_delay1 <= 0;
         rnew_sample_trig_delay2 <= 0;
         rnew_sample_trig_delay3 <= 0;
         rnew_sample_trig_delay4 <= 0;
+        rnew_sample_trig_delay5 <= 0;
       end else begin
         rnew_sample_trig_delay1 <= inew_sample_trig;
         rnew_sample_trig_delay2 <= rnew_sample_trig_delay1;
         rnew_sample_trig_delay3 <= rnew_sample_trig_delay2;
         rnew_sample_trig_delay4 <= rnew_sample_trig_delay3;
+        rnew_sample_trig_delay5 <= rnew_sample_trig_delay4;
       end
     end
   end
@@ -343,14 +424,14 @@ module rx_correlator(
           if (!erx_en) begin
             rcorrelation_result[i] <= 0;
           end else begin
-            if (rnew_sample_trig_delay2) begin
+            if (rnew_sample_trig_delay5) begin
               rcorrelation_result[i] <= 0;
             end else begin
-              if (rbit_ready_one_clk_delay) begin
+              if (rbit_ready_four_clk_delay) begin
                 if (wsequences[i])begin
-                  rcorrelation_result[i] <= rcorrelation_result[i] + rcorrelation_units_sum;
+                  rcorrelation_result[i] <= rcorrelation_result[i] + rcorrelation_units_sum_01234;
                 end else begin
-                  rcorrelation_result[i] <= rcorrelation_result[i] - rcorrelation_units_sum;
+                  rcorrelation_result[i] <= rcorrelation_result[i] - rcorrelation_units_sum_01234;
                 end
               end
             end
@@ -386,7 +467,7 @@ module rx_correlator(
       if (!erx_en) begin
         onew_result_trigger <= 0;
       end else begin
-        if (rnew_sample_trig_delay1) begin
+        if (rnew_sample_trig_delay2) begin
           onew_result_trigger <= 1;
         end else begin
           onew_result_trigger <= 0;

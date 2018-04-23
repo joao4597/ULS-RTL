@@ -1,0 +1,4 @@
+ERROR: Exception caught trying to open file C:\Users\joao\Downloads\work\ULS-RTL\Verilog\RTL\rx\vivado_2015_4\vivado_2015_4.runs\synth_3/runme.log
+	Exception name: Error
+	Exception error code: 70
+	Exception message: Permission denied

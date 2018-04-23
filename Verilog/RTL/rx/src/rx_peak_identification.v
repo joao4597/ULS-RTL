@@ -20,7 +20,10 @@
  *
  */
 
-module rx_peak_identification(
+module rx_peak_identification#(
+    parameter WINDOW_SIZE = 20400,
+    parameter THRESHOLD   = 800   
+  )(  
   input  wire               crx_clk               ,  //clock signal
   input  wire               rrx_rst               ,  //reset signal
   input  wire               erx_en                ,  //enable signal
@@ -57,37 +60,61 @@ module rx_peak_identification(
   output reg         [15:0] o_time_arm            ,  //Timestamp
   output reg                o_trigger_arm            //Trigger
   );
-  
-  //Counts the number of clocks after a trigger
-  reg [13:0] rpos_trigger_counter;
+
+
+  reg rsearch_window_active;
+  reg [15:0] rsearch_window_samples_counter;
+
+  reg rsearch_complete;
 
   reg signed [40:0] rhighest_sample [15:0];
   reg        [31:0] rtimestamp      [15:0];
 
   reg [3:0] rcounter_4bit;
-  reg       rstart_comparing_seqs;
 
   wire signed [40:0] wsample_correlation [15:0];
-  
 
-  wire wtrigger_threshold;
 
-  assign wtrigger_threshold = isample_filtered > 100 ? 1 : 0;
-
-  //Counts the number of clocks after a trigger
+  //flag set to opne suring the window search period
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rpos_trigger_counter <= 0;
+      rsearch_window_active <= 0;
     end else begin
       if (!erx_en) begin
-        rpos_trigger_counter <= 0;
+        rsearch_window_active <= 0;
       end else begin
-        if (wtrigger_threshold || (rpos_trigger_counter > 0) && (inew_samle_trigger == 1)) begin
-          rpos_trigger_counter <= rpos_trigger_counter + 1;
+        if (isample_filtered > THRESHOLD) begin
+          rsearch_window_active <= 1;
+        end else begin
+          if (rsearch_window_samples_counter == WINDOW_SIZE) begin
+            rsearch_window_active <= 0;
+          end
         end
       end
     end
   end
+
+
+  //counts the the number of clocks during the window search
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rsearch_window_samples_counter <= 0;
+    end else begin
+      if (!erx_en) begin
+        rsearch_window_samples_counter <= 0;
+      end else begin
+        if ((rsearch_window_active == 1) && (rsearch_window_samples_counter < WINDOW_SIZE)) begin
+          if (inew_samle_trigger) begin
+            rsearch_window_samples_counter <= rsearch_window_samples_counter + 1;
+          end
+        end else begin
+          rsearch_window_samples_counter <= 0;
+        end
+      end
+    end
+  end
+
+  
 
   
   //Compare incoming sample from correlation with the one alredy stored
@@ -97,19 +124,18 @@ module rx_peak_identification(
       always @(posedge crx_clk) begin
         if (rrx_rst) begin
           rhighest_sample[i] <= 0;
-          rtimestamp[i] <= 0;
+          rtimestamp[i]      <= 0;
         end else begin
           if (!erx_en) begin
             rhighest_sample[i] <= 0;
-            rtimestamp[i] <= 0;
+            rtimestamp[i]      <= 0;
           end else begin
-            if (wtrigger_threshold && rpos_trigger_counter == 0) begin
+            if (rcounter_4bit == 15) begin
               rhighest_sample[i] <= 0;
-              rtimestamp[i] <= 0;
+              rtimestamp[i]      <= 0;
             end else begin
               if (inew_samle_trigger) begin
                 if (rhighest_sample[i] < wsample_correlation[i]) begin
-                  //Replace sample by new highest sample
                   rhighest_sample[i] <= wsample_correlation[i];
                   rtimestamp[i]      <= icurrent_time;
                 end
@@ -145,15 +171,15 @@ module rx_peak_identification(
   //Signal to start comparing the highest values of the 16 correlations
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
-      rstart_comparing_seqs <= 0;
+      rsearch_complete <= 0;
     end else begin
       if (!erx_en) begin
-        rstart_comparing_seqs <= 0;
+        rsearch_complete <= 0;
       end else begin
-        if (rpos_trigger_counter > 16368) begin
-          rstart_comparing_seqs  <= 1;
+        if (rsearch_window_samples_counter == WINDOW_SIZE) begin
+          rsearch_complete  <= 1;
         end else begin
-          rstart_comparing_seqs <= 0;
+          rsearch_complete <= 0;
         end
       end
     end
@@ -168,7 +194,7 @@ module rx_peak_identification(
       if (!erx_en) begin
         rcounter_4bit <= 0;
       end else begin
-        if (rstart_comparing_seqs) begin
+        if (rsearch_complete || (rcounter_4bit > 0)) begin
           rcounter_4bit <= rcounter_4bit + 1;
         end else begin
           rcounter_4bit <= 0;
@@ -190,10 +216,10 @@ module rx_peak_identification(
         o_time_arm     <= 0;
         o_received_seq <= 0;
       end else begin
-        if (rstart_comparing_seqs) begin
+        if (rsearch_complete || (rcounter_4bit > 0)) begin
           if (rhighest_sample[rcounter_4bit] > o_sample_arm) begin
             o_sample_arm   <= rhighest_sample[rcounter_4bit];
-            o_time_arm     <= rhighest_sample[rcounter_4bit];
+            o_time_arm     <= rtimestamp[rcounter_4bit]     ;
             o_received_seq <= rcounter_4bit                 ;
           end
         end
@@ -212,8 +238,6 @@ module rx_peak_identification(
       end else begin
         if (rcounter_4bit == 15) begin
           o_trigger_arm  <= 1;
-        end else begin
-          o_trigger_arm  <= 0;
         end
       end
     end

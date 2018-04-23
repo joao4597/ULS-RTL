@@ -83,7 +83,7 @@ module rx_correlation_unit #(
       end 
     end else begin
       if (inew_sample_trig) begin
-        if (rnormalized_order >= 9) begin
+        if (rnormalized_order == 9) begin
           rnormalized_order <= 0;
         end else begin
           rnormalized_order <= rnormalized_order + 1;
