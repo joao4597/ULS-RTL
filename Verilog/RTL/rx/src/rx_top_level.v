@@ -29,15 +29,17 @@
  */
 
 module rx_top_level(
-  input  wire               crx_clk       ,  //clock signal
-  input  wire               rrx_rst       ,  //reset signal
-  input  wire               erx_en        ,  //enable signal
- 
-  input  wire signed [15:0] inew_sample   ,  //new sample in
+  input  wire               crx_clk             ,  //clock signal
+  input  wire               rrx_rst             ,  //reset signal
+  input  wire               erx_en              ,  //enable signal
 
-  output wire signed [40:0] o_sample_arm  ,  //Peak Value
-  output wire         [3:0] o_received_seq,
-  output wire        [15:0] o_time_arm    ,  //Timestamp
+  input wire                iresult_acquired_arm,  //result read by arm
+ 
+  input  wire signed [15:0] inew_sample         ,  //new sample in
+
+  output wire signed [40:0] o_sample_arm        ,  //Peak Value
+  output wire         [3:0] o_received_seq      ,
+  output wire        [15:0] o_time_arm          ,  //Timestamp
   output wire               o_trigger_arm    //Trigger
   );
 
@@ -50,6 +52,7 @@ module rx_top_level(
 
   //Inputs of rx_band_pass_filter
   reg rrx_rst_1;
+  reg rrx_rst_2;
   //Outputs of rx_band_pass_filter
   wire signed [15:0] wfiltered_sample_band_pass;
   wire               wband_pass_sample_ready   ;
@@ -88,11 +91,14 @@ module rx_top_level(
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rrx_rst_1 <= 1;
+      rrx_rst_2 <= 1;
     end else begin
       if (!erx_en) begin
         rrx_rst_1 <= 1;
+        rrx_rst_2 <= 1;
       end else begin
-        rrx_rst_1 <= rrx_rst;
+        rrx_rst_1 <= rrx_rst  ;
+        rrx_rst_2 <= rrx_rst_1;
       end
     end
   end
@@ -100,7 +106,7 @@ module rx_top_level(
   //Band pass filter
   rx_band_pass_filter rx_band_pass_filter_0(
   .crx_clk         (crx_clk                   ),  //clock signal
-  .rrx_rst         (rrx_rst_1                 ),  //reset signal
+  .rrx_rst         (rrx_rst_2                 ),  //reset signal
   .erx_en          (erx_en                    ),  //enable signal
   .idata_in_RAM    (wfiltered_sample_low_pass ),  //new sample to be stored
 
@@ -233,6 +239,8 @@ module rx_top_level(
   .crx_clk               (crx_clk                   ),  //clock signal
   .rrx_rst               (rrx_rst                   ),  //reset signal
   .erx_en                (erx_en                    ),  //enable signal
+
+  .iresult_acquired      (iresult_acquired_arm      ),
 
   .icurrent_time         (23                        ), 
    

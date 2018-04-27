@@ -13,9 +13,9 @@ Command: synth_design -top rx_top_level -part xc7z010clg400-1 -fanout_limit 400 
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
-INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -113 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -114 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 292.551 ; gain = 119.832
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 292.141 ; gain = 119.555
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'rx_top_level' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:31]
 INFO: [Synth 8-638] synthesizing module 'rx_low_pass_filter' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_low_pass_filter.v:23]
@@ -88,7 +88,7 @@ INFO: [Synth 8-638] synthesizing module 'rx_peak_identification' [C:/Users/joao/
 INFO: [Synth 8-256] done synthesizing module 'rx_peak_identification' (14#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_peak_identification.v:23]
 INFO: [Synth 8-256] done synthesizing module 'rx_top_level' (15#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:31]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 379.641 ; gain = 206.922
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 380.301 ; gain = 207.715
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -98,7 +98,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 379.641 ; gain = 206.922
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 380.301 ; gain = 207.715
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -112,22 +112,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 694.910 ; gain = 3.063
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.117 . Memory (MB): peak = 695.531 ; gain = 3.902
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "ram_reg[127]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ram_reg[126]" won't be mapped to RAM because it is too sparse
@@ -233,7 +233,7 @@ INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instan
 INFO: [Synth 8-5544] ROM "o_trigger_arm" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "rhighest_sample" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:32 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -241,8 +241,8 @@ Report RTL Partitions:
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
 |1     |rx_top_level__GB0 |           1|     21923|
-|2     |rx_top_level__GB1 |           1|      9383|
-|3     |rx_top_level__GB2 |           1|     23398|
+|2     |rx_top_level__GB1 |           1|      9443|
+|3     |rx_top_level__GB2 |           1|     23458|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -264,6 +264,7 @@ Detailed RTL Component Info :
 	               70 Bit    Registers := 2     
 	               41 Bit    Registers := 28    
 	               32 Bit    Registers := 16    
+	               26 Bit    Registers := 2     
 	               17 Bit    Registers := 20    
 	               16 Bit    Registers := 667   
 	                9 Bit    Registers := 43    
@@ -277,6 +278,7 @@ Detailed RTL Component Info :
 	               4K Bit         RAMs := 1     
 	               2K Bit         RAMs := 1     
 +---Muxes : 
+	   2 Input     26 Bit        Muxes := 2     
 	   2 Input     17 Bit        Muxes := 40    
 	   2 Input     16 Bit        Muxes := 2     
 	   2 Input      9 Bit        Muxes := 60    
@@ -817,8 +819,10 @@ Detailed RTL Component Info :
 	   2 Input      7 Bit       Adders := 3     
 +---Registers : 
 	               70 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
 +---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 5     
 Module rx_BRAM_16_512_band_pass 
@@ -841,9 +845,11 @@ Detailed RTL Component Info :
 	   2 Input      9 Bit       Adders := 3     
 +---Registers : 
 	               70 Bit    Registers := 1     
+	               26 Bit    Registers := 1     
 	                9 Bit    Registers := 3     
 	                1 Bit    Registers := 1     
 +---Muxes : 
+	   2 Input     26 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
@@ -858,30 +864,30 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:32 . Memory (MB): peak = 694.910 ; gain = 522.191
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
-DSP Report: Generating DSP rx_low_pass_filter_0/rfiltered_sample_final1, operation Mode is: A*B.
-DSP Report: operator rx_low_pass_filter_0/rfiltered_sample_final1 is absorbed into DSP rx_low_pass_filter_0/rfiltered_sample_final1.
-DSP Report: Generating DSP rx_low_pass_filter_0/rfiltered_sample_acum1, operation Mode is: A*B.
-DSP Report: operator rx_low_pass_filter_0/rfiltered_sample_acum1 is absorbed into DSP rx_low_pass_filter_0/rfiltered_sample_acum1.
-DSP Report: Generating DSP rx_band_pass_filter_0/rfiltered_sample_final1, operation Mode is: A*B.
-DSP Report: operator rx_band_pass_filter_0/rfiltered_sample_final1 is absorbed into DSP rx_band_pass_filter_0/rfiltered_sample_final1.
-DSP Report: Generating DSP rx_band_pass_filter_0/rfiltered_sample_acum1, operation Mode is: A*B.
-DSP Report: operator rx_band_pass_filter_0/rfiltered_sample_acum1 is absorbed into DSP rx_band_pass_filter_0/rfiltered_sample_acum1.
+DSP Report: Generating DSP rx_low_pass_filter_0/rmulti_result_reg, operation Mode is: ((((InmodeCtrl[2]:1=>D) or (InmodeCtrl[2]:0=>0))+((InmodeCtrl[1]:1=>0) or (InmodeCtrl[1]:0=>A)))*B)'.
+DSP Report: register rx_low_pass_filter_0/rmulti_result_reg is absorbed into DSP rx_low_pass_filter_0/rmulti_result_reg.
+DSP Report: operator rx_low_pass_filter_0/rmulti_result0 is absorbed into DSP rx_low_pass_filter_0/rmulti_result_reg.
+DSP Report: operator rx_low_pass_filter_0/rmulti_result0 is absorbed into DSP rx_low_pass_filter_0/rmulti_result_reg.
+DSP Report: Generating DSP rx_band_pass_filter_0/rmulti_result_reg, operation Mode is: ((((InmodeCtrl[2]:1=>D) or (InmodeCtrl[2]:0=>0))+((InmodeCtrl[1]:1=>0) or (InmodeCtrl[1]:0=>A)))*B)'.
+DSP Report: register rx_band_pass_filter_0/rmulti_result_reg is absorbed into DSP rx_band_pass_filter_0/rmulti_result_reg.
+DSP Report: operator rx_band_pass_filter_0/rmulti_result0 is absorbed into DSP rx_band_pass_filter_0/rmulti_result_reg.
+DSP Report: operator rx_band_pass_filter_0/rmulti_result0 is absorbed into DSP rx_band_pass_filter_0/rmulti_result_reg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:40 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished Parallel Reinference  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 695.531 ; gain = 522.945
 
 Report RTL Partitions: 
 +------+------------------+------------+----------+
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
 |1     |rx_top_level__GB0 |           1|     20448|
-|2     |rx_top_level__GB1 |           1|     11215|
-|3     |rx_top_level__GB2 |           1|     23434|
+|2     |rx_top_level__GB1 |           1|     11220|
+|3     |rx_top_level__GB2 |           1|     23439|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -925,14 +931,12 @@ Distributed RAM:
 
 Note: The table above shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once. "Hierarchical Name" reflects the Distributed RAM name as it appears in the hierarchical module and only part of it is displayed.
 DSP:
-+--------------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name         | DSP Mapping | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+--------------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|rx_low_pass_filter  | A*B         | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|rx_low_pass_filter  | A*B         | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|rx_band_pass_filter | A*B         | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-|rx_band_pass_filter | A*B         | No           | 16     | 16     | 48     | 25     | 32     | 0    | 0    | 1    | 1    | 1     | 0    | 0    | 
-+--------------------+-------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------------+------------------------------------------------------------------------------------------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping                                                                                          | Neg Edge Clk | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+------------------------------------------------------------------------------------------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|rx_top_level__GB1 | ((((InmodeCtrl[2]:1=>D) or (InmodeCtrl[2]:0=>0))+((InmodeCtrl[1]:1=>0) or (InmodeCtrl[1]:0=>A)))*B)' | No           | 16     | 16     | 48     | 16     | 26     | 0    | 0    | 1    | 0    | 0     | 1    | 0    | 
+|rx_top_level__GB2 | ((((InmodeCtrl[2]:1=>D) or (InmodeCtrl[2]:0=>0))+((InmodeCtrl[1]:1=>0) or (InmodeCtrl[1]:0=>A)))*B)' | No           | 16     | 16     | 48     | 16     | 26     | 0    | 0    | 1    | 0    | 0     | 1    | 0    | 
++------------------+------------------------------------------------------------------------------------------------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -1144,17 +1148,17 @@ WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][6] ) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 695.531 ; gain = 522.945
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 694.910 ; gain = 522.191
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 695.531 ; gain = 522.945
 
 Report RTL Partitions: 
 +------+------------------+------------+----------+
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
 |1     |rx_top_level__GB0 |           1|     13331|
-|2     |rx_top_level__GB1 |           1|      4960|
-|3     |rx_top_level__GB2 |           1|      7262|
+|2     |rx_top_level__GB1 |           1|      4958|
+|3     |rx_top_level__GB2 |           1|      7260|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Timing Optimization
@@ -1163,14 +1167,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:05 ; elapsed = 00:01:14 . Memory (MB): peak = 745.879 ; gain = 573.160
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:14 . Memory (MB): peak = 742.234 ; gain = 569.648
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5584] The signal rx_low_pass_filter_0/rx_BRAM_16_128_0/ram_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal rx_low_pass_filter_0/rx_BRAM_16_128_0/ram_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal rx_band_pass_filter_0/rx_BRAM_16_512_0/ram_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal rx_band_pass_filter_0/rx_BRAM_16_512_0/ram_reg is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:17 . Memory (MB): peak = 766.254 ; gain = 593.535
+Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:17 . Memory (MB): peak = 756.082 ; gain = 583.496
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1178,8 +1178,8 @@ Report RTL Partitions:
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
 |1     |rx_top_level__GB0 |           1|     13331|
-|2     |rx_top_level__GB1 |           1|      4960|
-|3     |rx_top_level__GB2 |           1|      7643|
+|2     |rx_top_level__GB1 |           1|      4958|
+|3     |rx_top_level__GB2 |           1|      7260|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -1205,17 +1205,19 @@ INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_17/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_18/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_19/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_low_pass_filter_0/rx_BRAM_16_128_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_band_pass_filter_0/rx_BRAM_16_512_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:14 ; elapsed = 00:01:22 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:14 ; elapsed = 00:01:22 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 784.664 ; gain = 612.078
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:14 ; elapsed = 00:01:22 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1232,7 +1234,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:15 ; elapsed = 00:01:23 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished IO Insertion : Time (s): cpu = 00:01:16 ; elapsed = 00:01:23 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1245,7 +1247,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:15 ; elapsed = 00:01:23 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:16 ; elapsed = 00:01:23 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1257,25 +1259,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1293,33 +1295,30 @@ Report Cell Usage:
 +------+-----------+------+
 |1     |BUFG       |     1|
 |2     |CARRY4     |   767|
-|3     |DSP48E1_1  |     3|
-|4     |DSP48E1_2  |     1|
-|5     |LUT1       |   154|
-|6     |LUT2       |  2305|
-|7     |LUT3       |   241|
-|8     |LUT4       |  1847|
-|9     |LUT5       |   594|
-|10    |LUT6       |   831|
-|11    |MUXF7      |   170|
-|12    |MUXF8      |    61|
-|13    |RAM64M     |    50|
-|14    |RAM64X1D   |    10|
-|15    |RAMB18E1   |     1|
-|16    |RAMB18E1_1 |    20|
-|17    |FDRE       |  2808|
-|18    |FDSE       |    17|
-|19    |IBUF       |    19|
-|20    |OBUF       |    62|
+|3     |DSP48E1_1  |     2|
+|4     |LUT1       |   154|
+|5     |LUT2       |  2305|
+|6     |LUT3       |   224|
+|7     |LUT4       |  1847|
+|8     |LUT5       |   586|
+|9     |LUT6       |   798|
+|10    |MUXF7      |   154|
+|11    |MUXF8      |    61|
+|12    |RAMB18E1   |     1|
+|13    |RAMB18E1_1 |    22|
+|14    |FDRE       |  2808|
+|15    |FDSE       |    17|
+|16    |IBUF       |    19|
+|17    |OBUF       |    62|
 +------+-----------+------+
 
 Report Instance Areas: 
 +------+----------------------------------------+------------------------------------+------+
 |      |Instance                                |Module                              |Cells |
 +------+----------------------------------------+------------------------------------+------+
-|1     |top                                     |                                    |  9962|
-|2     |  rx_band_pass_filter_0                 |rx_band_pass_filter                 |   502|
-|3     |    rx_BRAM_16_512_0                    |rx_BRAM_16_512                      |   106|
+|1     |top                                     |                                    |  9828|
+|2     |  rx_band_pass_filter_0                 |rx_band_pass_filter                 |   398|
+|3     |    rx_BRAM_16_512_0                    |rx_BRAM_16_512                      |     3|
 |4     |  rx_correlator_0                       |rx_correlator                       |  6295|
 |5     |    rx_correlation_unit_0               |rx_correlation_unit                 |   186|
 |6     |    rx_correlation_unit_1               |rx_correlation_unit__parameterized0 |   155|
@@ -1333,8 +1332,8 @@ Report Instance Areas:
 |14    |    rx_correlation_unit_9               |rx_correlation_unit__parameterized8 |   155|
 |15    |    rx_sequences_bits_feader_0          |rx_sequences_bits_feader            |  1496|
 |16    |      rx_BRAM_16_256_binary_sequences_0 |rx_BRAM_16_256_binary_sequences     |  1473|
-|17    |  rx_low_pass_filter_0                  |rx_low_pass_filter                  |   215|
-|18    |    rx_BRAM_16_128_0                    |rx_BRAM_16_128                      |    31|
+|17    |  rx_low_pass_filter_0                  |rx_low_pass_filter                  |   185|
+|18    |    rx_BRAM_16_128_0                    |rx_BRAM_16_128                      |     3|
 |19    |  rx_peak_identification_0              |rx_peak_identification              |  1232|
 |20    |  rx_samples_organizer_0                |rx_samples_organizer                |  1618|
 |21    |    rx_BRAM_internal_controller_0       |rx_BRAM_internal_controller         |    80|
@@ -1379,24 +1378,22 @@ Report Instance Areas:
 |60    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples     |    25|
 +------+----------------------------------------+------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 787.867 ; gain = 615.148
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 7195 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:59 ; elapsed = 00:01:12 . Memory (MB): peak = 787.867 ; gain = 250.848
-Synthesis Optimization Complete : Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 787.867 ; gain = 615.148
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:13 . Memory (MB): peak = 784.664 ; gain = 247.492
+Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 871 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 811 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 60 instances were transformed.
-  RAM64M => RAM64M (RAMD64E, RAMD64E, RAMD64E, RAMD64E): 50 instances
-  RAM64X1D => RAM64X1D (RAMD64E, RAMD64E): 10 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-290 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+288 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:17 ; elapsed = 00:01:25 . Memory (MB): peak = 787.867 ; gain = 578.242
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 787.867 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 23 22:35:50 2018...
+synth_design: Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 784.664 ; gain = 575.305
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 784.664 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 24 21:46:38 2018...

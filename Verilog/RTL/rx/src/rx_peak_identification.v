@@ -28,6 +28,8 @@ module rx_peak_identification#(
   input  wire               rrx_rst               ,  //reset signal
   input  wire               erx_en                ,  //enable signal
 
+  input  wire               iresult_acquired      ,
+
   input  wire        [31:0] icurrent_time         , 
    
   input  wire signed [15:0] isample_filtered      ,  //output of band_pass filter
@@ -238,6 +240,10 @@ module rx_peak_identification#(
       end else begin
         if (rcounter_4bit == 15) begin
           o_trigger_arm  <= 1;
+        end else begin
+          if (iresult_acquired) begin
+            o_trigger_arm <= 0;
+          end
         end
       end
     end

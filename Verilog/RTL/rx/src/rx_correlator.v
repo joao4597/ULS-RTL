@@ -291,6 +291,9 @@ module rx_correlator(
     .osequences_bits (wsequences             )   //16 bits corresponding to the 16 binary sequences
   );
 
+
+  //The following four always blocks add the results of the 10 correlation_units in four stages
+  //necessary to work at 125MHz
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rcorrelation_units_sum_0 <= 0;

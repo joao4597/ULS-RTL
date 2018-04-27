@@ -61,6 +61,9 @@ module rx_top_level_Testbench();
   integer band_pass_result     ;
   integer aux                  ;
   integer sample_aux           ;
+  integer LOW_PASS_MAT         ;
+  integer aux_2                ;
+  integer aux_3                ;
 
   reg signed [15:0] aux_reg;
   reg [1:0] two_bit_counter;
@@ -74,6 +77,7 @@ module rx_top_level_Testbench();
     samples_file     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\record_11_12_13_14.csv", "r");
     low_pass_result  = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\low_pass_result.csv" , "w");
     band_pass_result = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\band_pass_result.csv", "w");
+    LOW_PASS_MAT     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\LOW_PASS_RESULT_MAT_11_12_13_14.csv", "r");
 
     //reset module
     @(negedge clk);
@@ -87,18 +91,25 @@ module rx_top_level_Testbench();
     enable <= 1'b1;
 
 
-    for (i = 1, w = 1; $fscanf(samples_file, "%d\n", sample_aux) > 0;) begin
+    for (i = 1, w = 1, aux_3 = 1; $fscanf(samples_file, "%d\n", sample_aux) > 0; aux_3 = aux_3 + 1) begin
 
       sample_in <= sample_aux;
       
 
       //SAVE THE LOW_PASS RESULT
       @(negedge clk);
+      @(negedge clk);
       $fwrite(low_pass_result, "%1d\n", $signed(rx_top_level_0.wfiltered_sample_low_pass));
       $fflush(low_pass_result);
+      $fscanf(LOW_PASS_MAT, "%d\n", aux_2);
+      if (aux_2 != $signed(rx_top_level_0.wfiltered_sample_low_pass)) begin
+        $display("%1d -> erro %1d -> %1d\n", aux_3, aux_2, $signed(rx_top_level_0.wfiltered_sample_low_pass));
+        $finish;
+      end
 
 
       //SAVE THE BAND_PASS RESULT
+      @(negedge clk);
       @(negedge clk);
       if (two_bit_counter == 0) begin
         $fwrite(band_pass_result, "%1d\n", $signed(rx_top_level_0.wfiltered_sample_band_pass));
@@ -111,7 +122,7 @@ module rx_top_level_Testbench();
       end
 
       //wait 127 clocks between new samples
-      for (j = 0; j < 126; j = j + 1) begin
+      for (j = 0; j < 124; j = j + 1) begin
         @(negedge clk);
       end
     end

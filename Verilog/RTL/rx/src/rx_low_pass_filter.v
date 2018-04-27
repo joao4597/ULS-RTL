@@ -42,9 +42,9 @@ module rx_low_pass_filter(
   reg signed [69:0] rfiltered_sample_acum ;
   reg signed [69:0] rfiltered_sample_final;
 
-  wire signed [69:0] widata_in_RAM_extended;
-  wire signed [69:0] wwcoeff_read_extended ;
-  wire signed [69:0] wwsample_read_extended;
+  reg signed [25:0] rmulti_result;
+
+  reg rnew_sample_trigg_delayed_1;
 
 
   //anticipates when a new sample is comming based on the read adderess of the filter filter memory
@@ -66,6 +66,19 @@ module rx_low_pass_filter(
     .dia    (idata_in_RAM          ),  //data in
     .dob    (wsample_read          )   //data out
     );
+
+  //delay wnew_sample_trigg by one clock
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      rnew_sample_trigg_delayed_1 <= 0;
+    end else begin
+      if (!erx_en) begin
+        rnew_sample_trigg_delayed_1 <= 0;
+      end else begin
+        rnew_sample_trigg_delayed_1 <= wnew_sample_trigg;
+      end
+    end
+  end
 
 
   //Reads the filter coefficients in Round Robin
@@ -119,6 +132,24 @@ module rx_low_pass_filter(
   //Acumulates the result of the multiplication of the samples by the filter coefficients
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
+      rmulti_result  <= 0;
+    end else begin
+      if (!erx_en) begin
+        rmulti_result  <= 0;
+      end else begin
+        if (wnew_sample_trigg) begin
+          rmulti_result <= idata_in_RAM * wcoeff_read;
+        end else begin
+          rmulti_result <= wsample_read * wcoeff_read;
+        end
+      end
+    end
+  end
+
+
+  //Acumulates the result of the multiplication of the samples by the filter coefficients
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
       rfiltered_sample_acum  <= 0;
       rfiltered_sample_final <= 0;
     end else begin
@@ -126,20 +157,15 @@ module rx_low_pass_filter(
         rfiltered_sample_acum  <= 0;
         rfiltered_sample_final <= 0;
       end else begin
-        if (wnew_sample_trigg) begin
-          rfiltered_sample_final <= rfiltered_sample_acum + (widata_in_RAM_extended * wwcoeff_read_extended);
+        if (rnew_sample_trigg_delayed_1) begin
+          rfiltered_sample_final <= rfiltered_sample_acum + rmulti_result;
           rfiltered_sample_acum  <= 0;
         end else begin
-          rfiltered_sample_acum  <= rfiltered_sample_acum + (wwsample_read_extended * wwcoeff_read_extended);
+          rfiltered_sample_acum  <= rfiltered_sample_acum + rmulti_result;
         end
       end
     end
   end
-
-
-  assign widata_in_RAM_extended = $signed(idata_in_RAM);
-  assign wwcoeff_read_extended  = $signed(wcoeff_read );
-  assign wwsample_read_extended = $signed(wsample_read);
 
 
   assign ofiltered_sample = rfiltered_sample_final[25:10];
