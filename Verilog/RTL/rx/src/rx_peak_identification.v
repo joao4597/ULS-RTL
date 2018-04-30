@@ -77,7 +77,7 @@ module rx_peak_identification#(
   wire signed [40:0] wsample_correlation [15:0];
 
 
-  //flag set to opne suring the window search period
+  //flag set to one during the window search period
   always @(posedge crx_clk) begin
     if (rrx_rst) begin
       rsearch_window_active <= 0;
@@ -223,6 +223,12 @@ module rx_peak_identification#(
             o_sample_arm   <= rhighest_sample[rcounter_4bit];
             o_time_arm     <= rtimestamp[rcounter_4bit]     ;
             o_received_seq <= rcounter_4bit                 ;
+          end
+        end else begin
+          if (iresult_acquired) begin
+            o_sample_arm   <= 0;
+            o_time_arm     <= 0;
+            o_received_seq <= 0;
           end
         end
       end

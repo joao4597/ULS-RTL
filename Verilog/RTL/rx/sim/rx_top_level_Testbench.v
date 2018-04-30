@@ -34,6 +34,8 @@ module rx_top_level_Testbench();
     .clk(clk)
   );
 
+  reg result_acquired;
+
   wire signed [40:0] sample_arm     ;
   wire         [3:0] received_signal;
   wire        [15:0] time_arm       ;
@@ -45,6 +47,7 @@ module rx_top_level_Testbench();
   .crx_clk        (clk           ),  //clock signal
   .rrx_rst        (reset         ),  //reset signal
   .erx_en         (enable        ),  //enable signal
+  .iresult_acquired_arm (result_acquired),
        
   .inew_sample    (sample_in     ),
 
@@ -178,6 +181,7 @@ module rx_top_level_Testbench();
 
   //Saves the rx_peak_identification outputs
   initial begin
+    result_acquired <= 0;
     @(negedge clk);
     while(1 == 1) begin
       @(negedge clk);
@@ -187,6 +191,10 @@ module rx_top_level_Testbench();
         $display("Timestamp         -> %1d", time_arm           );
         $display("Received sequence -> %1d", received_signal    );
         $display("++++++++++++++++++++++++++"                   );
+
+        result_acquired <= 1;
+        @(negedge clk);
+        result_acquired <= 0;
       end   
     end
   end

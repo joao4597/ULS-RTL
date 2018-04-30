@@ -1073,7 +1073,7 @@ always @(posedge adc_clk_i) begin
       set_a_tresh   <=  14'd5000   ;
       set_b_tresh   <= -14'd5000   ;
       set_dly       <=  32'd0      ;
-      set_dec       <=  17'd64      ; //alterei era 17'd1
+      set_dec       <=  17'd128    ; //alterei era 17'd1
       set_a_hyst    <=  14'd20     ;
       set_b_hyst    <=  14'd20     ;
       set_avg_en    <=   1'b1      ;
