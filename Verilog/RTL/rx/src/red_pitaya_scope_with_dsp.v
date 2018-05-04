@@ -96,7 +96,10 @@ module red_pitaya_scope_with_dsp
     input  [ 2-1:0] adcbuf_select_i     ,   //
     output [ 4-1:0] adcbuf_ready_o      ,   // buffer ready [0]: ChA 0-1k, [1]: ChA 1k-2k, [2]: ChB 0-1k, [3]: ChB 1k-2k
     input  [ 9-1:0] adcbuf_raddr_i      ,   //
-    output [64-1:0] adcbuf_rdata_o          //
+    output [64-1:0] adcbuf_rdata_o      ,   //
+    
+    //new signal transmitted trigger
+    input           inew_signal_trigg
 );
 
 // ID values to be read by the device driver, mapped at 40100ff0 - 40100fff
@@ -291,32 +294,67 @@ wire [31:0] start_amplitude_2;
 
 reg          [31:0] res_acquired;
 
-wire signed [32:0] wpeak_value  ;
+wire signed [31:0] wpeak_value  ;
 wire         [3:0] wreceived_seq;
-wire        [32:0] wtimestamp   ;
+wire        [31:0] wtimestamp   ;
 wire               wseq_trigger ;
+wire signed [31:0] wcorrelation_result [15:0];
 
-//assign wpeak_value   = 2;
-//assign wreceived_seq = 3;
-//assign wtimestamp    = 4;
-//assign wseq_trigger  = 1;
+wire wcorrelation_trigger; 
 
+reg rcorrelation_trigger_aux;
 
 
 rx_top_level rx_top_level_0(
-  .crx_clk              (adc_clk_i      ),  //clock signal
-  .rrx_rst              (reset_dsp[0]   ),  //reset signal
-  .erx_en               (1'b1           ),  //enable signal
+  .crx_clk              (adc_clk_i              ),  //clock signal
+  .rrx_rst              (reset_dsp[0]           ),  //reset signal
+  .erx_en               (1'b1                   ),  //enable signal
+  
+  .inew_signal_trigg    (inew_signal_trigg      ),  //new signal transmitted trigger
 
-  .iresult_acquired_arm (res_acquired[0]),
+  .iresult_acquired_arm (res_acquired[0]        ),
  
-  .inew_sample          (adc_a_dat_sync ),  //new sample in
+  .inew_sample          (adc_a_dat_sync         ),  //new sample in
 
-  .o_sample_arm         (wpeak_value    ),  //Peak Value
-  .o_received_seq       (wreceived_seq  ),
-  .o_time_arm           (wtimestamp     ),  //Timestamp
-  .o_trigger_arm        (wseq_trigger   )   //Trigger
+  .o_correlator_0_arm   (wcorrelation_result[0] ),  //outputs of the 16 correlators
+  .o_correlator_1_arm   (wcorrelation_result[1] ),
+  .o_correlator_2_arm   (wcorrelation_result[2] ),
+  .o_correlator_3_arm   (wcorrelation_result[3] ),
+  .o_correlator_4_arm   (wcorrelation_result[4] ),
+  .o_correlator_5_arm   (wcorrelation_result[5] ),
+  .o_correlator_6_arm   (wcorrelation_result[6] ),
+  .o_correlator_7_arm   (wcorrelation_result[7] ),
+  .o_correlator_8_arm   (wcorrelation_result[8] ),
+  .o_correlator_9_arm   (wcorrelation_result[9] ),
+  .o_correlator_10_arm  (wcorrelation_result[10]),
+  .o_correlator_11_arm  (wcorrelation_result[11]),
+  .o_correlator_12_arm  (wcorrelation_result[12]),
+  .o_correlator_13_arm  (wcorrelation_result[13]),
+  .o_correlator_14_arm  (wcorrelation_result[14]),
+  .o_correlator_15_arm  (wcorrelation_result[15]),
+
+  .o_correlator_trigg   (wcorrelation_trigger    ),
+
+  .o_sample_arm         (wpeak_value            ),  //Peak Value
+  .o_received_seq       (wreceived_seq          ),
+  .o_time_arm           (wtimestamp             ),  //Timestamp
+  .o_trigger_arm        (wseq_trigger           )   //Trigger
 );
+
+always @(posedge adc_clk_i) begin
+  if (adc_rstn_i == 1'b0) begin
+    rcorrelation_trigger_aux <= 0;
+  end else begin
+    if ((addr[19:0] == 20'h00300) && (rcorrelation_trigger_aux == 1) && (wen)) begin
+      rcorrelation_trigger_aux <= wdata[0];
+    end else begin
+      if (rcorrelation_trigger_aux == 0) begin
+        rcorrelation_trigger_aux <= wcorrelation_trigger;
+      end
+    end
+  end
+end
+
 
 
 
@@ -1090,6 +1128,10 @@ always @(posedge adc_clk_i) begin
         ddr_b_base  <= 32'h00000000;
         ddr_b_end   <= 32'h00000000;
         ddr_control <= 6'b000000;
+
+        //++++++++++++++++++++++++++ CONNECTIONS FOR RX_TOP_LEVEL ++++++++++++++++++++++++++++++++++\\
+        res_acquired             <= 0;
+        //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\
    end
    else begin
       if (wen) begin
@@ -1190,18 +1232,18 @@ always @(*) begin
     20'h00220:  begin   ack <= 1'b1; rdata <= config_MAX_DELAY;  end
     20'h00224:  begin   ack <= 1'b1; rdata <= config_RESET_TIME_AMPLITUDE;  end
     
-    20'h00300:  begin   ack <= 1'b1; rdata <= delay_out[0];  end
-    20'h00304:  begin   ack <= 1'b1; rdata <= delay_out[1];  end
-    20'h00308:  begin   ack <= 1'b1; rdata <= delay_out[2];  end
-    20'h0030c:  begin   ack <= 1'b1; rdata <= delay_out[3];  end
-    20'h00310:  begin   ack <= 1'b1; rdata <= delay_counter[0];  end  
-    20'h00314:  begin   ack <= 1'b1; rdata <= delay_counter[1];  end  
-    20'h00318:  begin   ack <= 1'b1; rdata <= delay_counter[0];  end  
-    20'h0031c:  begin   ack <= 1'b1; rdata <= delay_counter[1];  end  
-    20'h00320:  begin   ack <= 1'b1; rdata <= amplitude_1;  end  
-    20'h00324:  begin   ack <= 1'b1; rdata <= amplitude_2;  end  
-    20'h00328:  begin   ack <= 1'b1; rdata <= start_amplitude_1;  end  
-    20'h0032c:  begin   ack <= 1'b1; rdata <= start_amplitude_2;  end  
+    //20'h00300:  begin   ack <= 1'b1; rdata <= delay_out[0];  end
+    //20'h00304:  begin   ack <= 1'b1; rdata <= delay_out[1];  end
+    //20'h00308:  begin   ack <= 1'b1; rdata <= delay_out[2];  end
+    //20'h0030c:  begin   ack <= 1'b1; rdata <= delay_out[3];  end
+    //20'h00310:  begin   ack <= 1'b1; rdata <= delay_counter[0];  end  
+    //20'h00314:  begin   ack <= 1'b1; rdata <= delay_counter[1];  end  
+    //20'h00318:  begin   ack <= 1'b1; rdata <= delay_counter[0];  end  
+    //20'h0031c:  begin   ack <= 1'b1; rdata <= delay_counter[1];  end  
+    //20'h00320:  begin   ack <= 1'b1; rdata <= amplitude_1;  end  
+    //20'h00324:  begin   ack <= 1'b1; rdata <= amplitude_2;  end  
+    //20'h00328:  begin   ack <= 1'b1; rdata <= start_amplitude_1;  end  
+    //20'h0032c:  begin   ack <= 1'b1; rdata <= start_amplitude_2;  end  
      
     
     // Read my ID & timestamp:
@@ -1212,6 +1254,25 @@ always @(*) begin
     20'h00408:  begin   ack <= 1'b1; rdata <= {28'd0, wreceived_seq}; end
     20'h0040C:  begin   ack <= 1'b1; rdata <= wtimestamp            ; end
     20'h00410:  begin   ack <= 1'b1; rdata <= {31'd0, wseq_trigger }; end
+
+    20'h00300:  begin   ack <= 1'b1; rdata <= {31'd0, rcorrelation_trigger_aux};  end
+
+    20'h00304:  begin   ack <= 1'b1; rdata <= wcorrelation_result[0] ; end
+    20'h00308:  begin   ack <= 1'b1; rdata <= wcorrelation_result[1] ; end
+    20'h0030C:  begin   ack <= 1'b1; rdata <= wcorrelation_result[2] ; end
+    20'h00310:  begin   ack <= 1'b1; rdata <= wcorrelation_result[3] ; end
+    20'h00314:  begin   ack <= 1'b1; rdata <= wcorrelation_result[4] ; end
+    20'h00318:  begin   ack <= 1'b1; rdata <= wcorrelation_result[5] ; end
+    20'h0031C:  begin   ack <= 1'b1; rdata <= wcorrelation_result[6] ; end
+    20'h00320:  begin   ack <= 1'b1; rdata <= wcorrelation_result[7] ; end
+    20'h00324:  begin   ack <= 1'b1; rdata <= wcorrelation_result[8] ; end
+    20'h00328:  begin   ack <= 1'b1; rdata <= wcorrelation_result[9] ; end
+    20'h0032C:  begin   ack <= 1'b1; rdata <= wcorrelation_result[10]; end
+    20'h00330:  begin   ack <= 1'b1; rdata <= wcorrelation_result[11]; end
+    20'h00334:  begin   ack <= 1'b1; rdata <= wcorrelation_result[12]; end
+    20'h00338:  begin   ack <= 1'b1; rdata <= wcorrelation_result[13]; end
+    20'h0033C:  begin   ack <= 1'b1; rdata <= wcorrelation_result[14]; end
+    20'h00340:  begin   ack <= 1'b1; rdata <= wcorrelation_result[15]; end
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\
 
     20'h00ff0:  begin   ack <= 1'b1; rdata <= SYS_ID;       end

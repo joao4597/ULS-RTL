@@ -1,0 +1,4 @@
+#!/bin/bash
+systemctl stop redpitaya_nginx.service
+cat $1 > /dev/xdevcfg
+systemctl start redpitaya_nginx.service

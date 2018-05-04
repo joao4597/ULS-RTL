@@ -32,10 +32,31 @@ module rx_top_level(
   input  wire               crx_clk             ,  //clock signal
   input  wire               rrx_rst             ,  //reset signal
   input  wire               erx_en              ,  //enable signal
+  
+  input wire                inew_signal_trigg   ,
 
   input wire                iresult_acquired_arm,  //result read by arm
  
   input  wire signed [15:0] inew_sample         ,  //new sample in
+
+  output wire signed [31:0] o_correlator_0_arm  ,  //outputs of the 16 correlators
+  output wire signed [31:0] o_correlator_1_arm  ,
+  output wire signed [31:0] o_correlator_2_arm  ,
+  output wire signed [31:0] o_correlator_3_arm  ,
+  output wire signed [31:0] o_correlator_4_arm  ,
+  output wire signed [31:0] o_correlator_5_arm  ,
+  output wire signed [31:0] o_correlator_6_arm  ,
+  output wire signed [31:0] o_correlator_7_arm  ,
+  output wire signed [31:0] o_correlator_8_arm  ,
+  output wire signed [31:0] o_correlator_9_arm  ,
+  output wire signed [31:0] o_correlator_10_arm ,
+  output wire signed [31:0] o_correlator_11_arm ,
+  output wire signed [31:0] o_correlator_12_arm ,
+  output wire signed [31:0] o_correlator_13_arm ,
+  output wire signed [31:0] o_correlator_14_arm ,
+  output wire signed [31:0] o_correlator_15_arm ,
+
+  output wire               o_correlator_trigg  ,  //set to one when a new correlation result is ready
 
   output wire signed [40:0] o_sample_arm        ,  //Peak Value
   output wire         [3:0] o_received_seq      ,
@@ -218,7 +239,24 @@ module rx_top_level(
     .onew_result_trigger(wcorrelator_trigger    )
   );
 
+  assign o_correlator_trigg = wcorrelator_trigger;
 
+  assign o_correlator_0_arm  =  wcorrelation_result[0] ;
+  assign o_correlator_1_arm  =  wcorrelation_result[1] ;
+  assign o_correlator_2_arm  =  wcorrelation_result[2] ;
+  assign o_correlator_3_arm  =  wcorrelation_result[3] ;
+  assign o_correlator_4_arm  =  wcorrelation_result[4] ;
+  assign o_correlator_5_arm  =  wcorrelation_result[5] ;
+  assign o_correlator_6_arm  =  wcorrelation_result[6] ;
+  assign o_correlator_7_arm  =  wcorrelation_result[7] ;
+  assign o_correlator_8_arm  =  wcorrelation_result[8] ;
+  assign o_correlator_9_arm  =  wcorrelation_result[9] ;
+  assign o_correlator_10_arm =  wcorrelation_result[10];
+  assign o_correlator_11_arm =  wcorrelation_result[11];
+  assign o_correlator_12_arm =  wcorrelation_result[12];
+  assign o_correlator_13_arm =  wcorrelation_result[13];
+  assign o_correlator_14_arm =  wcorrelation_result[14];
+  assign o_correlator_15_arm =  wcorrelation_result[15];
 
   ///////////////////////////////////////////////////PEAK_FINDER////////////////////////////////////////////////////////
   always @(posedge crx_clk) begin
@@ -235,6 +273,8 @@ module rx_top_level(
     end
   end
   
+  reg [31:0] rtimer;
+  
   rx_peak_identification rx_peak_identification_0(
   .crx_clk               (crx_clk                   ),  //clock signal
   .rrx_rst               (rrx_rst                   ),  //reset signal
@@ -242,7 +282,7 @@ module rx_top_level(
 
   .iresult_acquired      (iresult_acquired_arm      ),
 
-  .icurrent_time         (23                        ), 
+  .icurrent_time         (rtimer                    ), 
    
   .isample_filtered      (rfiltered_sample_band_pass),  //output of band_pass filter
   
@@ -270,6 +310,20 @@ module rx_top_level(
   .o_time_arm            (o_time_arm                ),  //Timestamp
   .o_trigger_arm         (o_trigger_arm             )   //Trigger
   );
+
+
+  //Timer logic, counts the time between the moment a signal is transmmited to the momente the signal arrives  
+  always @(posedge crx_clk) begin
+    if (erx_en) begin
+      rtimer <= 0;
+    end else begin
+      if (inew_signal_trigg) begin
+        rtimer <= 0;
+      end else begin
+        rtimer <= rtimer + 1;
+      end
+    end
+  end
   
 endmodule
 
