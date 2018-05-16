@@ -6,7 +6,7 @@
 *-corr_u -> STRUCTUR CONTAINING BUFFERS THAT HOLD THE POINTS SURROUNDIG THE CORRELATION PEAK
 *-seq    -> RECEIVED PSEUDO RANDOM BINARY SEQUENCE
 **/
-void peak_adjustment(correlator_units_s *corr_u, uint8_t seq);
+void peak_adjustment(int32_t *corr_u, long double *interssection_x, long double *interssection_y, int32_t xy[][2]);
 
 
 /**
@@ -28,7 +28,7 @@ void compute_error(float x, float *time_e, float *distance_e);
 *
 *RETURNS: X AXIS INTERCEPTION POINT
 **/
-float compute_linear_interssection(float slope1, float slope2, float constant1, float constant2);
+float compute_linear_interssection(long double slope1, long double slope2, long double constant1, long double constant2);
 
 
 /**
@@ -41,7 +41,7 @@ float compute_linear_interssection(float slope1, float slope2, float constant1, 
 *-slope    -> COMPUTED SLOPE 
 *-constant -> COMKPUTED CONSTANT
 **/
-void compute_linear_equation(int32_t xy[][2], float *slope, float *constant);
+void compute_linear_equation(int32_t xy[][2], long double *slope, long double *constant);
 
 
 /**
@@ -67,4 +67,4 @@ void search_for_peaks(int32_t *buffer, int32_t xy[][2]);
 * OUTPUTS:
 * -ordered_vector -> VECTOR COUNTAINING ORDERED ELEMENTS FROM POS0 TO POS88 
 **/
-void order_buff(int32_t *buff, uint8_t order, int32_t *ordered_vector);
+void order_buff(int32_t *buff, int32_t *ordered_vector, int32_t max);

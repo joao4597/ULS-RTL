@@ -1,4 +1,4 @@
-TARGET = code
+TARGET = kode
 LIBS = -lm
 CC = gcc
 CFLAGS = -g -Wall

@@ -27,120 +27,188 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../src/rx_BRAM_16_256_binary_sequences.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_32_1024.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_32_1024.v"/>
+          <Attr Name="ImportTime" Val="1525872190"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../src/rx_correlator_buff_unit.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_BRAM_16_510_filtered_samples.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_16_256_binary_sequences.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_16_256_binary_sequences.v"/>
+          <Attr Name="ImportTime" Val="1524233064"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_sequnces_bits_feader.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_16_510_filtered_samples.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_16_510_filtered_samples.v"/>
+          <Attr Name="ImportTime" Val="1523550681"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_correlation_unit.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_correlator_4buffs.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_correlator_4buffs.v"/>
+          <Attr Name="ImportTime" Val="1525885404"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_BRAM_16_128_low_pass.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_sequnces_bits_feader.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_sequnces_bits_feader.v"/>
+          <Attr Name="ImportTime" Val="1524048314"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_BRAM_16_128.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_correlation_unit.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_correlation_unit.v"/>
+          <Attr Name="ImportTime" Val="1524235423"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_BRAM_internal_controller.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_16_128_low_pass.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_16_128_low_pass.v"/>
+          <Attr Name="ImportTime" Val="1524040219"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_BRAM_16_512_band_pass.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_16_128.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_16_128.v"/>
+          <Attr Name="ImportTime" Val="1523550688"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_BRAM_16_512.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_internal_controller.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_internal_controller.v"/>
+          <Attr Name="ImportTime" Val="1523436528"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_correlator.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_16_512_band_pass.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_16_512_band_pass.v"/>
+          <Attr Name="ImportTime" Val="1524040209"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_low_pass_filter.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_BRAM_16_512.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_BRAM_16_512.v"/>
+          <Attr Name="ImportTime" Val="1523550674"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_samples_organizer.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_correlator_buff.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_correlator_buff.v"/>
+          <Attr Name="ImportTime" Val="1525886539"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_band_pass_filter.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_correlator.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_correlator.v"/>
+          <Attr Name="ImportTime" Val="1524579736"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_peak_identification.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_low_pass_filter.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_low_pass_filter.v"/>
+          <Attr Name="ImportTime" Val="1524604630"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../src/rx_top_level.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_samples_organizer.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_samples_organizer.v"/>
+          <Attr Name="ImportTime" Val="1523436528"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../sim/rx_top_level_Testbench.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_band_pass_filter.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_band_pass_filter.v"/>
+          <Attr Name="ImportTime" Val="1524604854"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_peak_identification.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_peak_identification.v"/>
+          <Attr Name="ImportTime" Val="1525884411"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/rx/src/rx_top_level.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../src/rx_top_level.v"/>
+          <Attr Name="ImportTime" Val="1525885295"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/rx/sim/rx_top_level_Testbench.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../sim/rx_top_level_Testbench.v"/>
+          <Attr Name="ImportTime" Val="1525886701"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../sim/rx_clk.v">
+      <File Path="$PSRCDIR/sources_1/imports/rx/sim/rx_clk.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../sim/rx_clk.v"/>
+          <Attr Name="ImportTime" Val="1522783504"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -164,22 +232,35 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../sim/rx_samples_organizer_Testbench.v">
+      <File Path="$PSRCDIR/sim_1/imports/rx/sim/rx_correlator_buff_Testbench.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../sim/rx_correlator_buff_Testbench.v"/>
+          <Attr Name="ImportTime" Val="1525889666"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/rx_filter_simulation/tx_filter_Testbench_behav.wcfg">
+      <File Path="$PSRCDIR/sim_1/imports/rx/sim/rx_samples_organizer_Testbench.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../sim/rx_samples_organizer_Testbench.v"/>
+          <Attr Name="ImportTime" Val="1523282270"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/imports/rx/vivado_2015_4/rx_filter_simulation/tx_filter_Testbench_behav.wcfg">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/rx_filter_simulation/tx_filter_Testbench_behav.wcfg"/>
+          <Attr Name="ImportTime" Val="1524579536"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="rx_top_level_Testbench"/>
+        <Option Name="TopModule" Val="rx_correlator_buff_Testbench"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/rx_filter_simulation/tx_filter_Testbench_behav.wcfg"/>
@@ -269,7 +350,7 @@
         <Step Id="write_bitstream"/>
       </Strategy>
     </Run>
-    <Run Id="impl_3" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" Dir="$PRUNDIR/impl_3" SynthRun="synth_3" IncludeInArchive="true">
+    <Run Id="impl_3" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Implementation Defaults" State="current" SynthRun="synth_3" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2015"/>
         <Step Id="init_design"/>
@@ -282,7 +363,6 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
   </Runs>
 </Project>

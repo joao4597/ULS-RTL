@@ -470,7 +470,7 @@ module rx_correlator(
       if (!erx_en) begin
         onew_result_trigger <= 0;
       end else begin
-        if (rnew_sample_trig_delay2) begin
+        if (rnew_sample_trig_delay4) begin
           onew_result_trigger <= 1;
         end else begin
           onew_result_trigger <= 0;

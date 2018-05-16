@@ -14,8 +14,11 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property vhdl_version vhdl_2k [current_fileset]
 read_verilog -library xil_defaultlib {
+  C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v
+  C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_32_1024.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_256_binary_sequences.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_510_filtered_samples.v
+  C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_4buffs.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_sequnces_bits_feader.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlation_unit.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_16_128_low_pass.v
@@ -28,6 +31,7 @@ read_verilog -library xil_defaultlib {
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_samples_organizer.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_band_pass_filter.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_peak_identification.v
+  C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff.v
   C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v
 }
 read_xdc C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.srcs/constrs_1/new/teste_rx.xdc

@@ -25,11 +25,11 @@ int setup(int *fd, int *gps, void **map_base) {
     return -1;
   }
 
-  //OPEN DEVICE MOUNTING POINT
+  /*//OPEN DEVICE MOUNTING POINT
   if((*fd = open("/dev/mem", O_RDWR | O_SYNC)) == -1) {
     printf("Cannot open the mem device\n");
     return -2;
-  }
+  }*/
 
 /*
   //OPEN GPS
@@ -40,11 +40,11 @@ int setup(int *fd, int *gps, void **map_base) {
 */
  
   //MAP ONE PAGE
-  *map_base = mmap(0, MAP_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, *fd, BASE_ADDR & ~MAP_MASK);  
+  /**map_base = mmap(0, MAP_SIZE, PROT_READ | PROT_WRITE, MAP_SHARED, *fd, BASE_ADDR & ~MAP_MASK);  
   if(map_base == (void *) -1) {
     printf("Cannot map memory\n");
     return -4;
-  }
+  }*/
 
   return 0;
 }

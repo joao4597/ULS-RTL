@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_3" LaunchPart="xc7z010clg400-1" LaunchTime="1524602706">
+<GenRun Id="synth_3" LaunchPart="xc7z010clg400-1" LaunchTime="1525873360">
   <File Type="RDS-DCP" Name="rx_top_level.dcp"/>
   <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/synth_3/constrs_in.xml"/>
   <File Type="RDS-UTIL-PB" Name="rx_top_level_utilization_synth.pb"/>
@@ -13,6 +13,20 @@
   <File Type="VDS-TIMING-PB" Name="rx_top_level_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../src/rx_correlator_buff_unit.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_BRAM_32_1024.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../src/rx_BRAM_16_256_binary_sequences.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -21,6 +35,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/rx_BRAM_16_510_filtered_samples.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_correlator_4buffs.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -105,6 +126,13 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../src/rx_peak_identification.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../src/rx_correlator_buff.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>

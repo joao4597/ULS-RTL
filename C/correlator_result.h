@@ -15,9 +15,15 @@ typedef struct correlator{
 
 } correlator_units_s;
 
+typedef struct brute_buff_struct{
+  int32_t  buff[16][22000];
+  uint32_t next_position;
+  int32_t  max_pos[2];
+}brute_buff;
 
 
-void save_correlators_values(correlator_units_s *corr_u, void *map_base);
+
+int save_correlators_values(correlator_units_s *corr_u, void *map_base, brute_buff *buff_struct);
 void save_to_buff_0(int correlatorN, correlator_units_s *corr_u, void *map_base);
 void save_to_buff_1(int correlatorN, correlator_units_s *corr_u, void *map_base);
 void reset_buff_0(correlator_units_s *corr_u);

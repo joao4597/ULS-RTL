@@ -29,40 +29,48 @@
  */
 
 module rx_top_level(
-  input  wire               crx_clk             ,  //clock signal
-  input  wire               rrx_rst             ,  //reset signal
-  input  wire               erx_en              ,  //enable signal
+  input  wire               crx_clk                 ,  //clock signal
+  input  wire               rrx_rst                 ,  //reset signal
+  input  wire               erx_en                  ,  //enable signal
+
+  input wire         [31:0] itimer                  ,
   
-  input wire                inew_signal_trigg   ,
+  input wire                inew_signal_trigg       ,  //new signal sent emmited trigger
 
-  input wire                iresult_acquired_arm,  //result read by arm
+  input wire                iresult_acquired_arm    ,  //result read by arm
  
-  input  wire signed [15:0] inew_sample         ,  //new sample in
+  input  wire signed [15:0] inew_sample             ,  //new sample in
 
-  output wire signed [31:0] o_correlator_0_arm  ,  //outputs of the 16 correlators
-  output wire signed [31:0] o_correlator_1_arm  ,
-  output wire signed [31:0] o_correlator_2_arm  ,
-  output wire signed [31:0] o_correlator_3_arm  ,
-  output wire signed [31:0] o_correlator_4_arm  ,
-  output wire signed [31:0] o_correlator_5_arm  ,
-  output wire signed [31:0] o_correlator_6_arm  ,
-  output wire signed [31:0] o_correlator_7_arm  ,
-  output wire signed [31:0] o_correlator_8_arm  ,
-  output wire signed [31:0] o_correlator_9_arm  ,
-  output wire signed [31:0] o_correlator_10_arm ,
-  output wire signed [31:0] o_correlator_11_arm ,
-  output wire signed [31:0] o_correlator_12_arm ,
-  output wire signed [31:0] o_correlator_13_arm ,
-  output wire signed [31:0] o_correlator_14_arm ,
-  output wire signed [31:0] o_correlator_15_arm ,
+  input wire                inext_sample_trigg_buff ,
+  input wire                iall_acquired_buff_trigg,
 
-  output wire               o_correlator_trigg  ,  //set to one when a new correlation result is ready
+  output reg  signed [31:0] o_correlator_0_arm      ,  //outputs of the 16 correlators
+  output reg  signed [31:0] o_correlator_1_arm      ,
+  output reg  signed [31:0] o_correlator_2_arm      ,
+  output reg  signed [31:0] o_correlator_3_arm      ,
+  output reg  signed [31:0] o_correlator_4_arm      ,
+  output reg  signed [31:0] o_correlator_5_arm      ,
+  output reg  signed [31:0] o_correlator_6_arm      ,
+  output reg  signed [31:0] o_correlator_7_arm      ,
+  output reg  signed [31:0] o_correlator_8_arm      ,
+  output reg  signed [31:0] o_correlator_9_arm      ,
+  output reg  signed [31:0] o_correlator_10_arm     ,
+  output reg  signed [31:0] o_correlator_11_arm     ,
+  output reg  signed [31:0] o_correlator_12_arm     ,
+  output reg  signed [31:0] o_correlator_13_arm     ,
+  output reg  signed [31:0] o_correlator_14_arm     ,
+  output reg  signed [31:0] o_correlator_15_arm     ,
 
-  output wire signed [40:0] o_sample_arm        ,  //Peak Value
-  output wire         [3:0] o_received_seq      ,
-  output wire        [15:0] o_time_arm          ,  //Timestamp
-  output wire               o_trigger_arm    //Trigger
-  );
+  output reg                o_correlator_trigg      ,  //set to one when a new correlation result is ready
+
+  output wire signed [40:0] o_sample_arm            ,  //Peak Value
+  output wire         [3:0] o_received_seq          ,
+  output wire        [31:0] o_time_arm              ,  //Timestamp
+  output wire               o_trigger_arm           ,//Trigger
+
+  output wire signed [31:0] ocorr_sample_buff       ,
+  output wire               ocorr_sample_ready_buff
+  );      
 
   reg new_sample_trig_delay_1;
   
@@ -239,24 +247,52 @@ module rx_top_level(
     .onew_result_trigger(wcorrelator_trigger    )
   );
 
-  assign o_correlator_trigg = wcorrelator_trigger;
 
-  assign o_correlator_0_arm  =  wcorrelation_result[0] ;
-  assign o_correlator_1_arm  =  wcorrelation_result[1] ;
-  assign o_correlator_2_arm  =  wcorrelation_result[2] ;
-  assign o_correlator_3_arm  =  wcorrelation_result[3] ;
-  assign o_correlator_4_arm  =  wcorrelation_result[4] ;
-  assign o_correlator_5_arm  =  wcorrelation_result[5] ;
-  assign o_correlator_6_arm  =  wcorrelation_result[6] ;
-  assign o_correlator_7_arm  =  wcorrelation_result[7] ;
-  assign o_correlator_8_arm  =  wcorrelation_result[8] ;
-  assign o_correlator_9_arm  =  wcorrelation_result[9] ;
-  assign o_correlator_10_arm =  wcorrelation_result[10];
-  assign o_correlator_11_arm =  wcorrelation_result[11];
-  assign o_correlator_12_arm =  wcorrelation_result[12];
-  assign o_correlator_13_arm =  wcorrelation_result[13];
-  assign o_correlator_14_arm =  wcorrelation_result[14];
-  assign o_correlator_15_arm =  wcorrelation_result[15];
+  always @(posedge crx_clk) begin
+    if (rrx_rst) begin
+      o_correlator_0_arm  <= 0;
+      o_correlator_1_arm  <= 0;
+      o_correlator_2_arm  <= 0;
+      o_correlator_3_arm  <= 0;
+      o_correlator_4_arm  <= 0;
+      o_correlator_5_arm  <= 0;
+      o_correlator_6_arm  <= 0;
+      o_correlator_7_arm  <= 0;
+      o_correlator_8_arm  <= 0;
+      o_correlator_9_arm  <= 0;
+      o_correlator_10_arm <= 0;
+      o_correlator_11_arm <= 0;
+      o_correlator_12_arm <= 0;
+      o_correlator_13_arm <= 0;
+      o_correlator_14_arm <= 0;
+      o_correlator_15_arm <= 0;
+
+      o_correlator_trigg  <= 0;
+    end else begin
+      if (wcorrelator_trigger) begin
+        o_correlator_0_arm  <=  wcorrelation_result[0] ;
+        o_correlator_1_arm  <=  wcorrelation_result[1] ;
+        o_correlator_2_arm  <=  wcorrelation_result[2] ;
+        o_correlator_3_arm  <=  wcorrelation_result[3] ;
+        o_correlator_4_arm  <=  wcorrelation_result[4] ;
+        o_correlator_5_arm  <=  wcorrelation_result[5] ;
+        o_correlator_6_arm  <=  wcorrelation_result[6] ;
+        o_correlator_7_arm  <=  wcorrelation_result[7] ;
+        o_correlator_8_arm  <=  wcorrelation_result[8] ;
+        o_correlator_9_arm  <=  wcorrelation_result[9] ;
+        o_correlator_10_arm <=  wcorrelation_result[10];
+        o_correlator_11_arm <=  wcorrelation_result[11];
+        o_correlator_12_arm <=  wcorrelation_result[12];
+        o_correlator_13_arm <=  wcorrelation_result[13];
+        o_correlator_14_arm <=  wcorrelation_result[14];
+        o_correlator_15_arm <=  wcorrelation_result[15];
+
+        o_correlator_trigg  <= wcorrelator_trigger;
+      end else begin
+        o_correlator_trigg  <= 0;
+      end
+    end
+  end
 
   ///////////////////////////////////////////////////PEAK_FINDER////////////////////////////////////////////////////////
   always @(posedge crx_clk) begin
@@ -273,7 +309,6 @@ module rx_top_level(
     end
   end
   
-  reg [31:0] rtimer;
   
   rx_peak_identification rx_peak_identification_0(
   .crx_clk               (crx_clk                   ),  //clock signal
@@ -282,7 +317,7 @@ module rx_top_level(
 
   .iresult_acquired      (iresult_acquired_arm      ),
 
-  .icurrent_time         (rtimer                    ), 
+  .icurrent_time         (itimer                    ), 
    
   .isample_filtered      (rfiltered_sample_band_pass),  //output of band_pass filter
   
@@ -312,18 +347,41 @@ module rx_top_level(
   );
 
 
-  //Timer logic, counts the time between the moment a signal is transmmited to the momente the signal arrives  
-  always @(posedge crx_clk) begin
-    if (erx_en) begin
-      rtimer <= 0;
-    end else begin
-      if (inew_signal_trigg) begin
-        rtimer <= 0;
-      end else begin
-        rtimer <= rtimer + 1;
-      end
-    end
-  end
+  ////////////////////////////////////////////////CORRELATOR_BUFFER/////////////////////////////////////////////////////
+
+  rx_correlator_buff rx_correlator_buff_0(  
+  .crx_clk               (crx_clk                    ),
+  .rrx_rst               (rrx_rst                    ),
+  .erx_en                (erx_en                     ),
+
+  .inew_samle_trigger    (o_correlator_trigg         ),
+
+  .isample_correlation_0 (o_correlator_0_arm         ),
+  .isample_correlation_1 (o_correlator_1_arm         ),
+  .isample_correlation_2 (o_correlator_2_arm         ),
+  .isample_correlation_3 (o_correlator_3_arm         ),
+  .isample_correlation_4 (o_correlator_4_arm         ),
+  .isample_correlation_5 (o_correlator_5_arm         ),
+  .isample_correlation_6 (o_correlator_6_arm         ),
+  .isample_correlation_7 (o_correlator_7_arm         ),
+  .isample_correlation_8 (o_correlator_8_arm         ),
+  .isample_correlation_9 (o_correlator_9_arm         ),
+  .isample_correlation_10(o_correlator_10_arm        ),
+  .isample_correlation_11(o_correlator_11_arm        ),
+  .isample_correlation_12(o_correlator_12_arm        ),
+  .isample_correlation_13(o_correlator_13_arm        ),
+  .isample_correlation_14(o_correlator_14_arm        ),
+  .isample_correlation_15(o_correlator_15_arm        ),
+
+  .ireceived_seq         (o_received_seq             ),
+  .istorage_wash_enable  (o_trigger_arm              ),
+  .inext_sample_trigger  (inext_sample_trigg_buff    ),
+  .iall_acquired_trigg   (iall_acquired_buff_trigg   ),
+
+  .ocorr_sample          (ocorr_sample_buff          ),
+  .ocorr_sample_ready    (ocorr_sample_ready_buff    )                
+  );
+
   
 endmodule
 

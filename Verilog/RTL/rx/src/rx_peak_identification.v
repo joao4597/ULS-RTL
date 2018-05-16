@@ -21,7 +21,7 @@
  */
 
 module rx_peak_identification#(
-    parameter WINDOW_SIZE = 20400,
+    parameter WINDOW_SIZE = 22100,
     parameter THRESHOLD   = 800   
   )(  
   input  wire               crx_clk               ,  //clock signal
@@ -59,7 +59,7 @@ module rx_peak_identification#(
 
   output reg  signed [40:0] o_sample_arm          ,  //Peak Value
   output reg          [3:0] o_received_seq        ,
-  output reg         [15:0] o_time_arm            ,  //Timestamp
+  output reg         [31:0] o_time_arm            ,  //Timestamp
   output reg                o_trigger_arm            //Trigger
   );
 

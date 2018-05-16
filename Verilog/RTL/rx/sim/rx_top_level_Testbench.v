@@ -38,23 +38,38 @@ module rx_top_level_Testbench();
 
   wire signed [40:0] sample_arm     ;
   wire         [3:0] received_signal;
-  wire        [15:0] time_arm       ;
-  wire               trigger_arm    ; 
+  wire        [31:0] time_arm       ;
+  wire               trigger_arm    ;
+
+  reg                next_sample_trigg_buff ;
+  reg               all_results_acq_buff    ;
+  wire signed [31:0] ocorr_sample_buff      ;
+  wire               ocorr_sample_ready_buff;
+  reg         [31:0] rtimer                 ;
   
 
   //block uder testing
   rx_top_level rx_top_level_0(
-  .crx_clk        (clk           ),  //clock signal
-  .rrx_rst        (reset         ),  //reset signal
-  .erx_en         (enable        ),  //enable signal
-  .iresult_acquired_arm (result_acquired),
+  .crx_clk                 (clk                    ),  //clock signal
+  .rrx_rst                 (reset                  ),  //reset signal
+  .erx_en                  (enable                 ),  //enable signal
+  
+  .itimer                  (rtimer                 ),
+  
+  .iresult_acquired_arm    (result_acquired        ),
        
-  .inew_sample    (sample_in     ),
+  .inew_sample             (sample_in              ),
 
-  .o_sample_arm   (sample_arm     ),  //Peak Value
-  .o_received_seq (received_signal),
-  .o_time_arm     (time_arm       ),  //Timestamp
-  .o_trigger_arm  (trigger_arm    )   //Trigger
+  .inext_sample_trigg_buff (next_sample_trigg_buff ),
+  .iall_acquired_buff_trigg(all_results_acq_buff   ),
+
+  .o_sample_arm            (sample_arm             ),  //Peak Value
+  .o_received_seq          (received_signal        ),
+  .o_time_arm              (time_arm               ),  //Timestamp
+  .o_trigger_arm           (trigger_arm            ),   //Trigger
+  
+  .ocorr_sample_buff       (ocorr_sample_buff      ),      
+  .ocorr_sample_ready_buff (ocorr_sample_ready_buff)
   );
 
 
@@ -74,13 +89,15 @@ module rx_top_level_Testbench();
   //test
   initial begin
 
+    $display("INITIAL\n");
+    $fflush();
     two_bit_counter <= 0;
 
     //open file to save modulation result
-    samples_file     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\record_11_12_13_14.csv", "r");
-    low_pass_result  = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\low_pass_result.csv" , "w");
-    band_pass_result = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\band_pass_result.csv", "w");
-    LOW_PASS_MAT     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\LOW_PASS_RESULT_MAT_11_12_13_14.csv", "r");
+    samples_file     = $fopen("..\\..\\..\\..\\sim_files\\seq_13\\record_13.csv", "r");
+    low_pass_result  = $fopen("..\\..\\..\\..\\sim_files\\seq_13\\low_pass_result.csv" , "w");
+    band_pass_result = $fopen("..\\..\\..\\..\\sim_files\\seq_13\\band_pass_result.csv", "w");
+    LOW_PASS_MAT     = $fopen("..\\..\\..\\..\\sim_files\\seq_13\\LOW_PASS_RESULT_MAT_13.csv", "r");
 
     //reset module
     @(negedge clk);
@@ -130,7 +147,7 @@ module rx_top_level_Testbench();
       end
     end
 
-
+    $display("Finished\n");
     $finish;
   end
 
@@ -147,15 +164,15 @@ module rx_top_level_Testbench();
     sample_aux_c = 0;
 
     //open file to save correlation result
-    correlator_result     = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\correlator_result.csv", "w");
-    correlator_result_mat = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\CORRELATOR_RESULT_MAT_12.csv", "r");;
+    correlator_result     = $fopen("..\\..\\..\\..\\sim_files\\seq_13\\correlator_result.csv", "w");
+    correlator_result_mat = $fopen("..\\..\\..\\..\\sim_files\\seq_13\\CORRELATOR_RESULT_MAT_13.csv", "r");;
 
     while (i_c > -1) begin
       @(negedge clk);
       if (rx_top_level_0.wcorrelator_trigger) begin
-        @(negedge clk);
-        @(negedge clk);
-        $fwrite(correlator_result, "%1d\n", $signed(rx_top_level_0.wcorrelation_result[3]));
+        //@(negedge clk);
+        //@(negedge clk);
+        $fwrite(correlator_result, "%1d\n", rx_top_level_0.wcorrelation_result[3]);
         $fflush(correlator_result);
 
         $fscanf(correlator_result_mat, "%d\n", sample_aux_c);
@@ -169,11 +186,12 @@ module rx_top_level_Testbench();
           $display("%1d -> erro %1d -> %1d\n", i_c, sample_aux_c, aux_c);
           $finish;
         end
-
         i_c = i_c + 1;
       end
     end
 
+
+    $display("Finished\n");
     $finish;
   end
 
@@ -198,6 +216,67 @@ module rx_top_level_Testbench();
       end   
     end
   end
+
+/*
+next_sample_trigg_buff 
+all_results_acq_buff   
+ocorr_sample_buff      
+ocorr_sample_ready_buff
+*/
+  //Tests the correlator_buffer
+  integer buffer_file;
+  integer aux_buff;
+  initial begin
+    aux_buff = 0;
+    next_sample_trigg_buff = 0;
+    all_results_acq_buff   = 0;
+    @(negedge clk);
+    @(negedge clk);
+
+    buffer_file = $fopen("..\\..\\..\\..\\sim_files\\seq_11_12_13_14\\buff_result.csv", "w");
+
+    while (1 == 1) begin
+
+      if (ocorr_sample_ready_buff) begin
+        aux_buff = aux_buff + 1;
+        $display("%1d\n", $signed(ocorr_sample_buff));
+
+        $fwrite(buffer_file, "%1d\n", $signed(ocorr_sample_buff));
+        $fflush(buffer_file);
+
+        if (aux_buff == 128) begin
+          all_results_acq_buff <= 1;
+          @(negedge clk);
+          all_results_acq_buff <= 0;
+          aux_buff = 0;
+          $display("Finished readind sumples from buffer");
+          $finish;
+        end else begin
+          next_sample_trigg_buff <= 1;
+          @(negedge clk);
+          @(negedge clk);
+          @(negedge clk);
+          @(negedge clk);
+          @(negedge clk);
+          next_sample_trigg_buff <= 0;
+        end
+      end else begin
+        @(negedge clk);
+      end
+    end  
+  end
+  
+  
+  
+  initial begin
+    rtimer = 0;
+    @(negedge clk)
+    while(1 == 1) begin
+      rtimer <= rtimer + 1;
+      @(negedge clk);
+    end
+  end
+
 
 
 endmodule

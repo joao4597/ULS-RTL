@@ -21,21 +21,16 @@
 #include "output.h"
 
 
-void peak_adjustment(correlator_units_s *corr_u, uint8_t seq){
-  int32_t aux[89];
-  float interssection;
-  int32_t xy[13][2];
-  float slope1, slope2;
-  float constant1, constant2;
+void peak_adjustment(int32_t *corr_u, long double *interssection_x, long double *interssection_y, int32_t xy[][2]){
+  int32_t *aux;
+  long double slope1, slope2;
+  long double constant1, constant2;
   float time_e, distance_e;
 
 
   //ESTABLISH WHICH BUFFER HOLDS THS SAMPLES OF INTEREST AND STORE THEM ORDERES INVECTOR AUX 
-  if (corr_u[seq].flag == 0) {
-    order_buff(corr_u[seq].samples_buffer_1, corr_u[seq].next_position_1, aux);
-  } else {
-    order_buff(corr_u[seq].samples_buffer_0, corr_u[seq].next_position_0, aux);
-  }
+  //order_buff(corr_u, aux, max);
+  aux = corr_u;
   
 
   //SEARCH FOR THE 13 PEAKS NECESSARY TO COMPUTE TRIANGLE AND INTERSSECTION
@@ -50,37 +45,38 @@ void peak_adjustment(correlator_units_s *corr_u, uint8_t seq){
   compute_linear_equation(&(xy[6]), &slope2, &constant2);
 
   //COMPUTE INTERSSECTION OF THE SLOPES OF EACH SIDE OF THE TRIANGLE
-  interssection = compute_linear_interssection(slope1, slope2, constant1, constant2);
+  *interssection_x = compute_linear_interssection(slope1, slope2, constant1, constant2);
+  *interssection_y = slope1 * (*interssection_x) + constant1;
 
 
   //COMPUTE SPACIAL EM TEMPORAL ERROR BETTEEN THE CORRELATION PEAK AND THE TRIANGLE PEAK
-  compute_error(interssection, &time_e, &distance_e);
+  compute_error(*interssection_x, &time_e, &distance_e);
 
-  printf("Temporal_deviation -> %fs\n", time_e);
-  printf("Spacial_deviation  -> %fm\n", distance_e);
+  printf("temporal_deviation -> %fs\n", time_e);
+  printf("spacial_deviation  -> %fm\n", distance_e);
 
 }
 
 void compute_error(float x, float *time_e, float *distance_e) {
-  *time_e = (45 - x) * SAMPLING_PERIODE;
+  *time_e = (64 - x) * SAMPLING_PERIODE;
   *distance_e = (*time_e) * SOUND_SPEED;
 }
 
 
-float compute_linear_interssection(float slope1, float slope2, float constant1, float constant2) {
+float compute_linear_interssection(long double slope1, long double slope2, long double constant1, long double constant2) {
   //COPUTE X AXIS INTERCECTION OF THE TO LINEAR EQUATIONS
   return (constant2 - constant1) / (slope1 - slope2);
 }
 
 
-void compute_linear_equation(int32_t xy[][2], float *slope, float *constant) {
+void compute_linear_equation(int32_t xy[][2], long double *slope, long double *constant) {
   int i;
 
-  float x_avg;
-  float y_avg;
+  long double x_avg;
+  long double y_avg;
 
-  float sum1;
-  float sum2;
+  long double sum1;
+  long double sum2;
 
 
   //COPUTE AVERAGE OF X AXIS AND Y AXIS VALUES
@@ -105,7 +101,7 @@ void compute_linear_equation(int32_t xy[][2], float *slope, float *constant) {
 
 
 void search_for_peaks(int32_t *buffer, int32_t xy[][2]){
-  int32_t aux[89];
+  int32_t aux;
   int i, q, w;
 
 
@@ -113,16 +109,23 @@ void search_for_peaks(int32_t *buffer, int32_t xy[][2]){
   uint8_t local_max_pos;
 
   //SAVE CORRELATION PEAK VALUE AND POSITION
-  xy[6][0] = 45        ;
-  xy[6][1] = buffer[45];
+  xy[6][0] = 64        ;
+  xy[6][1] = buffer[64];
 
   
   //SEARCHE AND STORE THE 6 LOCAL PEAKS AFTER THE CORRELATION MAXIMUM (VALUE AND POSITION) 
-  for (i = 45, q = 7; q < 13; q++) {
+  for (i = 64, q = 7; q < 13; q++) {
     i = i + 3;
     for (w = 0, local_max = 0, local_max_pos = 0; w < 5; w++){
-      if (buffer[i + w] > local_max){
-        local_max = aux[i + w];
+      
+      if (buffer[i + w] > 0)
+        aux = buffer[i + w];
+      else
+        aux = -buffer[i + w];
+      
+
+      if (aux > local_max){
+        local_max = aux;
         local_max_pos = i + w;
       }
     }
@@ -134,11 +137,17 @@ void search_for_peaks(int32_t *buffer, int32_t xy[][2]){
 
 
   //SEARCHE AND STORE THE 6 LOCAL PEAKS BEFORE THE CORRELATION MAXIMUM (VALUE AND POSITION) 
-  for (i = 45, q = 5; q > 0; q--) {
+  for (i = 64, q = 5; q >= 0; q--) {
     i = i - 3;
     for (w = 0, local_max = 0, local_max_pos = 0; w < 5; w++){
-      if (buffer[i - w] > local_max){
-        local_max = aux[i - w];
+
+      if (buffer[i - w] > 0)
+        aux = buffer[i - w];
+      else
+        aux = -buffer[i - w];
+
+      if (aux > local_max){
+        local_max = aux;
         local_max_pos = i - w;
       }
     }
@@ -151,20 +160,21 @@ void search_for_peaks(int32_t *buffer, int32_t xy[][2]){
   return;
 }
 
-void order_buff(int32_t *buff, uint8_t order, int32_t *ordered_vector){
-  int i;
+void order_buff(int32_t *buff, int32_t *ordered_vector, int32_t max){
+  int i, q;
+  uint8_t w;
 
 
-  for (i = 0; i < 89; i++){
-    ordered_vector[i] = buff[order];
+  for (i = 0; (buff[i] != max) && (i < 128); i++);
 
-    if (order == 89) {
-      order = 0;
-    } else{
-      order = order + 1;
-    }
+  for (q = 64, w = (0x80 | i); q < 128; q = q + 1, w = w + 0x81) {
+    ordered_vector[q] = buff[w & 0x7F]; 
   }
 
+  for (q = 63, w = (0x80 | i) - 0x81; q >= 0; q = q - 1, w = w - 0x81) {
+    ordered_vector[q] = buff[w & 0x7F]; 
+  }
+  
   write_to_file("samples_surrounding_peak.csv", ordered_vector, 89);
 
   return;

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="rx_correlator_buff_Testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="rx_correlator_buff_Testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="20378666667fs"></ZoomStartTime>
+      <ZoomEndTime time="21199666668fs"></ZoomEndTime>
+      <Cursor1Time time="20580000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="39" />
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /crx_clk" type="logic">
+      <obj_property name="ElementShortName">crx_clk</obj_property>
+      <obj_property name="ObjectShortName">crx_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /rrx_rst" type="logic">
+      <obj_property name="ElementShortName">rrx_rst</obj_property>
+      <obj_property name="ObjectShortName">rrx_rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /erx_en" type="logic">
+      <obj_property name="ElementShortName">erx_en</obj_property>
+      <obj_property name="ObjectShortName">erx_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /inew_samle_trigger" type="logic">
+      <obj_property name="ElementShortName">inew_samle_trigger</obj_property>
+      <obj_property name="ObjectShortName">inew_samle_trigger</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /isample_correlation" type="array">
+      <obj_property name="ElementShortName">isample_correlation[31:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /oram_w_eanble" type="logic">
+      <obj_property name="ElementShortName">oram_w_eanble</obj_property>
+      <obj_property name="ObjectShortName">oram_w_eanble</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /oram_w_address" type="array">
+      <obj_property name="ElementShortName">oram_w_address[9:0]</obj_property>
+      <obj_property name="ObjectShortName">oram_w_address[9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /oram_data_in" type="array">
+      <obj_property name="ElementShortName">oram_data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">oram_data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /r_buff_flag" type="logic">
+      <obj_property name="ElementShortName">r_buff_flag</obj_property>
+      <obj_property name="ObjectShortName">r_buff_flag</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /rmax" type="array">
+      <obj_property name="ElementShortName">rmax[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rmax[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /rwrite_address" type="array">
+      <obj_property name="ElementShortName">rwrite_address[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rwrite_address[6:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /rsamples_missing" type="array">
+      <obj_property name="ElementShortName">rsamples_missing[6:0]</obj_property>
+      <obj_property name="ObjectShortName">rsamples_missing[6:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /RAM_BASE_ADDRESS" type="array">
+      <obj_property name="ElementShortName">RAM_BASE_ADDRESS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RAM_BASE_ADDRESS[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/crx_clk" type="logic">
+      <obj_property name="ElementShortName">crx_clk</obj_property>
+      <obj_property name="ObjectShortName">crx_clk</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rrx_rst" type="logic">
+      <obj_property name="ElementShortName">rrx_rst</obj_property>
+      <obj_property name="ObjectShortName">rrx_rst</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/erx_en" type="logic">
+      <obj_property name="ElementShortName">erx_en</obj_property>
+      <obj_property name="ObjectShortName">erx_en</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/inew_samle_trigger" type="logic">
+      <obj_property name="ElementShortName">inew_samle_trigger</obj_property>
+      <obj_property name="ObjectShortName">inew_samle_trigger</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/isample_correlation_0" type="array">
+      <obj_property name="ElementShortName">isample_correlation_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_0[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/isample_correlation_1" type="array">
+      <obj_property name="ElementShortName">isample_correlation_1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_1[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/isample_correlation_2" type="array">
+      <obj_property name="ElementShortName">isample_correlation_2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_2[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/isample_correlation_3" type="array">
+      <obj_property name="ElementShortName">isample_correlation_3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">isample_correlation_3[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/ireceived_seq" type="array">
+      <obj_property name="ElementShortName">ireceived_seq[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ireceived_seq[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/istorage_wash_trigger" type="logic">
+      <obj_property name="ElementShortName">istorage_wash_trigger</obj_property>
+      <obj_property name="ObjectShortName">istorage_wash_trigger</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/inext_sample_trigger" type="logic">
+      <obj_property name="ElementShortName">inext_sample_trigger</obj_property>
+      <obj_property name="ObjectShortName">inext_sample_trigger</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/ocorr_sample" type="array">
+      <obj_property name="ElementShortName">ocorr_sample[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ocorr_sample[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/ocorr_sample_ready" type="logic">
+      <obj_property name="ElementShortName">ocorr_sample_ready</obj_property>
+      <obj_property name="ObjectShortName">ocorr_sample_ready</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rread_counter" type="array">
+      <obj_property name="ElementShortName">rread_counter[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rread_counter[9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rflag_buff" type="logic">
+      <obj_property name="ElementShortName">rflag_buff</obj_property>
+      <obj_property name="ObjectShortName">rflag_buff</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/wflag" type="array">
+      <obj_property name="ElementShortName">wflag[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wflag[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/wram_w_address" type="array">
+      <obj_property name="ElementShortName">wram_w_address[3:0][9:0]</obj_property>
+      <obj_property name="ObjectShortName">wram_w_address[3:0][9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/wram_data_in" type="array">
+      <obj_property name="ElementShortName">wram_data_in[3:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">wram_data_in[3:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rassign_w_address" type="array">
+      <obj_property name="ElementShortName">rassign_w_address[9:0]</obj_property>
+      <obj_property name="ObjectShortName">rassign_w_address[9:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rassign_data_in" type="array">
+      <obj_property name="ElementShortName">rassign_data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rassign_data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/wisample_correlation" type="array">
+      <obj_property name="ElementShortName">wisample_correlation[3:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">wisample_correlation[3:0][31:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/wram_w_enable" type="array">
+      <obj_property name="ElementShortName">wram_w_enable[3:0]</obj_property>
+      <obj_property name="ObjectShortName">wram_w_enable[3:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rassign_w_enable" type="logic">
+      <obj_property name="ElementShortName">rassign_w_enable</obj_property>
+      <obj_property name="ObjectShortName">rassign_w_enable</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/rtrigger_counter" type="array">
+      <obj_property name="ElementShortName">rtrigger_counter[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rtrigger_counter[1:0]</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /inew_samle_trigger" type="logic">
+      <obj_property name="ElementShortName">inew_samle_trigger</obj_property>
+      <obj_property name="ObjectShortName">inew_samle_trigger</obj_property>
+   </wvobject>
+   <wvobject db_ref_id="1" fp_name="/rx_correlator_buff_Testbench/rx_correlator_buff_0/rx_correlator_buff_4units_0/\genblk1[0].rx_correlator_buff_unit_0 /oram_w_eanble" type="logic">
+      <obj_property name="ElementShortName">oram_w_eanble</obj_property>
+      <obj_property name="ObjectShortName">oram_w_eanble</obj_property>
+   </wvobject>
+</wave_config>

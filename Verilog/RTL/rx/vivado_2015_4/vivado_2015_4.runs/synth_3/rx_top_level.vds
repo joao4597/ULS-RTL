@@ -2,8 +2,8 @@
 # Vivado v2015.4 (64-bit)
 # SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
 # IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
-# Start of session at: Tue Apr 24 21:45:08 2018
-# Process ID: 9124
+# Start of session at: Wed May 09 14:42:41 2018
+# Process ID: 4816
 # Current directory: C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3
 # Command line: vivado.exe -log rx_top_level.vds -mode batch -messageDb vivado.pb -notrace -source rx_top_level.tcl
 # Log file: C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/vivado_2015_4/vivado_2015_4.runs/synth_3/rx_top_level.vds
@@ -14,9 +14,9 @@ Command: synth_design -top rx_top_level -part xc7z010clg400-1 -fanout_limit 400 
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
-INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -114 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
+INFO: [Common 17-1223] The version limit for your license is '2017.12' and will expire in -129 days. A version limit expiration means that, although you may be able to continue to use the current version of tools or IP with this license, you will not be eligible for any updates or new releases.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 292.141 ; gain = 119.555
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 292.086 ; gain = 119.875
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'rx_top_level' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:31]
 INFO: [Synth 8-638] synthesizing module 'rx_low_pass_filter' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_low_pass_filter.v:23]
@@ -87,9 +87,44 @@ INFO: [Synth 8-638] synthesizing module 'rx_peak_identification' [C:/Users/joao/
 	Parameter WINDOW_SIZE bound to: 20400 - type: integer 
 	Parameter THRESHOLD bound to: 800 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'rx_peak_identification' (14#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_peak_identification.v:23]
-INFO: [Synth 8-256] done synthesizing module 'rx_top_level' (15#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:31]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff.v:23]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator_buff_4units' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_4buffs.v:25]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator_buff_unit' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+	Parameter RAM_BASE_ADDRESS bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator_buff_unit' (15#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator_buff_unit__parameterized0' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+	Parameter RAM_BASE_ADDRESS bound to: 256 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator_buff_unit__parameterized0' (15#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator_buff_unit__parameterized1' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+	Parameter RAM_BASE_ADDRESS bound to: 512 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator_buff_unit__parameterized1' (15#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+INFO: [Synth 8-638] synthesizing module 'rx_correlator_buff_unit__parameterized2' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+	Parameter RAM_BASE_ADDRESS bound to: 768 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator_buff_unit__parameterized2' (15#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff_unit.v:28]
+INFO: [Synth 8-638] synthesizing module 'rx_BRAM_32_1024' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_32_1024.v:15]
+INFO: [Synth 8-256] done synthesizing module 'rx_BRAM_32_1024' (16#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_BRAM_32_1024.v:15]
+INFO: [Synth 8-226] default block is never used [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_4buffs.v:131]
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator_buff_4units' (17#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_4buffs.v:25]
+INFO: [Synth 8-256] done synthesizing module 'rx_correlator_buff' (18#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_correlator_buff.v:23]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_0' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:343]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_1' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:344]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_2' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:345]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_3' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:346]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_4' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:347]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_5' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:348]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_6' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:349]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_7' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:350]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_8' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:351]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_9' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:352]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_10' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:353]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_11' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:354]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_12' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:355]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_13' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:356]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_14' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:357]
+WARNING: [Synth 8-689] width (41) of port connection 'isample_correlation_15' does not match port width (32) of module 'rx_correlator_buff' [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:358]
+INFO: [Synth 8-256] done synthesizing module 'rx_top_level' (19#1) [C:/Users/joao/Downloads/work/ULS-RTL/Verilog/RTL/rx/src/rx_top_level.v:31]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 380.301 ; gain = 207.715
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 383.203 ; gain = 210.992
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -99,7 +134,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 380.301 ; gain = 207.715
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 383.203 ; gain = 210.992
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -113,22 +148,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.117 . Memory (MB): peak = 695.531 ; gain = 3.902
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 701.480 ; gain = 4.109
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "ram_reg[127]" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "ram_reg[126]" won't be mapped to RAM because it is too sparse
@@ -234,16 +269,16 @@ INFO: [Common 17-14] Message 'Synth 8-5546' appears 100 times and further instan
 INFO: [Synth 8-5544] ROM "o_trigger_arm" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "rhighest_sample" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------+------------+----------+
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
-|1     |rx_top_level__GB0 |           1|     21923|
-|2     |rx_top_level__GB1 |           1|      9443|
-|3     |rx_top_level__GB2 |           1|     23458|
+|1     |rx_top_level__GB0 |           1|     25437|
+|2     |rx_top_level__GB1 |           1|     12990|
+|3     |rx_top_level__GB2 |           1|     23460|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -255,39 +290,49 @@ Detailed RTL Component Info :
 	   2 Input     41 Bit       Adders := 36    
 	   2 Input     17 Bit       Adders := 20    
 	   3 Input     17 Bit       Adders := 20    
+	   2 Input     10 Bit       Adders := 4     
 	   2 Input      9 Bit       Adders := 43    
 	   2 Input      8 Bit       Adders := 1     
-	   2 Input      7 Bit       Adders := 3     
+	   2 Input      7 Bit       Adders := 35    
 	   2 Input      5 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 11    
-	   2 Input      1 Bit       Adders := 11    
+	   2 Input      2 Bit       Adders := 4     
+	   2 Input      1 Bit       Adders := 27    
 +---Registers : 
 	               70 Bit    Registers := 2     
 	               41 Bit    Registers := 28    
-	               32 Bit    Registers := 16    
+	               32 Bit    Registers := 36    
 	               26 Bit    Registers := 2     
 	               17 Bit    Registers := 20    
 	               16 Bit    Registers := 667   
+	               10 Bit    Registers := 4     
 	                9 Bit    Registers := 43    
 	                8 Bit    Registers := 1     
-	                7 Bit    Registers := 3     
+	                7 Bit    Registers := 35    
 	                5 Bit    Registers := 1     
 	                4 Bit    Registers := 12    
-	                1 Bit    Registers := 37    
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 82    
 +---RAMs : 
+	              32K Bit         RAMs := 4     
 	               8K Bit         RAMs := 21    
 	               4K Bit         RAMs := 1     
 	               2K Bit         RAMs := 1     
 +---Muxes : 
+	   4 Input     32 Bit        Muxes := 5     
 	   2 Input     26 Bit        Muxes := 2     
 	   2 Input     17 Bit        Muxes := 40    
 	   2 Input     16 Bit        Muxes := 2     
+	   4 Input     10 Bit        Muxes := 4     
+	   2 Input     10 Bit        Muxes := 4     
 	   2 Input      9 Bit        Muxes := 60    
+	   5 Input      7 Bit        Muxes := 16    
+	   2 Input      6 Bit        Muxes := 48    
 	   2 Input      4 Bit        Muxes := 10    
-	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 744   
+	   2 Input      2 Bit        Muxes := 14    
+	   2 Input      1 Bit        Muxes := 798   
 	   3 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -299,199 +344,9 @@ Module rx_top_level
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 2     
-Module rx_peak_identification 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      4 Bit       Adders := 1     
-+---Registers : 
-	               41 Bit    Registers := 17    
-	               32 Bit    Registers := 16    
-	               16 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 10    
-	   3 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 1     
-Module rx_correlation_unit 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized0 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized4 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized5 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized6 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized7 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_correlation_unit__parameterized8 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     17 Bit       Adders := 2     
-	   3 Input     17 Bit       Adders := 2     
-	   2 Input      4 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 2     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 2     
-+---Muxes : 
-	   2 Input     17 Bit        Muxes := 4     
-	   2 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
-Module rx_BRAM_16_256_binary_sequences 
-Detailed RTL Component Info : 
-+---Registers : 
-	               16 Bit    Registers := 1     
-+---RAMs : 
-	               4K Bit         RAMs := 1     
-Module rx_sequences_bits_feader 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
-+---Registers : 
-	                8 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 4     
-Module rx_correlator 
-Detailed RTL Component Info : 
-+---Adders : 
-	   4 Input     41 Bit       Adders := 5     
-	   2 Input     41 Bit       Adders := 36    
-+---Registers : 
-	               41 Bit    Registers := 11    
-	                1 Bit    Registers := 10    
-+---Muxes : 
-	   2 Input      1 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
 Module rx_BRAM_16_510_filtered_samples__1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -800,6 +655,500 @@ Detailed RTL Component Info :
 	                5 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 1     
+Module rx_correlation_unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized5 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized7 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_correlation_unit__parameterized8 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 2     
+	   3 Input     17 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module rx_BRAM_16_256_binary_sequences 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module rx_sequences_bits_feader 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_correlator 
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input     41 Bit       Adders := 5     
+	   2 Input     41 Bit       Adders := 36    
++---Registers : 
+	               41 Bit    Registers := 11    
+	                1 Bit    Registers := 10    
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module rx_peak_identification 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               41 Bit    Registers := 17    
+	               32 Bit    Registers := 16    
+	               16 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 13    
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module rx_BRAM_32_1024__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+Module rx_correlator_buff_unit__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized0__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized1__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized2__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_4units__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+Module rx_BRAM_32_1024__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+Module rx_correlator_buff_unit__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized0__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized1__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized2__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_4units__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+Module rx_BRAM_32_1024__3 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+Module rx_correlator_buff_unit__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized0__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized1__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized2__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_4units__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+Module rx_BRAM_32_1024 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---RAMs : 
+	              32K Bit         RAMs := 1     
+Module rx_correlator_buff_unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_unit__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                7 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2     
+Module rx_correlator_buff_4units 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 1     
+Module rx_correlator_buff 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
 Module rx_BRAM_16_128_low_pass 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -822,10 +1171,11 @@ Detailed RTL Component Info :
 	               70 Bit    Registers := 1     
 	               26 Bit    Registers := 1     
 	                7 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input     26 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 6     
 Module rx_BRAM_16_512_band_pass 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -848,7 +1198,7 @@ Detailed RTL Component Info :
 	               70 Bit    Registers := 1     
 	               26 Bit    Registers := 1     
 	                9 Bit    Registers := 3     
-	                1 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
 	   2 Input     26 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
@@ -865,7 +1215,7 @@ BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 695.531 ; gain = 522.945
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -878,49 +1228,53 @@ DSP Report: register rx_band_pass_filter_0/rmulti_result_reg is absorbed into DS
 DSP Report: operator rx_band_pass_filter_0/rmulti_result0 is absorbed into DSP rx_band_pass_filter_0/rmulti_result_reg.
 DSP Report: operator rx_band_pass_filter_0/rmulti_result0 is absorbed into DSP rx_band_pass_filter_0/rmulti_result_reg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:33 ; elapsed = 00:00:39 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished Parallel Reinference  : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 701.480 ; gain = 529.270
 
 Report RTL Partitions: 
 +------+------------------+------------+----------+
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
-|1     |rx_top_level__GB0 |           1|     20448|
-|2     |rx_top_level__GB1 |           1|     11220|
-|3     |rx_top_level__GB2 |           1|     23439|
+|1     |rx_top_level__GB0 |           1|     25759|
+|2     |rx_top_level__GB1 |           1|     13327|
+|3     |rx_top_level__GB2 |           1|     23441|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 Block RAM:
-+------------------+-------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
-|Module Name       | RTL Object                                                                                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name | 
-+------------------+-------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_0/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__26        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_1/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__28        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_2/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__30        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_3/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__32        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_4/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__34        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_5/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__36        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_6/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__38        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_7/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__40        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_8/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__42        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_9/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__44        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_10/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__46        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_11/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__48        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_12/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__50        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_13/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__52        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_14/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__54        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_15/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__56        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_16/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__58        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_17/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__60        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_18/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__62        | 
-|rx_top_level__GB1 | rx_samples_organizer_0/rx_BRAM_internal_controller_19/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__64        | 
-|rx_top_level__GB1 | rx_low_pass_filter_0/rx_BRAM_16_128_0/ram_reg                                                   | 128 x 16(READ_FIRST)   | W |   | 128 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__66        | 
-|rx_top_level__GB2 | rx_band_pass_filter_0/rx_BRAM_16_512_0/ram_reg                                                  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__68        | 
-+------------------+-------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+-------------------+
++------------------+-------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+---------------------------------------------------------+
+|Module Name       | RTL Object                                                                                      | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | OUT_REG      | RAMB18 | RAMB36 | Hierarchical Name                                       | 
++------------------+-------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+---------------------------------------------------------+
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_0/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__28                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_1/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__30                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_2/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__32                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_3/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__34                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_4/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__36                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_5/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__38                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_6/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__40                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_7/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__42                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_8/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__44                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_9/rx_BRAM_16_510_filtered_samples_0/ram_reg  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__46                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_10/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__48                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_11/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__50                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_12/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__52                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_13/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__54                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_14/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__56                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_15/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__58                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_16/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__60                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_17/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__62                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_18/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__64                                              | 
+|rx_top_level__GB0 | rx_samples_organizer_0/rx_BRAM_internal_controller_19/rx_BRAM_16_510_filtered_samples_0/ram_reg | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__66                                              | 
+|rx_top_level__GB1 | rx_BRAM_32_1024_0/BRAM_reg                                                                      | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | rx_correlator_buff/rx_correlator_buff_4units/extram__70 | 
+|rx_top_level__GB1 | rx_BRAM_32_1024_0/BRAM_reg                                                                      | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | rx_correlator_buff/rx_correlator_buff_4units/extram__72 | 
+|rx_top_level__GB1 | rx_BRAM_32_1024_0/BRAM_reg                                                                      | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | rx_correlator_buff/rx_correlator_buff_4units/extram__74 | 
+|rx_top_level__GB1 | rx_BRAM_32_1024_0/BRAM_reg                                                                      | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B | 0      | 1      | rx_correlator_buff/rx_correlator_buff_4units/extram__76 | 
+|rx_top_level__GB1 | rx_low_pass_filter_0/rx_BRAM_16_128_0/ram_reg                                                   | 128 x 16(READ_FIRST)   | W |   | 128 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__78                                              | 
+|rx_top_level__GB2 | rx_band_pass_filter_0/rx_BRAM_16_512_0/ram_reg                                                  | 512 x 16(READ_FIRST)   | W |   | 512 x 16(WRITE_FIRST)  |   | R | Port A and B | 1      | 0      | extram__80                                              | 
++------------------+-------------------------------------------------------------------------------------------------+------------------------+---+---+------------------------+---+---+--------------+--------+--------+---------------------------------------------------------+
 
 Note: The table above shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. "Hierarchical Name" reflects the Block RAM name as it appears in the hierarchical module and only part of it is displayed.
 Distributed RAM: 
@@ -946,107 +1300,6 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 Start Area Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[11].rtimestamp_reg[11][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[10].rtimestamp_reg[10][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[9].rtimestamp_reg[9][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[8].rtimestamp_reg[8][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[7].rtimestamp_reg[7][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[6].rtimestamp_reg[6][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[5].rtimestamp_reg[5][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[4].rtimestamp_reg[4][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[3].rtimestamp_reg[3][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[2].rtimestamp_reg[2][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[1].rtimestamp_reg[1][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[0].rtimestamp_reg[0][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[11].rtimestamp_reg[11][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[10].rtimestamp_reg[10][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[9].rtimestamp_reg[9][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[8].rtimestamp_reg[8][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[7].rtimestamp_reg[7][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[6].rtimestamp_reg[6][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[5].rtimestamp_reg[5][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[4].rtimestamp_reg[4][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[3].rtimestamp_reg[3][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[2].rtimestamp_reg[2][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[1].rtimestamp_reg[1][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[0].rtimestamp_reg[0][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[11].rtimestamp_reg[11][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[10].rtimestamp_reg[10][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[9].rtimestamp_reg[9][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[8].rtimestamp_reg[8][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[7].rtimestamp_reg[7][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[6].rtimestamp_reg[6][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[5].rtimestamp_reg[5][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[4].rtimestamp_reg[4][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[3].rtimestamp_reg[3][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[2].rtimestamp_reg[2][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[1].rtimestamp_reg[1][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[0].rtimestamp_reg[0][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[11].rtimestamp_reg[11][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[10].rtimestamp_reg[10][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[9].rtimestamp_reg[9][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[8].rtimestamp_reg[8][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[7].rtimestamp_reg[7][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[6].rtimestamp_reg[6][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[5].rtimestamp_reg[5][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[4].rtimestamp_reg[4][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[3].rtimestamp_reg[3][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[2].rtimestamp_reg[2][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[1].rtimestamp_reg[1][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[0].rtimestamp_reg[0][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[11].rtimestamp_reg[11][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[10].rtimestamp_reg[10][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[9].rtimestamp_reg[9][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[8].rtimestamp_reg[8][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[7].rtimestamp_reg[7][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[6].rtimestamp_reg[6][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[5].rtimestamp_reg[5][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[4].rtimestamp_reg[4][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[3].rtimestamp_reg[3][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[2].rtimestamp_reg[2][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[1].rtimestamp_reg[1][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[0].rtimestamp_reg[0][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[11].rtimestamp_reg[11][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[10].rtimestamp_reg[10][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[9].rtimestamp_reg[9][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[8].rtimestamp_reg[8][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[7].rtimestamp_reg[7][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[6].rtimestamp_reg[6][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[5].rtimestamp_reg[5][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[4].rtimestamp_reg[4][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[3].rtimestamp_reg[3][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[2].rtimestamp_reg[2][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[1].rtimestamp_reg[1][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[0].rtimestamp_reg[0][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[15].rtimestamp_reg[15][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[14].rtimestamp_reg[14][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[13].rtimestamp_reg[13][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\rx_peak_identification_0/genblk1[12].rtimestamp_reg[12][10] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will be removed from module rx_correlation_unit__parameterized0.
 WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will be removed from module rx_correlation_unit__parameterized1.
 WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will be removed from module rx_correlation_unit__parameterized2.
@@ -1056,109 +1309,210 @@ WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will b
 WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will be removed from module rx_correlation_unit__parameterized6.
 WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will be removed from module rx_correlation_unit__parameterized7.
 WARNING: [Synth 8-3332] Sequential element (obit_ready_reg) is unused and will be removed from module rx_correlation_unit__parameterized8.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][15] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][14] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][13] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][12] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][11] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][10] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][9] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][8] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][7] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][6] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][4] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][3] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][2] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][1] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[127][0] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][15] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][14] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][13] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][12] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][11] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][10] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][9] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][8] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][7] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][6] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][4] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][3] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][2] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][1] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[126][0] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][15] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][14] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][13] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][12] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][11] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][10] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][9] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][8] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][7] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][6] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][4] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][3] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][2] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][1] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[125][0] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][15] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][14] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][13] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][12] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][11] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][10] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][9] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][8] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][7] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][6] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][4] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][3] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][2] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][1] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[124][0] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][15] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][14] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][13] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][12] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][11] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][10] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][9] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][8] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][7] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][6] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][4] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][3] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][2] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][1] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[123][0] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][15] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][14] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][13] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][12] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][11] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][10] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][9] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][8] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][7] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][6] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
-WARNING: [Synth 8-3332] Sequential element (\ram_reg[122][5] ) is unused and will be removed from module rx_BRAM_16_128_low_pass.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][31] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][30] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][29] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][28] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][27] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][26] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][25] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][24] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][23] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][22] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][21] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][20] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][19] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][18] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][17] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[15].rtimestamp_reg[15][16] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][31] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][30] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][29] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][28] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][27] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][26] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][25] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][24] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][23] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][22] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][21] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][20] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][19] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][18] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][17] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[14].rtimestamp_reg[14][16] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][31] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][30] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][29] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][28] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][27] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][26] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][25] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][24] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][23] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][22] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][21] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][20] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][19] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][18] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][17] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[13].rtimestamp_reg[13][16] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][31] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][30] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][29] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][28] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][27] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][26] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][25] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][24] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][23] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][22] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][21] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][20] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][19] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][18] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][17] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[12].rtimestamp_reg[12][16] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][31] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][30] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][29] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][28] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][27] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][26] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][25] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][24] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][23] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][22] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][21] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][20] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][19] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][18] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][17] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[11].rtimestamp_reg[11][16] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][31] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][30] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][29] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][28] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][27] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][26] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][25] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][24] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][23] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][22] ) is unused and will be removed from module rx_peak_identification.
+WARNING: [Synth 8-3332] Sequential element (\genblk1[10].rtimestamp_reg[10][21] ) is unused and will be removed from module rx_peak_identification.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[127][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[126][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[125][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[124][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[123][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[122][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[121][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[120][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[119][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[118][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[117][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[116][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[115][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[114][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[113][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[112][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[111][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[110][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[109][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[108][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[107][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[106][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[105][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[104][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[103][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[102][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[101][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[100][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[96][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[95][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[92][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[91][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[90][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[85][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[83][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[82][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[81][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[80][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[78][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[73][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[71][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[68][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[66][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[61][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[59][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[56][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[54][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[49][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[47][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[46][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[45][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[44][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[42][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[37][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[36][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[35][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[32][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[31][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[27][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[26][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[25][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[24][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[23][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[22][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[21][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[20][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[19][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[18][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[17][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[16][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[15][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[14][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[13][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[12][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[11][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[10][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[8][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[6][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[3][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[127][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[126][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[125][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[124][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[123][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[122][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[121][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[120][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[119][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[118][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[117][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[116][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[115][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_1/\rx_low_pass_filter_0/rx_BRAM_16_128_low_pass_0/ram_reg[114][1] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished Area Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 701.480 ; gain = 529.270
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 695.531 ; gain = 522.945
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 701.480 ; gain = 529.270
 
 Report RTL Partitions: 
 +------+------------------+------------+----------+
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
-|1     |rx_top_level__GB0 |           1|     13331|
-|2     |rx_top_level__GB1 |           1|      4958|
+|1     |rx_top_level__GB0 |           1|     16326|
+|2     |rx_top_level__GB1 |           1|      6945|
 |3     |rx_top_level__GB2 |           1|      7260|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
@@ -1168,24 +1522,23 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:07 ; elapsed = 00:01:14 . Memory (MB): peak = 742.234 ; gain = 569.648
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:08 ; elapsed = 00:01:14 . Memory (MB): peak = 764.484 ; gain = 592.273
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:10 ; elapsed = 00:01:17 . Memory (MB): peak = 756.082 ; gain = 583.496
+Finished Timing Optimization : Time (s): cpu = 00:01:13 ; elapsed = 00:01:19 . Memory (MB): peak = 783.352 ; gain = 611.141
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+------------------+------------+----------+
 |      |RTL Partition     |Replication |Instances |
 +------+------------------+------------+----------+
-|1     |rx_top_level__GB0 |           1|     13331|
-|2     |rx_top_level__GB1 |           1|      4958|
+|1     |rx_top_level__GB0 |           1|     16326|
+|2     |rx_top_level__GB1 |           1|      6945|
 |3     |rx_top_level__GB2 |           1|      7260|
 +------+------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4480] The timing for the instance \rx_correlator_0/rx_sequences_bits_feader_0/rx_BRAM_16_256_binary_sequences_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_0/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_1/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_2/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
@@ -1206,19 +1559,24 @@ INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_17/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_18/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_samples_organizer_0/rx_BRAM_internal_controller_19/rx_BRAM_16_510_filtered_samples_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_correlator_0/rx_sequences_bits_feader_0/rx_BRAM_16_256_binary_sequences_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_correlator_buff_0/rx_correlator_buff_4units_0/rx_BRAM_32_1024_0/BRAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_correlator_buff_0/rx_correlator_buff_4units_1/rx_BRAM_32_1024_0/BRAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_correlator_buff_0/rx_correlator_buff_4units_2/rx_BRAM_32_1024_0/BRAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance \rx_correlator_buff_0/rx_correlator_buff_4units_3/rx_BRAM_32_1024_0/BRAM_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_low_pass_filter_0/rx_BRAM_16_128_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 INFO: [Synth 8-4480] The timing for the instance \rx_band_pass_filter_0/rx_BRAM_16_512_0/ram_reg  (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Technology Mapping : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 820.766 ; gain = 648.555
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:15 ; elapsed = 00:01:22 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -1235,7 +1593,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:16 ; elapsed = 00:01:23 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished IO Insertion : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1248,7 +1606,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:16 ; elapsed = 00:01:23 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:20 ; elapsed = 00:01:26 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1260,25 +1618,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:20 ; elapsed = 00:01:27 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:20 ; elapsed = 00:01:27 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:20 ; elapsed = 00:01:27 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:20 ; elapsed = 00:01:27 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1295,106 +1653,132 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     1|
-|2     |CARRY4     |   767|
+|2     |CARRY4     |   835|
 |3     |DSP48E1_1  |     2|
-|4     |LUT1       |   154|
-|5     |LUT2       |  2305|
-|6     |LUT3       |   224|
-|7     |LUT4       |  1847|
-|8     |LUT5       |   586|
-|9     |LUT6       |   798|
-|10    |MUXF7      |   154|
-|11    |MUXF8      |    61|
-|12    |RAMB18E1   |     1|
-|13    |RAMB18E1_1 |    22|
-|14    |FDRE       |  2808|
-|15    |FDSE       |    17|
-|16    |IBUF       |    19|
-|17    |OBUF       |    62|
+|4     |LUT1       |   186|
+|5     |LUT2       |  2378|
+|6     |LUT3       |   290|
+|7     |LUT4       |  2389|
+|8     |LUT5       |   732|
+|9     |LUT6       |  1210|
+|10    |MUXF7      |   194|
+|11    |MUXF8      |    73|
+|12    |RAMB18E1   |    22|
+|13    |RAMB18E1_1 |     1|
+|14    |RAMB36E1   |     4|
+|15    |FDRE       |  3762|
+|16    |FDSE       |   113|
+|17    |IBUF       |    22|
+|18    |OBUF       |   608|
 +------+-----------+------+
 
 Report Instance Areas: 
-+------+----------------------------------------+------------------------------------+------+
-|      |Instance                                |Module                              |Cells |
-+------+----------------------------------------+------------------------------------+------+
-|1     |top                                     |                                    |  9828|
-|2     |  rx_band_pass_filter_0                 |rx_band_pass_filter                 |   398|
-|3     |    rx_BRAM_16_512_0                    |rx_BRAM_16_512                      |     3|
-|4     |  rx_correlator_0                       |rx_correlator                       |  6295|
-|5     |    rx_correlation_unit_0               |rx_correlation_unit                 |   186|
-|6     |    rx_correlation_unit_1               |rx_correlation_unit__parameterized0 |   155|
-|7     |    rx_correlation_unit_2               |rx_correlation_unit__parameterized1 |   184|
-|8     |    rx_correlation_unit_3               |rx_correlation_unit__parameterized2 |   155|
-|9     |    rx_correlation_unit_4               |rx_correlation_unit__parameterized3 |   184|
-|10    |    rx_correlation_unit_5               |rx_correlation_unit__parameterized4 |   155|
-|11    |    rx_correlation_unit_6               |rx_correlation_unit__parameterized5 |   184|
-|12    |    rx_correlation_unit_7               |rx_correlation_unit__parameterized6 |   155|
-|13    |    rx_correlation_unit_8               |rx_correlation_unit__parameterized7 |   184|
-|14    |    rx_correlation_unit_9               |rx_correlation_unit__parameterized8 |   155|
-|15    |    rx_sequences_bits_feader_0          |rx_sequences_bits_feader            |  1496|
-|16    |      rx_BRAM_16_256_binary_sequences_0 |rx_BRAM_16_256_binary_sequences     |  1473|
-|17    |  rx_low_pass_filter_0                  |rx_low_pass_filter                  |   185|
-|18    |    rx_BRAM_16_128_0                    |rx_BRAM_16_128                      |     3|
-|19    |  rx_peak_identification_0              |rx_peak_identification              |  1232|
-|20    |  rx_samples_organizer_0                |rx_samples_organizer                |  1618|
-|21    |    rx_BRAM_internal_controller_0       |rx_BRAM_internal_controller         |    80|
-|22    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_37  |    25|
-|23    |    rx_BRAM_internal_controller_1       |rx_BRAM_internal_controller_0       |    81|
-|24    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_36  |    25|
-|25    |    rx_BRAM_internal_controller_10      |rx_BRAM_internal_controller_1       |    80|
-|26    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_35  |    25|
-|27    |    rx_BRAM_internal_controller_11      |rx_BRAM_internal_controller_2       |    80|
-|28    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_34  |    25|
-|29    |    rx_BRAM_internal_controller_12      |rx_BRAM_internal_controller_3       |    80|
-|30    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_33  |    25|
-|31    |    rx_BRAM_internal_controller_13      |rx_BRAM_internal_controller_4       |    81|
-|32    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_32  |    25|
-|33    |    rx_BRAM_internal_controller_14      |rx_BRAM_internal_controller_5       |    80|
-|34    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_31  |    25|
-|35    |    rx_BRAM_internal_controller_15      |rx_BRAM_internal_controller_6       |    81|
-|36    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_30  |    25|
-|37    |    rx_BRAM_internal_controller_16      |rx_BRAM_internal_controller_7       |    80|
-|38    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_29  |    25|
-|39    |    rx_BRAM_internal_controller_17      |rx_BRAM_internal_controller_8       |    81|
-|40    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_28  |    25|
-|41    |    rx_BRAM_internal_controller_18      |rx_BRAM_internal_controller_9       |    80|
-|42    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_27  |    25|
-|43    |    rx_BRAM_internal_controller_19      |rx_BRAM_internal_controller_10      |    81|
-|44    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_26  |    25|
-|45    |    rx_BRAM_internal_controller_2       |rx_BRAM_internal_controller_11      |    80|
-|46    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_25  |    25|
-|47    |    rx_BRAM_internal_controller_3       |rx_BRAM_internal_controller_12      |    79|
-|48    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_24  |    25|
-|49    |    rx_BRAM_internal_controller_4       |rx_BRAM_internal_controller_13      |    80|
-|50    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_23  |    25|
-|51    |    rx_BRAM_internal_controller_5       |rx_BRAM_internal_controller_14      |    81|
-|52    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_22  |    25|
-|53    |    rx_BRAM_internal_controller_6       |rx_BRAM_internal_controller_15      |    80|
-|54    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_21  |    25|
-|55    |    rx_BRAM_internal_controller_7       |rx_BRAM_internal_controller_16      |    82|
-|56    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_20  |    25|
-|57    |    rx_BRAM_internal_controller_8       |rx_BRAM_internal_controller_17      |    78|
-|58    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples_19  |    25|
-|59    |    rx_BRAM_internal_controller_9       |rx_BRAM_internal_controller_18      |    81|
-|60    |      rx_BRAM_16_510_filtered_samples_0 |rx_BRAM_16_510_filtered_samples     |    25|
-+------+----------------------------------------+------------------------------------+------+
++------+---------------------------------------------+-------------------------------------------+------+
+|      |Instance                                     |Module                                     |Cells |
++------+---------------------------------------------+-------------------------------------------+------+
+|1     |top                                          |                                           | 12822|
+|2     |  rx_band_pass_filter_0                      |rx_band_pass_filter                        |   400|
+|3     |    rx_BRAM_16_512_0                         |rx_BRAM_16_512                             |     3|
+|4     |  rx_correlator_0                            |rx_correlator                              |  6747|
+|5     |    rx_correlation_unit_0                    |rx_correlation_unit                        |   186|
+|6     |    rx_correlation_unit_1                    |rx_correlation_unit__parameterized0        |   155|
+|7     |    rx_correlation_unit_2                    |rx_correlation_unit__parameterized1        |   184|
+|8     |    rx_correlation_unit_3                    |rx_correlation_unit__parameterized2        |   155|
+|9     |    rx_correlation_unit_4                    |rx_correlation_unit__parameterized3        |   184|
+|10    |    rx_correlation_unit_5                    |rx_correlation_unit__parameterized4        |   155|
+|11    |    rx_correlation_unit_6                    |rx_correlation_unit__parameterized5        |   184|
+|12    |    rx_correlation_unit_7                    |rx_correlation_unit__parameterized6        |   155|
+|13    |    rx_correlation_unit_8                    |rx_correlation_unit__parameterized7        |   184|
+|14    |    rx_correlation_unit_9                    |rx_correlation_unit__parameterized8        |   155|
+|15    |    rx_sequences_bits_feader_0               |rx_sequences_bits_feader                   |  1496|
+|16    |      rx_BRAM_16_256_binary_sequences_0      |rx_BRAM_16_256_binary_sequences            |  1473|
+|17    |  rx_correlator_buff_0                       |rx_correlator_buff                         |  1636|
+|18    |    rx_correlator_buff_4units_0              |rx_correlator_buff_4units                  |   399|
+|19    |      \genblk1[0].rx_correlator_buff_unit_0  |rx_correlator_buff_unit_51                 |    88|
+|20    |      \genblk1[1].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized0_52 |    90|
+|21    |      \genblk1[2].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized1_53 |    89|
+|22    |      \genblk1[3].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized2_54 |   101|
+|23    |      rx_BRAM_32_1024_0                      |rx_BRAM_32_1024_55                         |     1|
+|24    |    rx_correlator_buff_4units_1              |rx_correlator_buff_4units_38               |   399|
+|25    |      \genblk1[0].rx_correlator_buff_unit_0  |rx_correlator_buff_unit_46                 |    88|
+|26    |      \genblk1[1].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized0_47 |    90|
+|27    |      \genblk1[2].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized1_48 |    89|
+|28    |      \genblk1[3].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized2_49 |   101|
+|29    |      rx_BRAM_32_1024_0                      |rx_BRAM_32_1024_50                         |     1|
+|30    |    rx_correlator_buff_4units_2              |rx_correlator_buff_4units_39               |   402|
+|31    |      \genblk1[0].rx_correlator_buff_unit_0  |rx_correlator_buff_unit_41                 |    89|
+|32    |      \genblk1[1].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized0_42 |    90|
+|33    |      \genblk1[2].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized1_43 |    89|
+|34    |      \genblk1[3].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized2_44 |   101|
+|35    |      rx_BRAM_32_1024_0                      |rx_BRAM_32_1024_45                         |     2|
+|36    |    rx_correlator_buff_4units_3              |rx_correlator_buff_4units_40               |   433|
+|37    |      \genblk1[0].rx_correlator_buff_unit_0  |rx_correlator_buff_unit                    |    88|
+|38    |      \genblk1[1].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized0    |    90|
+|39    |      \genblk1[2].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized1    |    89|
+|40    |      \genblk1[3].rx_correlator_buff_unit_0  |rx_correlator_buff_unit__parameterized2    |   101|
+|41    |      rx_BRAM_32_1024_0                      |rx_BRAM_32_1024                            |    33|
+|42    |  rx_low_pass_filter_0                       |rx_low_pass_filter                         |   213|
+|43    |    rx_BRAM_16_128_0                         |rx_BRAM_16_128                             |     3|
+|44    |  rx_peak_identification_0                   |rx_peak_identification                     |  1525|
+|45    |  rx_samples_organizer_0                     |rx_samples_organizer                       |  1613|
+|46    |    rx_BRAM_internal_controller_0            |rx_BRAM_internal_controller                |    81|
+|47    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_37         |    25|
+|48    |    rx_BRAM_internal_controller_1            |rx_BRAM_internal_controller_0              |    79|
+|49    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_36         |    25|
+|50    |    rx_BRAM_internal_controller_10           |rx_BRAM_internal_controller_1              |    80|
+|51    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_35         |    25|
+|52    |    rx_BRAM_internal_controller_11           |rx_BRAM_internal_controller_2              |    78|
+|53    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_34         |    25|
+|54    |    rx_BRAM_internal_controller_12           |rx_BRAM_internal_controller_3              |    80|
+|55    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_33         |    25|
+|56    |    rx_BRAM_internal_controller_13           |rx_BRAM_internal_controller_4              |    80|
+|57    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_32         |    25|
+|58    |    rx_BRAM_internal_controller_14           |rx_BRAM_internal_controller_5              |    80|
+|59    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_31         |    25|
+|60    |    rx_BRAM_internal_controller_15           |rx_BRAM_internal_controller_6              |    81|
+|61    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_30         |    25|
+|62    |    rx_BRAM_internal_controller_16           |rx_BRAM_internal_controller_7              |    80|
+|63    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_29         |    25|
+|64    |    rx_BRAM_internal_controller_17           |rx_BRAM_internal_controller_8              |    80|
+|65    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_28         |    25|
+|66    |    rx_BRAM_internal_controller_18           |rx_BRAM_internal_controller_9              |    80|
+|67    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_27         |    25|
+|68    |    rx_BRAM_internal_controller_19           |rx_BRAM_internal_controller_10             |    80|
+|69    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_26         |    25|
+|70    |    rx_BRAM_internal_controller_2            |rx_BRAM_internal_controller_11             |    80|
+|71    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_25         |    25|
+|72    |    rx_BRAM_internal_controller_3            |rx_BRAM_internal_controller_12             |    79|
+|73    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_24         |    25|
+|74    |    rx_BRAM_internal_controller_4            |rx_BRAM_internal_controller_13             |    80|
+|75    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_23         |    25|
+|76    |    rx_BRAM_internal_controller_5            |rx_BRAM_internal_controller_14             |    80|
+|77    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_22         |    25|
+|78    |    rx_BRAM_internal_controller_6            |rx_BRAM_internal_controller_15             |    80|
+|79    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_21         |    25|
+|80    |    rx_BRAM_internal_controller_7            |rx_BRAM_internal_controller_16             |    83|
+|81    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_20         |    25|
+|82    |    rx_BRAM_internal_controller_8            |rx_BRAM_internal_controller_17             |    81|
+|83    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples_19         |    25|
+|84    |    rx_BRAM_internal_controller_9            |rx_BRAM_internal_controller_18             |    79|
+|85    |      rx_BRAM_16_510_filtered_samples_0      |rx_BRAM_16_510_filtered_samples            |    25|
++------+---------------------------------------------+-------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:20 ; elapsed = 00:01:27 . Memory (MB): peak = 820.766 ; gain = 648.555
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7195 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:00 ; elapsed = 00:01:13 . Memory (MB): peak = 784.664 ; gain = 247.492
-Synthesis Optimization Complete : Time (s): cpu = 00:01:17 ; elapsed = 00:01:24 . Memory (MB): peak = 784.664 ; gain = 612.078
+Synthesis finished with 0 errors, 0 critical warnings and 5957 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:16 . Memory (MB): peak = 820.766 ; gain = 281.078
+Synthesis Optimization Complete : Time (s): cpu = 00:01:21 ; elapsed = 00:01:27 . Memory (MB): peak = 820.766 ; gain = 648.555
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 811 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-17] Analyzing 886 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-288 Infos, 109 Warnings, 0 Critical Warnings and 0 Errors encountered.
+307 Infos, 125 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 784.664 ; gain = 575.305
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 784.664 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 24 21:46:38 2018...
+synth_design: Time (s): cpu = 00:01:22 ; elapsed = 00:01:29 . Memory (MB): peak = 820.766 ; gain = 611.652
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 820.766 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed May 09 14:44:16 2018...

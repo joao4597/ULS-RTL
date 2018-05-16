@@ -99,7 +99,8 @@ module red_pitaya_scope_with_dsp
     output [64-1:0] adcbuf_rdata_o      ,   //
     
     //new signal transmitted trigger
-    input           inew_signal_trigg
+    input           inew_signal_trigg   ,
+    input    [31:0] itimer  
 );
 
 // ID values to be read by the device driver, mapped at 40100ff0 - 40100fff
@@ -287,7 +288,7 @@ wire [31:0] delay_out[3:0];
 wire [31:0] delay_counter[3:0];
 wire [31:0] amplitude_1;
 wire [31:0] amplitude_2;
-reg [31:0] reset_dsp;
+reg  [31:0] reset_dsp;
 wire [31:0] start_amplitude_1;
 wire [31:0] start_amplitude_2;
 
@@ -305,44 +306,77 @@ wire wcorrelation_trigger;
 reg rcorrelation_trigger_aux;
 
 
+//necessary connections to read from correlator_buff.v
+reg rnext_s_from_buff_trigg ;
+reg rall_s_acq_from_buff    ;
+wire signed [31:0] wcorr_sample_from_buff ;
+wire               wcorr_s_ready_from_buff;
+
+reg rcorr_s_ready_from_buff;
+
+
+
+/*************************************************************/
+//buffered for timing reasons
+reg signed [31:0] rwcorr_sample_from_buff ; 
+reg               rwcorr_s_ready_from_buff;
+always @(posedge adc_clk_i) begin
+  if (reset_dsp[0]) begin
+    rwcorr_sample_from_buff  <= 0;
+    rwcorr_s_ready_from_buff <= 0;
+  end else begin
+    rwcorr_sample_from_buff  <= wcorr_sample_from_buff ;
+    rwcorr_s_ready_from_buff <= wcorr_s_ready_from_buff;
+  end
+end
+/*************************************************************/
+
 rx_top_level rx_top_level_0(
-  .crx_clk              (adc_clk_i              ),  //clock signal
-  .rrx_rst              (reset_dsp[0]           ),  //reset signal
-  .erx_en               (1'b1                   ),  //enable signal
+  .crx_clk                 (adc_clk_i              ),  //clock signal
+  .rrx_rst                 (reset_dsp[0]           ),  //reset signal
+  .erx_en                  (1'b1                   ),  //enable signal
+
+  .itimer                  (itimer                 ),  //Number of clocks since trigger
   
-  .inew_signal_trigg    (inew_signal_trigg      ),  //new signal transmitted trigger
+  .inew_signal_trigg       (inew_signal_trigg      ),  //new signal transmitted trigger
 
-  .iresult_acquired_arm (res_acquired[0]        ),
+  .iresult_acquired_arm    (res_acquired[0]        ),
  
-  .inew_sample          (adc_a_dat_sync         ),  //new sample in
+  .inew_sample             (adc_a_dat_sync         ),  //new sample in
 
-  .o_correlator_0_arm   (wcorrelation_result[0] ),  //outputs of the 16 correlators
-  .o_correlator_1_arm   (wcorrelation_result[1] ),
-  .o_correlator_2_arm   (wcorrelation_result[2] ),
-  .o_correlator_3_arm   (wcorrelation_result[3] ),
-  .o_correlator_4_arm   (wcorrelation_result[4] ),
-  .o_correlator_5_arm   (wcorrelation_result[5] ),
-  .o_correlator_6_arm   (wcorrelation_result[6] ),
-  .o_correlator_7_arm   (wcorrelation_result[7] ),
-  .o_correlator_8_arm   (wcorrelation_result[8] ),
-  .o_correlator_9_arm   (wcorrelation_result[9] ),
-  .o_correlator_10_arm  (wcorrelation_result[10]),
-  .o_correlator_11_arm  (wcorrelation_result[11]),
-  .o_correlator_12_arm  (wcorrelation_result[12]),
-  .o_correlator_13_arm  (wcorrelation_result[13]),
-  .o_correlator_14_arm  (wcorrelation_result[14]),
-  .o_correlator_15_arm  (wcorrelation_result[15]),
+  .inext_sample_trigg_buff (rnext_s_from_buff_trigg),  //signal corr buffer to put out the next sample
+  .iall_acquired_buff_trigg(rall_s_acq_from_buff   ),  //signal buffer that all 128 samples have been acquired
 
-  .o_correlator_trigg   (wcorrelation_trigger    ),
+  .o_correlator_0_arm      (wcorrelation_result[0] ),  //outputs of the 16 correlators
+  .o_correlator_1_arm      (wcorrelation_result[1] ),
+  .o_correlator_2_arm      (wcorrelation_result[2] ),
+  .o_correlator_3_arm      (wcorrelation_result[3] ),
+  .o_correlator_4_arm      (wcorrelation_result[4] ),
+  .o_correlator_5_arm      (wcorrelation_result[5] ),
+  .o_correlator_6_arm      (wcorrelation_result[6] ),
+  .o_correlator_7_arm      (wcorrelation_result[7] ),
+  .o_correlator_8_arm      (wcorrelation_result[8] ),
+  .o_correlator_9_arm      (wcorrelation_result[9] ),
+  .o_correlator_10_arm     (wcorrelation_result[10]),
+  .o_correlator_11_arm     (wcorrelation_result[11]),
+  .o_correlator_12_arm     (wcorrelation_result[12]),
+  .o_correlator_13_arm     (wcorrelation_result[13]),
+  .o_correlator_14_arm     (wcorrelation_result[14]),
+  .o_correlator_15_arm     (wcorrelation_result[15]),
 
-  .o_sample_arm         (wpeak_value            ),  //Peak Value
-  .o_received_seq       (wreceived_seq          ),
-  .o_time_arm           (wtimestamp             ),  //Timestamp
-  .o_trigger_arm        (wseq_trigger           )   //Trigger
+  .o_correlator_trigg      (wcorrelation_trigger    ),
+
+  .o_sample_arm            (wpeak_value             ),  //Peak Value
+  .o_received_seq          (wreceived_seq           ),
+  .o_time_arm              (wtimestamp              ),  //Timestamp
+  .o_trigger_arm           (wseq_trigger            ),  //Trigger
+
+  .ocorr_sample_buff       (wcorr_sample_from_buff  ),  //sample stored in buffer
+  .ocorr_sample_ready_buff (wcorr_s_ready_from_buff )   //signal from buffer every time a new sample has been outputed
 );
 
 always @(posedge adc_clk_i) begin
-  if (adc_rstn_i == 1'b0) begin
+  if (reset_dsp[0]) begin
     rcorrelation_trigger_aux <= 0;
   end else begin
     if ((addr[19:0] == 20'h00300) && (rcorrelation_trigger_aux == 1) && (wen)) begin
@@ -355,42 +389,47 @@ always @(posedge adc_clk_i) begin
   end
 end
 
+//request next sample from buffer
+always @(posedge adc_clk_i) begin
+  if (reset_dsp[0]) begin
+    rnext_s_from_buff_trigg <= 0;
+  end else begin
+    if ((addr[19:0] == 20'h00200) && (rnext_s_from_buff_trigg == 0) && (wen)) begin
+      rnext_s_from_buff_trigg <= wdata[0];
+    end else begin
+      rnext_s_from_buff_trigg <= 0;
+    end
+  end
+end
 
+//signal buffer that all samples have been acquired
+always @(posedge adc_clk_i) begin
+  if (reset_dsp[0]) begin
+    rall_s_acq_from_buff <= 0;
+  end else begin
+    if ((addr[19:0] == 20'h0020C) && (rall_s_acq_from_buff == 0) && (wen)) begin
+      rall_s_acq_from_buff <= wdata[0];
+    end else begin
+      rall_s_acq_from_buff <= 0;
+    end
+  end
+end
 
+//sample ready to be read by arm
+always @(posedge adc_clk_i) begin
+  if (reset_dsp[0]) begin
+    rcorr_s_ready_from_buff <= 0;
+  end else begin
+    if (rwcorr_s_ready_from_buff) begin
+      rcorr_s_ready_from_buff <= 1;
+    end else begin
+      if (rnext_s_from_buff_trigg) begin
+        rcorr_s_ready_from_buff <= 0;
+      end
+    end
+  end
+end
 
-
-/*
-// My DSP blocks:
-red_pitaya_dsp  red_pitaya_dsp_1 (
-         .clock( adc_clk_i ),         			  						// master clock
-         .reset( ~reset_dsp[0] ),       		                        // master reset
-         .data_enable( adc_dec_enable ), 		                        // input data enable
-         .config_WL_S_L_a( config_WL_S_L_a ),	                        // from configuration registers
-         .config_WL_S_H_a( config_WL_S_H_a ),	                        // from configuration registers
-         .config_WL_S_L_b( config_WL_S_L_b ),	                        // from configuration registers
-         .config_WL_S_H_b( config_WL_S_H_b ),	                        // from configuration registers
-         .config_N_ZEROS( config_N_ZEROS ), 	                        // from configuration registers
-         .config_WAITING_TIME( config_WAITING_TIME ),                   // number of samples that the system ignores after a detection 
-         .config_MAX_DELAY( config_MAX_DELAY ),  		                // delay max
-         .config_RESET_TIME_AMPLITUDE( config_RESET_TIME_AMPLITUDE ),  	// period of resetting the amplitude
-         .a_in( adc_a_dat_sync ),        			  						// data after decimator from channel A
-         .b_in( adc_b_dat_sync ),         			 						// data after decimator from channel B
-         .a_out( ab_out_a ),        			 						// to mux connected to the input of  scope path
-         .b_out( ab_out_b ),         			 						// to mux connected to the input of  scope path
-         .delay_out_0( delay_out[0] ),				
-         .delay_out_1( delay_out[1] ),
-         .delay_out_2( delay_out[2] ),
-         .delay_out_3( delay_out[3] ),
-         .delay_counter_0( delay_counter[0] ),
-         .delay_counter_1( delay_counter[1] ),
-         .delay_counter_2( delay_counter[2] ),
-         .delay_counter_3( delay_counter[3] ),		 
-		 .amplitude_1( amplitude_1 ),
-		 .amplitude_2( amplitude_2 ),
-		 .start_amplitude_1( start_amplitude_1 ),
-		 .start_amplitude_2( start_amplitude_2 )
-      );
-*/
          
 // Muxes to select the input top the scope path:
 assign dsp_a_scope_in = ( select_scope_in ) ? ab_out_a : adc_a_dat ;         
@@ -1159,7 +1198,7 @@ always @(posedge adc_clk_i) begin
         if (addr[19:0] == 20'h110)  ddr_b_end   <= wdata;
 
     // Control of the DSP modules:            
-        if (addr[19:0] == 20'h00200)  select_scope_in <= wdata[0];
+        /*if (addr[19:0] == 20'h00200)  select_scope_in <= wdata[0];
         if (addr[19:0] == 20'h00204)  config_WL_S_L_a <= wdata;
         if (addr[19:0] == 20'h00208)  config_WL_S_H_a <= wdata;
         if (addr[19:0] == 20'h0020c)  config_N_ZEROS <= wdata;
@@ -1168,9 +1207,10 @@ always @(posedge adc_clk_i) begin
         if (addr[19:0] == 20'h00218)  config_WL_S_L_b <= wdata;
         if (addr[19:0] == 20'h0021c)  config_WL_S_H_b <= wdata;
         if (addr[19:0] == 20'h00220)  config_MAX_DELAY <= wdata;
-        if (addr[19:0] == 20'h00224)  config_RESET_TIME_AMPLITUDE <= wdata;
+        if (addr[19:0] == 20'h00224)  config_RESET_TIME_AMPLITUDE <= wdata;*/
 
         //++++++++++++++++++++++++++ CONNECTIONS FOR RX_TOP_LEVEL ++++++++++++++++++++++++++++++++++\\
+        if (addr[19:0] == 20'h002F0)  reset_dsp    <= wdata;
         if (addr[19:0] == 20'h00414)  res_acquired <= wdata;
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\\
                     
@@ -1221,7 +1261,7 @@ always @(*) begin
     20'h0011c:  begin   ack <= 1'b1; rdata <= {{32-2{1'b0}},ddr_status_i};  end
     
     // Read DSP configuration registers:
-    20'h00200:  begin   ack <= 1'b1; rdata <= { 31'b0,select_scope_in };  end
+    /*20'h00200:  begin   ack <= 1'b1; rdata <= { 31'b0,select_scope_in };  end
     20'h00204:  begin   ack <= 1'b1; rdata <= config_WL_S_L_a;  end
     20'h00208:  begin   ack <= 1'b1; rdata <= config_WL_S_H_a;  end
     20'h0020c:  begin   ack <= 1'b1; rdata <= config_N_ZEROS;  end
@@ -1230,7 +1270,7 @@ always @(*) begin
     20'h00218:  begin   ack <= 1'b1; rdata <= config_WL_S_L_b;  end
     20'h0021c:  begin   ack <= 1'b1; rdata <= config_WL_S_H_b;  end
     20'h00220:  begin   ack <= 1'b1; rdata <= config_MAX_DELAY;  end
-    20'h00224:  begin   ack <= 1'b1; rdata <= config_RESET_TIME_AMPLITUDE;  end
+    20'h00224:  begin   ack <= 1'b1; rdata <= config_RESET_TIME_AMPLITUDE;  end*/
     
     //20'h00300:  begin   ack <= 1'b1; rdata <= delay_out[0];  end
     //20'h00304:  begin   ack <= 1'b1; rdata <= delay_out[1];  end
@@ -1250,6 +1290,10 @@ always @(*) begin
     20'h00400:  begin   ack <= 1'b1; rdata <= 32'h05121731;   end
 
     //++++++++++++++++++++++++++ CONNECTIONS FOR RX_TOP_LEVEL ++++++++++++++++++++++++++++++++++\\
+    20'h00204:  begin   ack <= 1'b1; rdata <= rcorr_s_ready_from_buff; end
+    20'h00208:  begin   ack <= 1'b1; rdata <= rwcorr_sample_from_buff; end
+    
+    
     20'h00404:  begin   ack <= 1'b1; rdata <= wpeak_value           ; end
     20'h00408:  begin   ack <= 1'b1; rdata <= {28'd0, wreceived_seq}; end
     20'h0040C:  begin   ack <= 1'b1; rdata <= wtimestamp            ; end
